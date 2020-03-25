@@ -13,15 +13,25 @@
 <li><a href="#quick-start">2. Quick Start</a></li>
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
-<li><a href="#homepage-code-coming-in-v2-0-code">3.1. Homepage <code>[coming in v2.0]</code></a></li>
-<li><a href="#trips-code-coming-in-v2-0-code">3.2. Trips <code>[coming in v2.0]</code></a></li>
-<li><a href="#itinerary-code-coming-in-v2-0-code">3.3. Itinerary <code>[coming in v2.0]</code></a></li>
-<li><a href="#journal-code-coming-in-v2-0-code">3.4. Journal <code>[coming in v2.0]</code></a></li>
+<li><a href="#homepage">3.1. Homepage</a></li>
+<li><a href="#trip-page">3.2. Trip page</a></li>
+<li><a href="#itinerary">3.3. Itinerary</a></li>
+<li><a href="#journal">3.4. Journal</a></li>
 <li><a href="#contact-list-code-coming-in-v2-0-code">3.5. Contact List <code>[coming in v2.0]</code></a></li>
+<li><a href="#across-the-app">3.6. Across the app</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
-<li><a href="#command-summary">5. Command Summary</a></li>
+<li><a href="#command-summary">5. Command Summary</a>
+<ul class="sectlevel2">
+<li><a href="#homepage-2">5.1. Homepage</a></li>
+<li><a href="#trip-page-2">5.2. Trip page</a></li>
+<li><a href="#itinerary-2">5.3. Itinerary</a></li>
+<li><a href="#journal-2">5.4. Journal</a></li>
+<li><a href="#contact-list">5.5. Contact List</a></li>
+<li><a href="#across-the-app-2">5.6. Across the app</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -29,7 +39,7 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Volant is a travel assistant application for solo travellers for who <strong>prefer to use a desktop app for managing people they meet during their solo travels</strong>. More importantly, Volant is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, AB3 can get your contact management tasks done faster than traditional GUI apps. Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
+<p>Volant is a travel companion application for solo travellers for who <strong>prefer to use a desktop app to manage their travels</strong>. More importantly, Volant is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, Volant can get you planning, executing and reflecting on your trip faster than traditional GUI apps. Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
 </div>
 </div>
 </div>
@@ -93,7 +103,7 @@ e.g. Typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect2">
-<h3 id="homepage-code-coming-in-v2-0-code"><a class="link" href="#homepage-code-coming-in-v2-0-code">3.1. Homepage <code>[coming in v2.0]</code></a></h3>
+<h3 id="homepage"><a class="link" href="#homepage">3.1. Homepage</a></h3>
 <div class="sect3">
 <h4 id="opening-the-help-window-code-help-code"><a class="link" href="#opening-the-help-window-code-help-code">3.1.1. Opening the help window: <code>help</code></a></h4>
 <div class="paragraph">
@@ -104,21 +114,12 @@ e.g. Typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect3">
-<h4 id="opening-the-homepage-code-home-code"><a class="link" href="#opening-the-homepage-code-home-code">3.1.2. Opening the homepage: <code>home</code></a></h4>
-<div class="paragraph">
-<p>Returns to the homepage. If already at the homepage, does nothing.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>home</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="navigating-to-a-trip-page-code-gototrip-code"><a class="link" href="#navigating-to-a-trip-page-code-gototrip-code">3.1.3. Navigating to a trip page: <code>gotoTrip</code></a></h4>
+<h4 id="navigating-to-a-trip-page-code-goto-code"><a class="link" href="#navigating-to-a-trip-page-code-goto-code">3.1.2. Navigating to a trip page: <code>goto</code></a></h4>
 <div class="paragraph">
 <p>Navigates to the context of a trip in the trip list.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>gotoTrip INDEX</code></p>
+<p>Format: <code>goto INDEX</code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -133,30 +134,24 @@ e.g. Typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>gotoTrip 12</code><br>
+<p><code>goto 12</code><br>
 Navigates to the 12th trip on the list of trips.</p>
 </li>
 </ul>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="trips-code-coming-in-v2-0-code"><a class="link" href="#trips-code-coming-in-v2-0-code">3.2. Trips <code>[coming in v2.0]</code></a></h3>
-<div class="paragraph">
-<p>All trips are listed on the home page.</p>
-</div>
 <div class="sect3">
-<h4 id="adding-a-trip-code-add-code"><a class="link" href="#adding-a-trip-code-add-code">3.2.1. Adding a trip: <code>add</code></a></h4>
+<h4 id="adding-a-trip-code-add-code"><a class="link" href="#adding-a-trip-code-add-code">3.1.3. Adding a trip: <code>add</code></a></h4>
 <div class="paragraph">
 <p>Adds a trip to the trip list.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>add n/TRIP_NAME from/TRIP_START_DATE to/TRIP_END_DATE l/LOCATION</code></p>
+<p>Format: <code>add n/TRIP_NAME l/LOCATION d/TRIP_START_DATE to TRIP_END_DATE</code></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Please write the date range in the format <code>from/DD-MM-YYYY</code> <code>to/DD-MM-YYYY</code>.</p>
+<p>Please write the date range in the format <code>d/YYYY-MM-DD to YYYY-MM-DD</code>.</p>
 </li>
 </ul>
 </div>
@@ -166,18 +161,18 @@ Navigates to the 12th trip on the list of trips.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/Graduation Trip from/01-02-2020 to/05-02-2020 l/Bangkok</code><br>
+<p><code>add n/Graduation Trip l/Bangkok d/2020-02-01 to 2020-02-05</code><br>
 Adds a trip titled “Graduation Trip” to the list with the specified metadata.</p>
 </li>
 <li>
-<p><code>add n/Family Trip from/05-02-2020 to/08-02-2020 l/Bangkok</code><br>
+<p><code>add n/Family Trip l/Bangkok d/02020-02-05 to 2020-02-08</code><br>
 Adds a trip titled “Family Trip” to the list with the specified metadata.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-trip-code-delete-code"><a class="link" href="#deleting-a-trip-code-delete-code">3.2.2. Deleting a trip: <code>delete</code></a></h4>
+<h4 id="deleting-a-trip-code-delete-code"><a class="link" href="#deleting-a-trip-code-delete-code">3.1.4. Deleting a trip: <code>delete</code></a></h4>
 <div class="paragraph">
 <p>Deletes a trip from the trip list.</p>
 </div>
@@ -204,12 +199,12 @@ Deletes the 12th trip on the list of trips.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-trip-metadata-code-edit-code"><a class="link" href="#editing-trip-metadata-code-edit-code">3.2.3. Editing trip metadata: <code>edit</code></a></h4>
+<h4 id="editing-trip-metadata-code-edit-code"><a class="link" href="#editing-trip-metadata-code-edit-code">3.1.5. Editing trip metadata: <code>edit</code></a></h4>
 <div class="paragraph">
 <p>Edits item in the trip list at the specified index.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>edit INDEX [n/TRIP_NAME] [from/TRIP_START_DATE] [to/TRIP_END_DATE] [l/LOCATION]&#8230;&#8203;</code></p>
+<p>Format: <code>edit INDEX [n/TRIP_NAME]  [l/LOCATION] [d/TRIP_START_DATE to TRIP_END_DATE]</code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -217,7 +212,7 @@ Deletes the 12th trip on the list of trips.</p>
 <p><code>INDEX</code> must be a positive integer within range of the list size.</p>
 </li>
 <li>
-<p>Please write the date range in the format <code>from/DD-MM-YYYY</code> <code>to/DD-MM-YYYY</code>.</p>
+<p>Please write the date range in the format <code>d/YYYY-MM-DD to YYYY-MM-DD</code>.</p>
 </li>
 </ul>
 </div>
@@ -231,14 +226,17 @@ Deletes the 12th trip on the list of trips.</p>
 Edits the second trip on the list with “School Trip” as name and “France” as location.</p>
 </li>
 <li>
-<p><code>edit 1 from/01-02-2020 to/ 01-03-2020</code><br>
+<p><code>edit 1 d/2020-02-01 to 2020-03-01</code><br>
 Edits the first trip on the list with date range of 1 February to 1 March 2020.</p>
 </li>
 </ul>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="trip-page"><a class="link" href="#trip-page">3.2. Trip page</a></h3>
 <div class="sect3">
-<h4 id="navigating-to-a-feature-in-the-trip-page-code-goto-code"><a class="link" href="#navigating-to-a-feature-in-the-trip-page-code-goto-code">3.2.4. Navigating to a feature in the trip page: <code>goto</code></a></h4>
+<h4 id="navigating-to-a-feature-in-the-trip-page-code-goto-code"><a class="link" href="#navigating-to-a-feature-in-the-trip-page-code-goto-code">3.2.1. Navigating to a feature in the trip page: <code>goto</code></a></h4>
 <div class="paragraph">
 <p>Navigates to a specific feature within each trip.</p>
 </div>
@@ -248,7 +246,7 @@ Edits the first trip on the list with date range of 1 February to 1 March 2020.<
 <div class="ulist">
 <ul>
 <li>
-<p>List of available features:</p>
+<p>List of available features (can be typed in any case):</p>
 <div class="ulist">
 <ul>
 <li>
@@ -258,13 +256,13 @@ Edits the first trip on the list with date range of 1 February to 1 March 2020.<
 <p><code>JOURNAL</code></p>
 </li>
 <li>
-<p><code>EXPENSES</code></p>
+<p><code>EXPENSES</code> [coming in v2.0]</p>
 </li>
 <li>
-<p><code>PACKINGLIST</code></p>
+<p><code>PACKINGLIST</code> [coming in v2.0]</p>
 </li>
 <li>
-<p><code>CONTACTS</code></p>
+<p><code>CONTACTS</code> [coming in v2.0]</p>
 </li>
 </ul>
 </div>
@@ -285,14 +283,14 @@ Navigates to the itinerary feature of the current trip.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="itinerary-code-coming-in-v2-0-code"><a class="link" href="#itinerary-code-coming-in-v2-0-code">3.3. Itinerary <code>[coming in v2.0]</code></a></h3>
+<h3 id="itinerary"><a class="link" href="#itinerary">3.3. Itinerary</a></h3>
 <div class="sect3">
 <h4 id="adding-an-activity-to-the-itinerary-code-add-code"><a class="link" href="#adding-an-activity-to-the-itinerary-code-add-code">3.3.1. Adding an activity to the itinerary: <code>add</code></a></h4>
 <div class="paragraph">
 <p>Adds an activity to the itinerary.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>add a/ACTIVITY d/DATE t/TIME l/LOCATION</code></p>
+<p>Format: <code>add title/TITLE l/LOCATION d/DATE t/TIME</code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -310,7 +308,7 @@ Navigates to the itinerary feature of the current trip.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>add a/Sightseeing d/12-10-2020 t/13:45 l/Mount Everest</code>
+<p><code>add title/Sightseeing l/Mount Everest d/12-10-2020 t/13:45</code>
 Adds Sightseeing at Mount Everest at 12 OCT 2020 13:45 to the itinerary</p>
 </li>
 </ul>
@@ -350,21 +348,12 @@ Deletes the 5th activity in the itinerary.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="displaying-next-activity-code-next-code"><a class="link" href="#displaying-next-activity-code-next-code">3.3.3. Displaying next activity: <code>next</code></a></h4>
+<h4 id="editing-an-acitivity-code-edit-code"><a class="link" href="#editing-an-acitivity-code-edit-code">3.3.3. Editing an acitivity: <code>edit</code></a></h4>
 <div class="paragraph">
-<p>Displays the next activity in the itinerary.</p>
+<p>Edits an existing activity.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>next</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="editing-the-itinerary-code-edit-code"><a class="link" href="#editing-the-itinerary-code-edit-code">3.3.4. Editing the itinerary: <code>edit</code></a></h4>
-<div class="paragraph">
-<p>Edits an existing itinerary.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>edit INDEX [a/ACTIVITY] [d/DATE] [t/TIME] [l/LOCATION]</code></p>
+<p>Format: <code>edit INDEX [title/TITLE] [l/LOCATION] [d/DATE] [t/TIME]</code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -387,16 +376,22 @@ Deletes the 5th activity in the itinerary.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="locating-an-activity-by-any-field-code-find-code"><a class="link" href="#locating-an-activity-by-any-field-code-find-code">3.3.5. Locating an activity by any field: <code>find</code></a></h4>
+<h4 id="locating-an-activity-code-find-code"><a class="link" href="#locating-an-activity-code-find-code">3.3.4. Locating an activity: <code>find</code></a></h4>
 <div class="paragraph">
 <p>Searches the itinerary for any activity that matches the input field.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>find FIELD [a/ACTIVITY] [d/DATE] [t/TIME] [l/LOCATION]</code></p>
+<p>Format: <code>find FIELD [title/TITLE] [l/LOCATION] [d/DATE] [t/TIME]</code></p>
 </div>
-<div class="paragraph">
-<p>Date must be specified in the following format: <code>DD-MM-YYYY</code>
-Time must be specified in the following format: <code>HH:MM</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Date must be specified in the following format: <code>DD-MM-YYYY</code></p>
+</li>
+<li>
+<p>Time must be specified in the following format: <code>HH:MM</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -404,7 +399,7 @@ Time must be specified in the following format: <code>HH:MM</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>find Itinerary a/Climbing</code><br>
+<p><code>find Itinerary title/Climbing</code><br>
 Returns all activities related to climbing.</p>
 </li>
 </ul>
@@ -412,14 +407,14 @@ Returns all activities related to climbing.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="journal-code-coming-in-v2-0-code"><a class="link" href="#journal-code-coming-in-v2-0-code">3.4. Journal <code>[coming in v2.0]</code></a></h3>
+<h3 id="journal"><a class="link" href="#journal">3.4. Journal</a></h3>
 <div class="sect3">
 <h4 id="adding-a-journal-entry-code-add-code"><a class="link" href="#adding-a-journal-entry-code-add-code">3.4.1. Adding a journal entry: <code>add</code></a></h4>
 <div class="paragraph">
 <p>Adds a journal entry to the entry list.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>add [c/CONTENT] [img/FILE_DIRECTORY] d/DATE t/TIME [l/LOCATION] [f/FEELING] [w/WEATHER]</code></p>
+<p>Format: <code>add d/DATE t/TIME [c/CONTENT] [l/LOCATION] [f/FEELING] [w/WEATHER]</code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -433,29 +428,29 @@ Returns all activities related to climbing.</p>
 <p>CONTENT is limited to 280 characters</p>
 </li>
 <li>
-<p>Available <code>FEELING</code> types:</p>
+<p>Available <code>FEELING</code> types (can be typed in any case):</p>
 <div class="ulist">
 <ul>
 <li>
-<p>happy</p>
+<p><code>HAPPY</code></p>
 </li>
 <li>
-<p>sad</p>
+<p><code>SAD</code></p>
 </li>
 <li>
-<p>excited</p>
+<p><code>EXCITED</code></p>
 </li>
 <li>
-<p>worried</p>
+<p><code>WORRIED</code></p>
 </li>
 <li>
-<p>scared</p>
+<p><code>SCARED</code></p>
 </li>
 <li>
-<p>surprised</p>
+<p><code>SURPRISED</code></p>
 </li>
 <li>
-<p>confused</p>
+<p><code>CONFUSED</code></p>
 </li>
 </ul>
 </div>
@@ -468,14 +463,43 @@ Returns all activities related to climbing.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>add c/Lorem ipsum dolor sit amet, consectetur adipiscing elit d/12-09-2021 t/12:51 l/New York f/confused</code><br>
+<p><code>add d/12-09-2021 t/12:51 c/Lorem ipsum dolor sit amet, consectetur adipiscing elit l/New York f/confused</code><br>
 Adds a new journal entry to the entry list with the specified content, date, time, location and feeling fields.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="sorting-a-list-of-current-journal-entries-code-sort-code"><a class="link" href="#sorting-a-list-of-current-journal-entries-code-sort-code">3.4.2. Sorting a list of current journal entries: <code>sort</code></a></h4>
+<h4 id="deleting-a-journal-entry-code-delete-code"><a class="link" href="#deleting-a-journal-entry-code-delete-code">3.4.2. Deleting a journal entry: <code>delete</code></a></h4>
+<div class="paragraph">
+<p>Deletes an entire journal entry or a specific metadata within a journal entry based on the chosen index number.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>delete INDEX</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-a-journal-entry-code-edit-code"><a class="link" href="#editing-a-journal-entry-code-edit-code">3.4.3. Editing a journal entry: <code>edit</code></a></h4>
+<div class="paragraph">
+<p>Edits specific metadata within a chosen journal entry using index number.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>edit INDEX [d/NEW_DATE] [t/NEW_TIME] [c/NEW_CONTENT] [l/NEW_LOCATION] [f/NEW_FEELING] [w/NEW_WEATHER]</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>edit 4 d/21-12-2012 f/scared</code><br>
+Changes date and feeling of fourth journal entry to “21-12-2012” and “SCARED” respectively</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sorting-a-list-of-current-journal-entries-code-sort-code"><a class="link" href="#sorting-a-list-of-current-journal-entries-code-sort-code">3.4.4. Sorting a list of current journal entries: <code>sort</code></a></h4>
 <div class="paragraph">
 <p>Sorts the list of current journal entry lists in a specified order.</p>
 </div>
@@ -489,22 +513,22 @@ Adds a new journal entry to the entry list with the specified content, date, tim
 <div class="ulist">
 <ul>
 <li>
-<p>Old to new - old (default if SORT_TYPE is left empty)</p>
+<p><code>OLDESTFIRST</code> - oldest entries first (default if SORT_TYPE is left empty)</p>
 </li>
 <li>
-<p>New to old - new</p>
+<p><code>NEWESTFIRST</code> - newest entries first</p>
 </li>
 <li>
-<p>Location - location</p>
+<p><code>LOCATION</code> - alphabetical order of locations</p>
 </li>
 <li>
-<p>Feeling - feeling</p>
+<p><code>FEELING</code> - alphabetical order of feelings</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Default sorting of journal entries is in order of old to new</p>
+<p>Default sorting of journal entries is in order of oldest entries first</p>
 </li>
 </ul>
 </div>
@@ -514,37 +538,8 @@ Adds a new journal entry to the entry list with the specified content, date, tim
 <div class="ulist">
 <ul>
 <li>
-<p><code>sort location</code><br>
-Sorts the list of journal entries sorted by locations.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="deleting-a-journal-entry-code-delete-code"><a class="link" href="#deleting-a-journal-entry-code-delete-code">3.4.3. Deleting a journal entry: <code>delete</code></a></h4>
-<div class="paragraph">
-<p>Deletes an entire journal entry or a specific metadata within a journal entry based on the chosen index number.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>delete INDEX</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="editing-a-journal-entry-code-edit-code"><a class="link" href="#editing-a-journal-entry-code-edit-code">3.4.4. Editing a journal entry: <code>edit</code></a></h4>
-<div class="paragraph">
-<p>Edits specific metadata within a chosen journal entry using index number.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>edit INDEX [c/NEW_CONTENT] [img/NEW_FILE_DIRECTORY] [d/NEW_DATE] [t/NEW_TIME] [l/NEW_LOCATION] [f/NEW_FEELING] [w/NEW_WEATHER]</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>edit 4 d/21-12-2012 f/Scared</code><br>
-Changes date and feeling of fourth journal entry to “21-12-2012” and “scared” respectively</p>
+<p><code>sort LOCATION</code><br>
+Sorts the list of journal entries by alphabetical order of locations.</p>
 </li>
 </ul>
 </div>
@@ -558,7 +553,7 @@ Changes date and feeling of fourth journal entry to “21-12-2012” and “scar
 <p>Adds a contact to the contact list.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>add n/NAME [p/PHONE_NUMBER] [a/AGE] l/:LOCATION [h/HOW_YOU_MET] [f/FAVOURITE]</code></p>
+<p>Format: <code>add n/NAME [p/PHONE_NUMBER] [a/AGE] [l/LOCATION] [h/HOW_YOU_MET] [f/FAVOURITE]</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -566,7 +561,7 @@ Changes date and feeling of fourth journal entry to “21-12-2012” and “scar
 <div class="ulist">
 <ul>
 <li>
-<p><code>addContact n/John Doe p/987654321 a/23 m/In Berlin h/Asked him to take a picture of me at Brandenburg Gate p/Cheerful f/no</code></p>
+<p><code>add n/John Doe p/987654321 a/23 m/In Berlin h/Asked him to take a picture of me at Brandenburg Gate p/Cheerful f/no</code></p>
 </li>
 </ul>
 </div>
@@ -615,7 +610,7 @@ Deletes the 2nd person in the contact list.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Edits the contact at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed person list. The index must be a   positive integer 1, 2, 3, …​</p>
+<p>Edits the contact at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed person list. The index must be a positive integer 1, 2, 3, …​</p>
 </li>
 <li>
 <p>At least one of the optional fields must be provided.</p>
@@ -627,7 +622,7 @@ Deletes the 2nd person in the contact list.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="locating-a-contact-by-any-field-code-find-code"><a class="link" href="#locating-a-contact-by-any-field-code-find-code">3.5.4. Locating a contact by any field: <code>find</code></a></h4>
+<h4 id="locating-a-contact-code-find-code"><a class="link" href="#locating-a-contact-code-find-code">3.5.4. Locating a contact: <code>find</code></a></h4>
 <div class="paragraph">
 <p>Searches the contact list for any contact that matches the input field.</p>
 </div>
@@ -647,10 +642,22 @@ Deletes the 2nd person in the contact list.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>findContact n/John</code><br>
+<p><code>find n/John</code><br>
 Returns the contact information on John Doe and John Wick</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="across-the-app"><a class="link" href="#across-the-app">3.6. Across the app</a></h3>
+<div class="sect3">
+<h4 id="navigating-to-the-previous-page-code-back-code"><a class="link" href="#navigating-to-the-previous-page-code-back-code">3.6.1. Navigating to the previous page: <code>back</code></a></h4>
+<div class="paragraph">
+<p>Navigates to the previous page in the app. This functionality works anywhere in the app.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>back</code></p>
 </div>
 </div>
 </div>
@@ -668,25 +675,104 @@ Returns the contact information on John Doe and John Wick</p>
 <div class="sect1">
 <h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="homepage-2"><a class="link" href="#homepage-2">5.1. Homepage</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER</code><br>
-e.g. <code>add n/James Ho p/22224444</code></p>
+<p><strong>Help</strong>: <code>help</code><br></p>
 </li>
 <li>
-<p><strong>Delete</strong> : <code>delete INDEX</code><br>
-e.g. <code>delete 3</code></p>
+<p><strong>Navigate to trip</strong>: <code>goto INDEX</code><br></p>
 </li>
 <li>
-<p><strong>Edit</strong> : <code>edit INDEX [n/NAME] [p/PHONE_NUMBER] `<br>
-e.g. `edit 2 n/James Lee</code></p>
+<p><strong>Add trip</strong>: <code>add n/TRIP_NAME l/LOCATION d/TRIP_START_DATE to TRIP_END_DATE</code><br></p>
 </li>
 <li>
-<p><strong>Find</strong> : <code>find KEYWORD [n/NAME]</code><br>
-e.g. <code>find James Jake</code></p>
+<p><strong>Delete trip</strong>: <code>delete INDEX</code><br></p>
+</li>
+<li>
+<p><strong>Edit trip</strong>: <code>edit INDEX [n/TRIP_NAME]  [l/LOCATION] [d/TRIP_START_DATE to TRIP_END_DATE]</code><br></p>
 </li>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-25 16:53:38 UTC</div></div></div></body></html>
+<div class="sect2">
+<h3 id="trip-page-2"><a class="link" href="#trip-page-2">5.2. Trip page</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Navigate to feature</strong>: <code>goto FEATURE</code><br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="itinerary-2"><a class="link" href="#itinerary-2">5.3. Itinerary</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Add activity</strong>: <code>add title/TITLE l/LOCATION d/DATE t/TIME</code><br></p>
+</li>
+<li>
+<p><strong>Delete activity</strong>: <code>delete INDEX</code><br></p>
+</li>
+<li>
+<p><strong>Edit activity</strong>: <code>edit INDEX [title/TITLE] [l/LOCATION] [d/DATE] [t/TIME]</code><br></p>
+</li>
+<li>
+<p><strong>Find activity</strong>: <code>find FIELD [title/TITLE] [l/LOCATION] [d/DATE] [t/TIME]</code><br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="journal-2"><a class="link" href="#journal-2">5.4. Journal</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Add entry</strong>: <code>add d/DATE t/TIME [c/CONTENT] [l/LOCATION] [f/FEELING] [w/WEATHER]</code><br></p>
+</li>
+<li>
+<p><strong>Delete entry</strong>: <code>delete INDEX</code><br></p>
+</li>
+<li>
+<p><strong>Edit entry</strong>: <code>edit INDEX [d/NEW_DATE] [t/NEW_TIME] [c/NEW_CONTENT] [l/NEW_LOCATION] [f/NEW_FEELING] [w/NEW_WEATHER]</code><br></p>
+</li>
+<li>
+<p><strong>Sort entries</strong>: <code>sort [SORT_TYPE]</code><br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="contact-list"><a class="link" href="#contact-list">5.5. Contact List</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Add contact</strong>: <code>add n/NAME [p/PHONE_NUMBER] [a/AGE] [l/LOCATION] [h/HOW_YOU_MET] [f/FAVOURITE]</code><br></p>
+</li>
+<li>
+<p><strong>Delete contact</strong>: <code>delete INDEX</code><br></p>
+</li>
+<li>
+<p><strong>Edit contact</strong>: <code>edit INDEX [n/NAME] [p/PHONE_NUMBER] [a/AGE] [l/LOCATION] [h/HOW_YOU_MET] [f/FAVOURITE]</code><br></p>
+</li>
+<li>
+<p><strong>Find contact</strong>: <code>find FIELD [n/NAME] [p/PHONE_NUMBER] [a/AGE]/ [l/LOCATION] [h/HOW_YOU_MET] [f/FAVOURITE]</code><br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="across-the-app-2"><a class="link" href="#across-the-app-2">5.6. Across the app</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Navigate to previous page</strong>: <code>back</code><br></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-25 16:54:13 UTC</div></div></div></body></html>
