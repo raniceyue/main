@@ -3,7 +3,7 @@
 /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";
 */
 
-article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary{
     display:block
 }
 
@@ -101,12 +101,15 @@ sub,sup {
 sup{
     top:-.5em
 }
-sub{
+sub {
     bottom:-.25em
 }
-img{
-    border:0
+
+img {
+    border: 0;
+    padding: 20px;
 }
+
 svg:not(:root){
     overflow:hidden
 }
@@ -191,7 +194,7 @@ body{
     color:rgba(0,0,0,.8);
     padding:0;
     margin:0;
-    font-family:"Noto Serif","DejaVu Serif",serif;
+    /*font-family:"Noto Serif","DejaVu Serif",serif;*/
     font-weight:400;
     font-style:normal;
     line-height:1;
@@ -201,14 +204,17 @@ body{
 a:hover{
     cursor:pointer
 }
+
 img,object,embed{
     max-width:100%;
     height:auto
 }
+
 object,embed{
     height:100%
 }
-img{
+
+img {
     -ms-interpolation-mode:bicubic
 }
 .left{
@@ -804,7 +810,7 @@ p a>code:hover{
 .admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{
     text-rendering:optimizeLegibility;
     text-align:left;
-    font-family:"Noto Serif","DejaVu Serif",serif;
+    /*font-family:"Noto Serif","DejaVu Serif",serif;*/
     font-size:1rem;
     font-style:italic
 }
