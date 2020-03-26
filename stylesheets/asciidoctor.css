@@ -107,7 +107,7 @@ sub {
 
 img {
     border: 0;
-    padding: 20px;
+    padding: 10px;
 }
 
 svg:not(:root){
