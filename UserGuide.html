@@ -167,15 +167,17 @@ Users are able to mark each item with a priority level, enabling them to priorit
 in the application&#8217;s GUI.</p>
 </div>
 <div class="paragraph">
-<p>Different commands work differently depending on the view that that you are on.</p>
+<p>The application has 4 different pages, and the commands you enter will work produce a different outcome
+depending on which page you are on.
+However, there are some commands that are universal, and will work on every page.</p>
 </div>
 <div class="paragraph">
-<p>The application has 4 different views:</p>
+<p><strong>Types of Pages</strong></p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all" style="width: 50%;">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 75%;">
 </colgroup>
 <tbody>
 <tr>
@@ -196,10 +198,6 @@ in the application&#8217;s GUI.</p>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>The commands you enter will work differently depending on which view you are on. However, there are some commands that
-are universal and will work on every page.</p>
-</div>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
@@ -242,7 +240,7 @@ e.g. <code>[f/FEELING]&#8230;&#8203;</code> can be used as <code>&#160;</code> (
 <div class="paragraph">
 <p><strong>Example of Usage</strong></p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all" style="width: 50%;">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -263,13 +261,65 @@ e.g. <code>[f/FEELING]&#8230;&#8203;</code> can be used as <code>&#160;</code> (
 <div class="paragraph">
 <p><strong>Example of Outcome</strong></p>
 </div>
+<div class="paragraph">
+<p>The outcome of the <code>back</code> command is dependant on which page the user is on.</p>
+</div>
+<div class="paragraph">
+<p>For example, if the user is in any <code>ITINERARY</code> page, using the <code>back</code> command will navigate the user to the <code>TRIP</code> page
+of the trip in which the itinerary is stored.</p>
+</div>
+<div class="paragraph">
+<p>DIAGRAM TO BE INSERTED HERE.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Table of Outcomes</strong></p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">View in which command was used</th>
+<th class="tableblock halign-left valign-top">Outcome</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>HOME</code> page</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nothing will happen as it is the root page.</p></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any <code>JOURNAL</code> page</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User will be directed to <code>TRIP</code> page of the trip in which the journal is stored.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any <code>ITINERARY</code> page</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User will be directed to <code>TRIP</code> page of the trip in which the itinerary is stored.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any <code>TRIP</code> page</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User will be directed to the <code>HOME</code> page.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div class="sect3">
-<h4 id="going-back-to-the-code-home-code-view-code-home-code"><a class="link" href="#going-back-to-the-code-home-code-view-code-home-code">4.1.2. Going back to the <code>HOME</code> view: <code>home</code></a></h4>
+<h4 id="going-back-to-the-home-page-code-home-code"><a class="link" href="#going-back-to-the-home-page-code-home-code">4.1.2. Going back to the Home Page: <code>home</code></a></h4>
 <div class="paragraph">
 <p>Navigates to the <code>HOME</code> page from any page. Nothing will happen when command is used on the <code>HOME</code> page.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<div class="paragraph">
+<p><strong>Example of Usage</strong></p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 50%;">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -287,82 +337,145 @@ e.g. <code>[f/FEELING]&#8230;&#8203;</code> can be used as <code>&#160;</code> (
 </tr>
 </tfoot>
 </table>
+<div class="paragraph">
+<p><strong>Example of Outcome</strong></p>
+</div>
+<div class="paragraph">
+<p>DIAGRAM TO BE INSERTED HERE.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="opening-the-help-window-code-help-code-code-coming-in-v2-0-code"><a class="link" href="#opening-the-help-window-code-help-code-code-coming-in-v2-0-code">4.1.3. Opening the help window: <code>help</code> <code>[coming in v2.0]</code></a></h4>
+<div class="paragraph">
+<p>Opens the Help Window.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example of Usage</strong></p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 50%;">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Syntax</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
+</tr>
+</tfoot>
+</table>
+<div class="paragraph">
+<p><strong>Example of Outcome</strong></p>
+</div>
+<div class="paragraph">
+<p>DIAGRAM TO BE INSERTED HERE.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="home-page"><a class="link" href="#home-page">4.2. Home Page</a></h3>
 <div class="paragraph">
-<p>The homepage consists of a list of all Trips stored in the program. Here, you can manipulate the trip list, as well as navigate to other pages, using commands.</p>
+<p>The <code>HOME</code> page consists of a list of all trips stored in the program.
+Here, you can manipulate the trip list, as well as navigate to other pages, using commands.</p>
 </div>
 <div class="sect3">
-<h4 id="opening-the-help-window-code-help-code-code-coming-in-v2-0-code"><a class="link" href="#opening-the-help-window-code-help-code-code-coming-in-v2-0-code">4.2.1. Opening the help window: <code>help</code> <code>[coming in v2.0]</code></a></h4>
+<h4 id="navigating-to-a-code-trip-code-page-code-goto-code"><a class="link" href="#navigating-to-a-code-trip-code-page-code-goto-code">4.2.1. Navigating to a <code>TRIP</code> page: <code>goto</code></a></h4>
 <div class="paragraph">
-<p>Opens the Help Window.</p>
+<p>Navigates to the page of a trip in the trip list.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>help</code></p>
+<p><strong>Example of Usage</strong></p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 50%;">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Syntax</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>goto INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>goto 12</code></p></td>
+</tr>
+</tfoot>
+</table>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><code>INDEX</code> must be a positive integer value, within range of the number of entries in the trip list.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Example of Outcome</strong></p>
+</div>
+<div class="paragraph">
+<p>Navigates to the 12th trip on the trip list.</p>
+</div>
+<div class="paragraph">
+<p>DIAGRAM TO BE INSERTED HERE.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="navigating-to-a-trip-page-code-goto-code"><a class="link" href="#navigating-to-a-trip-page-code-goto-code">4.2.2. Navigating to a trip page: <code>goto</code></a></h4>
-<div class="paragraph">
-<p>Navigates to the context of a trip in the trip list.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>goto INDEX</code></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>INDEX</code> must be a positive integer within range of the list size.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>goto 12</code><br>
-Navigates to the 12th trip on the trip list.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="adding-a-trip-code-add-code"><a class="link" href="#adding-a-trip-code-add-code">4.2.3. Adding a trip: <code>add</code></a></h4>
+<h4 id="adding-a-trip-to-the-trip-list-code-add-code"><a class="link" href="#adding-a-trip-to-the-trip-list-code-add-code">4.2.2. Adding a trip to the trip list: <code>add</code></a></h4>
 <div class="paragraph">
 <p>Adds a trip to the trip list.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>add n/TRIP_NAME l/LOCATION d/TRIP_START_DATE to TRIP_END_DATE</code></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Please write the date range in the format <code>d/YYYY-MM-DD to YYYY-MM-DD</code>.</p>
-</li>
-</ul>
+<p>Format: `</p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p><strong>Example of Usage</strong></p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>add n/Graduation Trip l/Bangkok d/2020-02-01 to 2020-02-05</code><br>
-Adds a trip titled “Graduation Trip” to the list with the specified metadata.</p>
-</li>
-<li>
-<p><code>add n/Family Trip l/Bangkok d/02020-02-05 to 2020-02-08</code><br>
-Adds a trip titled “Family Trip” to the list with the specified metadata.</p>
-</li>
-</ul>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Syntax</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add n/TRIP_NAME l/LOCATION d/TRIP_START_DATE to TRIP_END_DATE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add n/Graduation Trip l/Bangkok d/2020-02-01 to 2020-02-05</code></p></td>
+</tr>
+</tfoot>
+</table>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Please write the date range in the format <code>d/YYYY-MM-DD to YYYY-MM-DD</code>.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Example of Outcome</strong></p>
+</div>
+<div class="paragraph">
+<p>Adds a trip to the trip list with the name <strong>"Graduation Trip"</strong>, location <strong>"Bangkok"</strong>, and date range of the trip being from
+<strong>1st February 2020 to 5th February 2020</strong>.</p>
+</div>
+<div class="paragraph">
+<p>DIAGRAM TO BE INSERTED HERE.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-trip-code-delete-code"><a class="link" href="#deleting-a-trip-code-delete-code">4.2.4. Deleting a trip: <code>delete</code></a></h4>
+<h4 id="deleting-a-trip-code-delete-code"><a class="link" href="#deleting-a-trip-code-delete-code">4.2.3. Deleting a trip: <code>delete</code></a></h4>
 <div class="paragraph">
 <p>Deletes a trip from the trip list.</p>
 </div>
@@ -389,7 +502,7 @@ Deletes the 12th trip on the list of trips.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-trip-metadata-code-edit-code"><a class="link" href="#editing-trip-metadata-code-edit-code">4.2.5. Editing trip metadata: <code>edit</code></a></h4>
+<h4 id="editing-trip-metadata-code-edit-code"><a class="link" href="#editing-trip-metadata-code-edit-code">4.2.4. Editing trip metadata: <code>edit</code></a></h4>
 <div class="paragraph">
 <p>Edits item in the trip list at the specified index.</p>
 </div>
@@ -965,4 +1078,4 @@ Returns the contact information on John Doe and John Wick</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-26 10:58:28 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-26 11:27:40 UTC</div></div></div></body></html>
