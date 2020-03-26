@@ -27,7 +27,7 @@
 <li><a href="#universal-commands">4.1. Universal Commands</a></li>
 <li><a href="#home-page">4.2. Home Page</a></li>
 <li><a href="#trip-page">4.3. Trip Page</a></li>
-<li><a href="#itinerary-2">4.4. Itinerary</a></li>
+<li><a href="#itinerary-page">4.4. Itinerary Page</a></li>
 <li><a href="#journal-2">4.5. Journal</a></li>
 <li><a href="#contact-list-code-coming-in-v2-0-code-2">4.6. Contact List <code>[coming in v2.0]</code></a></li>
 </ul>
@@ -37,7 +37,7 @@
 <ul class="sectlevel2">
 <li><a href="#homepage">6.1. Homepage</a></li>
 <li><a href="#trip-page-2">6.2. Trip page</a></li>
-<li><a href="#itinerary-3">6.3. Itinerary</a></li>
+<li><a href="#itinerary-2">6.3. Itinerary</a></li>
 <li><a href="#journal-3">6.4. Journal</a></li>
 <li><a href="#contact-list">6.5. Contact List</a></li>
 </ul>
@@ -382,11 +382,11 @@ You will be navigated to the <code>HOME</code> page.</p>
 <div class="paragraph">
 <p>DIAGRAM TO BE INSERTED HERE.</p>
 </div>
-<div class="admonitionblock tip">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 This command does not work when you are already on the <code>HOME</code> page.
@@ -428,11 +428,11 @@ Here, you can manipulate the trip list, as well as navigate to other pages.</p>
 </tr>
 </tfoot>
 </table>
-<div class="admonitionblock tip">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 <code>INDEX</code> must be a positive integer value, within range of the number of entries in the trip list.
@@ -476,16 +476,17 @@ Here, you can manipulate the trip list, as well as navigate to other pages.</p>
 </tr>
 </tfoot>
 </table>
-<div class="exampleblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Please write the date range in the format <code>d/YYYY-MM-DD to YYYY-MM-DD</code>.</p>
-</li>
-</ul>
-</div>
-</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Please write the date range in the format <code>d/YYYY-MM-DD to YYYY-MM-DD</code>.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p><strong>Example of Outcome</strong></p>
@@ -524,16 +525,17 @@ Here, you can manipulate the trip list, as well as navigate to other pages.</p>
 </tr>
 </tbody>
 </table>
-<div class="exampleblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p><code>INDEX</code> must be a positive integer value, within range of the number of trips in the trip list.</p>
-</li>
-</ul>
-</div>
-</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>INDEX</code> must be a positive integer value, within range of the number of trips in the trip list.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p><strong>Example of Outcome</strong></p>
@@ -571,8 +573,13 @@ Here, you can manipulate the trip list, as well as navigate to other pages.</p>
 </tr>
 </tfoot>
 </table>
-<div class="exampleblock">
-<div class="content">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -583,7 +590,9 @@ Here, you can manipulate the trip list, as well as navigate to other pages.</p>
 </li>
 </ul>
 </div>
-</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p><strong>Example of Outcome</strong></p>
@@ -599,7 +608,10 @@ Here, you can manipulate the trip list, as well as navigate to other pages.</p>
 <div class="sect2">
 <h3 id="trip-page"><a class="link" href="#trip-page">4.3. Trip Page</a></h3>
 <div class="paragraph">
-<p>The <code>TRIP</code> page of a specific trip consists of the</p>
+<p>The <code>TRIP</code> page of a specific trip displays the details of the trip as well as the details of the trip&#8217;s <code>ITINERARY</code> and <code>JOURNAL</code> at a glance.</p>
+</div>
+<div class="paragraph">
+<p>Here, you can nagivate to the <code>ITINERARY</code> and <code>JOURNAL</code> pages.</p>
 </div>
 <div class="sect3">
 <h4 id="navigating-to-a-feature-in-the-trip-page-code-goto-code"><a class="link" href="#navigating-to-a-feature-in-the-trip-page-code-goto-code">4.3.1. Navigating to a feature in the trip page: <code>goto</code></a></h4>
@@ -649,15 +661,26 @@ Navigates to the itinerary feature of the current trip.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="itinerary-2"><a class="link" href="#itinerary-2">4.4. Itinerary</a></h3>
+<h3 id="itinerary-page"><a class="link" href="#itinerary-page">4.4. Itinerary Page</a></h3>
+<div class="paragraph">
+<p>The <code>ITINERARY</code> page of a specific trip consists of a list of all the planned activities for a specific trip.
+Here, you can manipulate the itinerary, as well as navigate to other pages.</p>
+</div>
 <div class="sect3">
-<h4 id="adding-an-activity-to-the-itinerary-code-add-code"><a class="link" href="#adding-an-activity-to-the-itinerary-code-add-code">4.4.1. Adding an activity to the itinerary: <code>add</code></a></h4>
+<h4 id="adding-an-activity-code-add-code"><a class="link" href="#adding-an-activity-code-add-code">4.4.1. Adding an activity: <code>add</code></a></h4>
 <div class="paragraph">
 <p>Adds an activity to the itinerary.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>add title/TITLE l/LOCATION d/DATE t/TIME</code></p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -667,6 +690,10 @@ Navigates to the itinerary feature of the current trip.</p>
 <p>Time must be specified in the following format: <code>HH:MM</code></p>
 </li>
 </ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -681,7 +708,7 @@ Adds Sightseeing at Mount Everest at 12 OCT 2020 13:45 to the itinerary</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-an-activity-in-the-itinerary-code-delete-code"><a class="link" href="#deleting-an-activity-in-the-itinerary-code-delete-code">4.4.2. Deleting an activity in the itinerary: <code>delete</code></a></h4>
+<h4 id="deleting-an-activity-code-delete-code"><a class="link" href="#deleting-an-activity-code-delete-code">4.4.2. Deleting an activity: <code>delete</code></a></h4>
 <div class="paragraph">
 <p>Deletes the specified activity in the itinerary.</p>
 </div>
@@ -1062,7 +1089,7 @@ Returns the contact information on John Doe and John Wick</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="itinerary-3"><a class="link" href="#itinerary-3">6.3. Itinerary</a></h3>
+<h3 id="itinerary-2"><a class="link" href="#itinerary-2">6.3. Itinerary</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1119,4 +1146,4 @@ Returns the contact information on John Doe and John Wick</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-26 13:32:43 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-26 13:42:35 UTC</div></div></div></body></html>
