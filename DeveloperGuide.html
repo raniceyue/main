@@ -133,13 +133,13 @@ The following class plays an important role at the architecture level:</p>
 <p>For the <code>Logic</code> and <code>Model</code> components, each view has their own <code>{Component Name} Manager</code> classes.</p>
 </div>
 <div class="paragraph">
-<p>e.g. <code>HomeLogicManager</code> etc. to facilitate different operations and commands in different views in the App.</p>
+<p>e.g. <code>JournalLogicManager</code> etc. to facilitate different operations and commands in different views in the App.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
+<img src="images/JournalLogicDiagram.png" alt="JournalLogicDiagram">
 </div>
-<div class="title">Figure 2. Class Diagram of the Home Logic Component</div>
+<div class="title">Figure 2. Class Diagram of the Journal Logic Component</div>
 </div>
 <h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
 <div class="paragraph">
@@ -152,6 +152,15 @@ The following class plays an important role at the architecture level:</p>
 <div class="title">Figure 3. Component interactions for <code>back</code> command in the <code>TRIP</code> view.</div>
 </div>
 <div class="paragraph">
+<p>The <em>Sequence Diagram</em> below illustrates how the components iteract with each other for the scenario where the user issues the command <code>goto 1</code> when in a <code>HomePage</code> view.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/gotoCommand.png" alt="gotoCommand">
+</div>
+<div class="title">Figure 4. Component interactions for <code>goto 1</code> command in the <code>HomePage</code> view.</div>
+</div>
+<div class="paragraph">
 <p>The sections below give more details about each component.</p>
 </div>
 </div>
@@ -161,7 +170,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="images/UIClassDiagram.png" alt="UIClassDiagram">
 </div>
-<div class="title">Figure 4. Structure of the UI Component</div>
+<div class="title">Figure 5. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-F09-4/main/src/main/java/seedu/location/ui/Ui.java"><code>Ui.java</code></a></p>
@@ -188,11 +197,11 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="sect2">
 <h3 id="Design-Logic"><a class="link" href="#Design-Logic">2.3. Logic component</a></h3>
-<div id="fig-LogicClassDiagram" class="imageblock">
+<div id="fig-LogicClassDiagram1" class="imageblock">
 <div class="content">
-<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
+<img src="images/JournalLogicDiagram.png" alt="JournalLogicDiagram">
 </div>
-<div class="title">Figure 5. Structure of the Logic Component</div>
+<div class="title">Figure 6. Structure of the Logic Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
@@ -201,10 +210,10 @@ The following class plays an important role at the architecture level:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>Logic</code> uses the <code>InputParser</code> class of the current feature to parse the user command.</p>
+<p><code>Logic</code> uses the <code>JournalInputParser</code> class of the current feature to parse the user command.</p>
 </li>
 <li>
-<p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code> of the current feature.</p>
+<p>This results in a <code>Command</code> object which is executed by the <code>JournalLogicManager</code> of the current feature.</p>
 </li>
 <li>
 <p>The command execution can affect the <code>Model</code> of the current feature (e.g. adding a trip).</p>
@@ -224,7 +233,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="images/DeleteCommandItinerary.png" alt="DeleteCommandItinerary">
 </div>
-<div class="title">Figure 6. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+<div class="title">Figure 7. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
 </div>
 </div>
 <div class="sect2">
@@ -233,13 +242,13 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="images/JournalModelClassDiagram.png" alt="JournalModelClassDiagram">
 </div>
-<div class="title">Figure 7. Structure of the Model Component in Journal</div>
+<div class="title">Figure 8. Structure of the Model Component in Journal</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ItineraryModel.png" alt="ItineraryModel">
 </div>
-<div class="title">Figure 8. Structure of the Model Component in Itinerary</div>
+<div class="title">Figure 9. Structure of the Model Component in Itinerary</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-F09-4/main/src/main/java/seedu/location/model/Model.java"><code>Model.java</code></a></p>
@@ -284,7 +293,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="content">
 <img src="images/StorageDiagram.png" alt="StorageDiagram">
 </div>
-<div class="title">Figure 9. Structure of the Storage Component</div>
+<div class="title">Figure 10. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-F09-4/main/src/main/java/seedu/location/storage/Storage.java"><code>Storage.java</code></a></p>
@@ -1576,4 +1585,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-26 03:23:09 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-26 07:47:46 UTC</div></div></div></body></html>
