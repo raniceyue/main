@@ -417,7 +417,7 @@ h4,
 h5,
 h6 {
     font-family: "Roboto", sans-serif;
-    font-weight: bold;
+    font-weight: 900;
     font-style: normal;
     color: #257b67;
     text-rendering: optimizeLegibility;
@@ -425,6 +425,21 @@ h6 {
     margin-bottom: .5em;
     line-height: 1.0125em
 }
+
+h2 {
+    font-weight: 700;
+}
+
+h3 {
+    font-weight: 500;
+}
+
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
 
 h1 small,
 h2 small,
@@ -1122,7 +1137,7 @@ h3>a.link,
 h4>a.link,
 h5>a.link,
 h6>a.link {
-    color: #ba3925;
+    color: #21585a;
     text-decoration: none
 }
 
@@ -1134,7 +1149,7 @@ h3>a.link:hover,
 h4>a.link:hover,
 h5>a.link:hover,
 h6>a.link:hover {
-    color: #a53221
+    color: #193d3f
 }
 
 .audioblock,
