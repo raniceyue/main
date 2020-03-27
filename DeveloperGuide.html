@@ -56,7 +56,39 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>This document is a Developer Guide written for developers who wish to contribute to or extend our project.
-It is technical, and explains the inner workings of Volant and our chosen implementation for certain features.</p>
+It is technical, and explains the inner workings of Volant and how the different components of our
+application work together.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Reading this Developer Guide</strong></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+This icon denotes useful tips to note of during development.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This icon denotes important details to take note of during development.
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -139,7 +171,7 @@ The following class plays an important role at the architecture level:</p>
 API in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
 </div>
 <div class="sect3">
-<h4 id="four-pages-code-home-code-code-trip-code-code-itinerary-code-code-journal-code"><a class="link" href="#four-pages-code-home-code-code-trip-code-code-itinerary-code-code-journal-code">3.1.1. Four Pages - <code>HOME</code>, <code>TRIP</code>, <code>ITINERARY</code>, <code>JOURNAL</code></a></h4>
+<h4 id="views-in-volant"><a class="link" href="#views-in-volant">3.1.1. Views in Volant</a></h4>
 <div class="paragraph">
 <p>There are 4 types of pages/views in this App: <code>HOME</code>, <code>TRIP</code>, <code>ITINERARY</code>, <code>JOURNAL</code>.
 Each view has their own <code>{Component Name} Manager</code> classes for both <code>Logic</code> and <code>Model</code>.</p>
@@ -161,7 +193,8 @@ for command execution on the <code>JOURNAL</code> page.</p>
 </div>
 <h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
 <div class="paragraph">
-<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>back</code> when in a <code>TRIP</code> view.</p>
+<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues
+the command <code>back</code> when in a <code>TRIP</code> view. View switching is executed by the <code>Ui</code> component.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -170,7 +203,8 @@ for command execution on the <code>JOURNAL</code> page.</p>
 <div class="title">Figure 3. Component interactions for <code>back</code> command in the <code>TRIP</code> view.</div>
 </div>
 <div class="paragraph">
-<p>The <em>Sequence Diagram</em> below illustrates how the components iteract with each other for the scenario where the user issues the command <code>goto 1</code> when in a <code>HomePage</code> view.</p>
+<p>The <em>Sequence Diagram</em> below illustrates how the components interact with each other for the scenario where the user issues the command <code>goto 1</code> when in a <code>HomePage</code> view.
+View switching is executed by the <code>Ui</code> component.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -226,21 +260,26 @@ For example, <code>goto</code>, <code>back</code> and <code>home</code> navigati
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>For example, if a user is switching from the <code>HOME</code> view to the <code>TRIP</code> view through the command, <code>goto</code>, to
-access a specific trip&#8217;s page.</p>
+<p>For example, if a user is switching from a <code>TRIP</code> view to the <code>HOME</code> view through the command, <code>back</code>.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Reassign the <code>Logic</code> component from <code>HomePageLogicManager</code> to a new <code>TripPageLogicManager</code>.</p>
+<p>Reassign the <code>Logic</code> component from <code>TripPageLogicManager</code> to a new <code>HomePageLogicManager</code>.</p>
 </li>
 <li>
-<p>Reassign the <code>Model</code> component from <code>HomePageModelManager</code> to a new <code>TripPageModelManager</code>.</p>
+<p>Reassign the <code>Model</code> component from <code>TripPageModelManager</code> to a new <code>HomePageModelManager</code>.</p>
 </li>
 <li>
-<p>Reassign the value of <code>StackPane</code> <code>mainPanel</code> from <code>HomePage</code> to <code>TripPage</code>.</p>
+<p>Reassign the value of <code>StackPane</code> <code>mainPanel</code> from <code>TripPage</code> to <code>HomePage</code>.</p>
 </li>
 </ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
+</div>
+<div class="title">Figure 6. Component interactions for <code>back</code> command in the <code>TRIP</code> view.</div>
 </div>
 </div>
 </div>
@@ -258,7 +297,7 @@ access a specific trip&#8217;s page.</p>
 <div class="content">
 <img src="images/JournalLogicDiagram.png" alt="JournalLogicDiagram">
 </div>
-<div class="title">Figure 6. Structure of the Logic Component</div>
+<div class="title">Figure 7. Structure of the Logic Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
@@ -290,7 +329,7 @@ access a specific trip&#8217;s page.</p>
 <div class="content">
 <img src="images/DeleteCommandItinerary.png" alt="DeleteCommandItinerary">
 </div>
-<div class="title">Figure 7. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+<div class="title">Figure 8. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
 </div>
 </div>
 <div class="sect2">
@@ -299,13 +338,13 @@ access a specific trip&#8217;s page.</p>
 <div class="content">
 <img src="images/JournalModelClassDiagram.png" alt="JournalModelClassDiagram">
 </div>
-<div class="title">Figure 8. Structure of the Model Component in Journal</div>
+<div class="title">Figure 9. Structure of the Model Component in Journal</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ItineraryModel.png" alt="ItineraryModel">
 </div>
-<div class="title">Figure 9. Structure of the Model Component in Itinerary</div>
+<div class="title">Figure 10. Structure of the Model Component in Itinerary</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-F09-4/main/src/main/java/seedu/location/model/Model.java"><code>Model.java</code></a></p>
@@ -336,7 +375,7 @@ access a specific trip&#8217;s page.</p>
 <div class="content">
 <img src="images/StorageDiagram.png" alt="StorageDiagram">
 </div>
-<div class="title">Figure 10. Structure of the Storage Component</div>
+<div class="title">Figure 11. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-F09-4/main/src/main/java/seedu/location/storage/Storage.java"><code>Storage.java</code></a></p>
@@ -570,7 +609,7 @@ appropriate functions to facilitate view switching.</p>
 <th class="tableblock halign-left valign-top">Priority</th>
 <th class="tableblock halign-left valign-top">As a &#8230;&#8203;</th>
 <th class="tableblock halign-left valign-top">I want to &#8230;&#8203;</th>
-<th class="tableblock halign-left valign-top">So that I ca &#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">So that I can &#8230;&#8203;</th>
 </tr>
 </thead>
 <tbody>
@@ -691,7 +730,7 @@ appropriate functions to facilitate view switching.</p>
 <p><strong>Guarantee:</strong> A new Trip will be created</p>
 </div>
 <div class="paragraph">
-<p><strong>MSS</strong></p>
+<p><strong><a href="#mss">MSS</a></strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -707,7 +746,7 @@ appropriate functions to facilitate view switching.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p><strong>Extensions</strong></p>
+<p><strong><a href="#extensions">Extensions</a></strong></p>
 </div>
 <div class="ulist none">
 <ul class="none">
@@ -1160,7 +1199,7 @@ appropriate functions to facilitate view switching.</p>
 </li>
 </ul>
 </div>
-<h3 id="uc08-deleting-a-contact-in-the-contact-list-of-atrip" class="discrete">UC08 - Deleting a Contact in the Contact List of aTrip</h3>
+<h3 id="uc08-deleting-a-contact-in-the-contact-list-of-a-trip" class="discrete">UC08 - Deleting a Contact in the Contact List of a Trip</h3>
 <div class="paragraph">
 <p><strong>Precondition:</strong> User is in Contact List page of the Trip</p>
 </div>
@@ -1252,6 +1291,8 @@ appropriate functions to facilitate view switching.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
+<dt class="hdlist1"><a id="mss"></a> MSS</dt>
+<dt class="hdlist1"><a id="extensions"></a> Extensions</dt>
 <dt class="hdlist1"><a id="mainstream-os"></a> Mainstream OS</dt>
 <dd>
 <p>Windows, Linux, Unix, OS-X</p>
@@ -1478,4 +1519,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-27 08:09:06 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-27 08:23:39 UTC</div></div></div></body></html>
