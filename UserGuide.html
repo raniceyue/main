@@ -14,10 +14,11 @@
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
 <li><a href="#trips">3.1. Trips</a></li>
-<li><a href="#trip-list">3.2. Trip List</a></li>
+<li><a href="#home-page">3.2. Home Page</a></li>
 <li><a href="#journal">3.3. Journal</a></li>
 <li><a href="#itinerary">3.4. Itinerary</a></li>
-<li><a href="#auto-saving-of-data">3.5. Auto-saving of Data</a></li>
+<li><a href="#auto-saving-of-data">3.5. Auto-Saving of Data</a></li>
+<li><a href="#fast-in-app-navigation">3.6. Fast In-App Navigation</a></li>
 </ul>
 </li>
 <li><a href="#Usage">4. Usage of Commands</a>
@@ -27,10 +28,10 @@
 <ul class="sectlevel3">
 <li><a href="#going-back-to-a-previous-page-code-back-code">4.2.1. Going back to a previous page: <code>back</code></a></li>
 <li><a href="#going-back-to-the-home-page-code-home-code">4.2.2. Going back to the Home Page: <code>home</code></a></li>
-<li><a href="#opening-the-help-window-code-help-code-code-coming-in-v2-0-code">4.2.3. Opening the help window: <code>help</code> <code>[coming in v2.0]</code></a></li>
+<li><a href="#opening-the-help-window-code-help-code-code-coming-in-v2-0-code">4.2.3. Opening the Help window: <code>help</code> <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
-<li><a href="#home-page">4.3. Home Page</a>
+<li><a href="#home-page-2">4.3. Home Page</a>
 <ul class="sectlevel3">
 <li><a href="#navigating-to-a-code-trip-code-page-code-goto-code">4.3.1. Navigating to a <code>TRIP</code> page: <code>goto</code></a></li>
 <li><a href="#adding-a-trip-to-the-trip-list-code-add-code">4.3.2. Adding a trip to the trip list: <code>add</code></a></li>
@@ -47,7 +48,7 @@
 <ul class="sectlevel3">
 <li><a href="#adding-an-activity-code-add-code">4.5.1. Adding an activity: <code>add</code></a></li>
 <li><a href="#deleting-an-activity-code-delete-code">4.5.2. Deleting an activity: <code>delete</code></a></li>
-<li><a href="#editing-an-acitivity-code-edit-code">4.5.3. Editing an acitivity: <code>edit</code></a></li>
+<li><a href="#editing-an-activity-code-edit-code">4.5.3. Editing an activity: <code>edit</code></a></li>
 <li><a href="#locating-an-activity-code-find-code">4.5.4. Locating an activity: <code>find</code></a></li>
 </ul>
 </li>
@@ -68,7 +69,6 @@
 <li><a href="#trip-page-2">6.2. Trip page</a></li>
 <li><a href="#itinerary-2">6.3. Itinerary</a></li>
 <li><a href="#journal-3">6.4. Journal</a></li>
-<li><a href="#contact-list">6.5. Contact List</a></li>
 </ul>
 </li>
 <li><a href="#glossary">7. Glossary</a></li>
@@ -173,21 +173,21 @@ Each <code>TRIP</code> contains trip features such as an <code>ITINERARY</code> 
 </div>
 </div>
 <div class="sect2">
-<h3 id="trip-list"><a class="link" href="#trip-list">3.2. Trip List</a></h3>
+<h3 id="home-page"><a class="link" href="#home-page">3.2. Home Page</a></h3>
 <div class="paragraph">
 <p>All trips are stored in a trip list.
-The trip list displayed on the <code>HOME</code> page of Volant.
+The trip list displayed on the Home Page of Volant.
 It gives a list view of all the trips stored in Volant&#8217;s data files.</p>
 </div>
 <div class="paragraph">
-<p>The trip list is sorted such that you are able to view upcoming and past trips.</p>
+<p>The trip list is sorted such that you are able to view both upcoming and past trips.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="journal"><a class="link" href="#journal">3.3. Journal</a></h3>
 <div class="paragraph">
 <p>Volant has a journal feature that allows you to write and store journal entries per trip.
-These entries are limited to 140 characters and have other metadata including the <code>LOCATION</code> and <code>WEATHER</code> for you
+These entries are limited to 280 characters and have other metadata including the <code>LOCATION</code> and <code>WEATHER</code> for you
 to record when writing journal entries.</p>
 </div>
 </div>
@@ -199,9 +199,16 @@ All activities are sorted in chronological orderby date and time from oldest to 
 </div>
 </div>
 <div class="sect2">
-<h3 id="auto-saving-of-data"><a class="link" href="#auto-saving-of-data">3.5. Auto-saving of Data</a></h3>
+<h3 id="auto-saving-of-data"><a class="link" href="#auto-saving-of-data">3.5. Auto-Saving of Data</a></h3>
 <div class="paragraph">
-<p>All changes in Volant will be automatically saved upon every command that changes the data in the application.</p>
+<p>All changes in data will automatically be saved upon every command that the user gives to Volant.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fast-in-app-navigation"><a class="link" href="#fast-in-app-navigation">3.6. Fast In-App Navigation</a></h3>
+<div class="paragraph">
+<p>Navigation within the different pages in Volant is simple and fast, with universal commands like <code>home</code> and <code>back</code>.
+In addition, navigating to a specific item in a list can be done with a shortcut. For example, users can input <code>goto i</code> instead of <code>goto itinerary</code>.</p>
 </div>
 <div class="paragraph">
 <p>In this application, commands are used to utilise and switch between these features. The upcoming section will cover the
@@ -227,17 +234,12 @@ in the application&#8217;s GUI. After which, the program will give feedback on t
 <li>
 <p><strong>Parameters in <code>UPPER_CASE</code></strong><br>
 Words in <code>UPPER_CASE</code> are compulsory parameters to be supplied by the user.<br>
-e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
+e.g. In <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
 </li>
 <li>
 <p><strong>Parameters in <code>[SQUARE_BRACKETS]</code></strong><br>
 Words in square brackets (i.e. <code>[f/FEELING]</code>), are optional.<br>
 e.g <code>n/NAME [a/AGE]</code> can be used as <code>n/John Doe a/26</code> or as <code>n/John Doe</code>.</p>
-</li>
-<li>
-<p><strong>Parameters with trailing ellipses <code>&#8230;&#8203;</code></strong><br>
-Words with <code>…</code>​ (ellipses) after them can be used multiple times including 0 times.<br>
-e.g. <code>[f/FEELING]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>f/FEELING f/FEELING w/WEATHER</code> (i.e 2 times) etc.</p>
 </li>
 </ul>
 </div>
@@ -246,9 +248,9 @@ e.g. <code>[f/FEELING]&#8230;&#8203;</code> can be used as <code>&#160;</code> (
 <div class="sect2">
 <h3 id="pages-in-volant"><a class="link" href="#pages-in-volant">4.1. Pages in Volant</a></h3>
 <div class="paragraph">
-<p>Volant has 4 different types of pages.
+<p>Volant has 4 different pages.
 Commands entered will produce a different outcome depending on which page you are on.
-However, there are some commands that are universal, and will work on every page.</p>
+Additionally, there are a number of commands that are universal, and will work on every page.</p>
 </div>
 <div class="paragraph">
 <p><strong>Types of Pages</strong></p>
@@ -267,7 +269,7 @@ However, there are some commands that are universal, and will work on every page
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>HOME</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Volant&#8217;s home page, featuring the entire list of trips in Volant.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volant&#8217;s Home page, featuring the entire list of trips in Volant.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>TRIP</code></p></td>
@@ -275,11 +277,11 @@ However, there are some commands that are universal, and will work on every page
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>JOURNAL</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A page displaying the <code>JOURNAL</code> of a specific trip.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A page displaying the Journal of a specific trip.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ITINERARY</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A page displaying the <code>ITINERARY</code> of a specific trip.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A page displaying the Itinerary of a specific trip.</p></td>
 </tr>
 </tbody>
 </table>
@@ -296,7 +298,7 @@ However, there are some commands that are universal, and will work on every page
 <p>Navigates to a previous page depending on which page you are on.</p>
 </div>
 <div class="paragraph">
-<p><strong>Example of Usage</strong></p>
+<p><strong>Usage</strong></p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -315,14 +317,13 @@ However, there are some commands that are universal, and will work on every page
 </tbody>
 </table>
 <div class="paragraph">
-<p><strong>Example of Outcome</strong></p>
+<p><strong>Expected Outcome</strong></p>
 </div>
 <div class="paragraph">
-<p>The outcome of the <code>back</code> command is dependant on which page the user is on.</p>
+<p>The outcome of the <code>back</code> command is dependent on which page the user is on.</p>
 </div>
 <div class="paragraph">
-<p>For example, if the user is in any <code>ITINERARY</code> page, using the <code>back</code> command will navigate the user to the <code>TRIP</code> page
-of the trip in which the itinerary is stored.</p>
+<p>For example, if the user is in an <code>ITINERARY</code> page, using the <code>back</code> command will navigate the user to the <code>TRIP</code> page associated with the <code>ITINERARY</code>.</p>
 </div>
 <div class="paragraph">
 <p>DIAGRAM TO BE INSERTED HERE.</p>
@@ -335,7 +336,7 @@ of the trip in which the itinerary is stored.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p><strong>Table of Outcomes</strong></p>
+<p><strong>Table of Possible Outcomes</strong></p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -357,11 +358,11 @@ of the trip in which the itinerary is stored.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Any <code>JOURNAL</code> page</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">User will be directed to <code>TRIP</code> page of the trip in which the journal is stored.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User will be directed to <code>TRIP</code> page of the trip in which the <code>JOURNAL</code> is stored.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Any <code>ITINERARY</code> page</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">User will be directed to <code>TRIP</code> page of the trip in which the itinerary is stored.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User will be directed to <code>TRIP</code> page of the trip in which the <code>ITINERARY</code> is stored.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Any <code>TRIP</code> page</p></td>
@@ -380,7 +381,7 @@ of the trip in which the itinerary is stored.</p>
 <p>Navigates to the <code>HOME</code> page from any page.</p>
 </div>
 <div class="paragraph">
-<p><strong>Example of Usage</strong></p>
+<p><strong>Usage</strong></p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -399,19 +400,19 @@ of the trip in which the itinerary is stored.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p><strong>Example of Outcome</strong></p>
+<p><strong>Expected Outcome</strong></p>
 </div>
 <div class="paragraph">
 <p>DIAGRAM TO BE INSERTED HERE.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="opening-the-help-window-code-help-code-code-coming-in-v2-0-code"><a class="link" href="#opening-the-help-window-code-help-code-code-coming-in-v2-0-code">4.2.3. Opening the help window: <code>help</code> <code>[coming in v2.0]</code></a></h4>
+<h4 id="opening-the-help-window-code-help-code-code-coming-in-v2-0-code"><a class="link" href="#opening-the-help-window-code-help-code-code-coming-in-v2-0-code">4.2.3. Opening the Help window: <code>help</code> <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
-<p>Opens the Help Window.</p>
+<p>Opens the Help window.</p>
 </div>
 <div class="paragraph">
-<p><strong>Example of Usage</strong></p>
+<p><strong>Usage</strong></p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -430,8 +431,7 @@ of the trip in which the itinerary is stored.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p><strong>Example of Outcome</strong>
-You will be navigated to the <code>HOME</code> page.</p>
+<p><strong>Expected Outcome</strong></p>
 </div>
 <div class="paragraph">
 <p>DIAGRAM TO BE INSERTED HERE.</p>
@@ -451,7 +451,7 @@ This command does not work when you are already on the <code>HOME</code> page.
 </div>
 </div>
 <div class="sect2">
-<h3 id="home-page"><a class="link" href="#home-page">4.3. Home Page</a></h3>
+<h3 id="home-page-2"><a class="link" href="#home-page-2">4.3. Home Page</a></h3>
 <div class="paragraph">
 <p>The <code>HOME</code> page consists of a list of all trips stored in the program.
 Here, you can manipulate the trip list, as well as navigate to other pages.</p>
@@ -462,7 +462,7 @@ Here, you can manipulate the trip list, as well as navigate to other pages.</p>
 <p>Navigates to the page of a specific trip with index <code>INDEX</code> in the trip list.</p>
 </div>
 <div class="paragraph">
-<p><strong>Example of Usage</strong></p>
+<p><strong>Usage</strong></p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -472,7 +472,7 @@ Here, you can manipulate the trip list, as well as navigate to other pages.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Syntax</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>goto</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>goto INDEX</code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Example</p></th>
@@ -493,10 +493,10 @@ Here, you can manipulate the trip list, as well as navigate to other pages.</p>
 </table>
 </div>
 <div class="paragraph">
-<p><strong>Example of Outcome</strong></p>
+<p><strong>Expected Outcome</strong></p>
 </div>
 <div class="paragraph">
-<p>Navigates to the 12th trip on the trip list.</p>
+<p>Navigates to the twelveth trip on the trip list.</p>
 </div>
 <div class="paragraph">
 <p>DIAGRAM TO BE INSERTED HERE.</p>
@@ -508,7 +508,7 @@ Here, you can manipulate the trip list, as well as navigate to other pages.</p>
 <p>Adds a trip to the trip list with the specified <code>NAME</code>, <code>LOCATION</code> and date range, <code>TRIP_START_DATE</code> to <code>TRIP_END_DATE</code>.</p>
 </div>
 <div class="paragraph">
-<p><strong>Example of Usage</strong></p>
+<p><strong>Usage</strong></p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -522,7 +522,7 @@ Here, you can manipulate the trip list, as well as navigate to other pages.</p>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Example</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add n/Graduation Trip l/Bangkok d/2020-02-01 to 2020-02-05</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add n/Graduation Trip l/Bangkok d/01-02-2020 to 05-02-2020</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -533,17 +533,17 @@ Here, you can manipulate the trip list, as well as navigate to other pages.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Please write the date range in the format <code>d/YYYY-MM-DD to YYYY-MM-DD</code>.
+The date range should be written in the format <code>d/DD-MM-YYYY to DD-MM-YYYY</code>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p><strong>Example of Outcome</strong></p>
+<p><strong>Expected Outcome</strong></p>
 </div>
 <div class="paragraph">
-<p>Adds a trip to the trip list with the name <strong>Graduation Trip</strong>, location <strong>Bangkok</strong>, and date range of the trip being from
-<strong>1st February 2020 to 5th February 2020</strong>.</p>
+<p>Adds a trip to the trip list with the name <strong>Graduation Trip</strong>, location being <strong>Bangkok</strong>, and date range of the trip being from
+<strong>1st February 2020</strong> to <strong>5th February 2020</strong>.</p>
 </div>
 <div class="paragraph">
 <p>DIAGRAM TO BE INSERTED HERE.</p>
@@ -555,7 +555,7 @@ Please write the date range in the format <code>d/YYYY-MM-DD to YYYY-MM-DD</code
 <p>Deletes a trip from the trip list at the specified index, <code>INDEX</code>.</p>
 </div>
 <div class="paragraph">
-<p><strong>Example of Usage</strong></p>
+<p><strong>Usage</strong></p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -592,10 +592,10 @@ Please write the date range in the format <code>d/YYYY-MM-DD to YYYY-MM-DD</code
 </table>
 </div>
 <div class="paragraph">
-<p><strong>Example of Outcome</strong></p>
+<p><strong>Expected Outcome</strong></p>
 </div>
 <div class="paragraph">
-<p>The trip at the specified index, <code>INDEX</code> will be deleted along with its other data (itinerary, journal, etc).</p>
+<p>The second trip on the list will be deleted along with its associated data (itinerary, journal, etc).</p>
 </div>
 <div class="paragraph">
 <p>DIAGRAM TO BE INSERTED HERE.</p>
@@ -607,7 +607,7 @@ Please write the date range in the format <code>d/YYYY-MM-DD to YYYY-MM-DD</code
 <p>Edits the details of a trip at index <code>INDEX</code> according to the details provided.</p>
 </div>
 <div class="paragraph">
-<p><strong>Example of Usage</strong></p>
+<p><strong>Usage</strong></p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -635,10 +635,10 @@ Please write the date range in the format <code>d/YYYY-MM-DD to YYYY-MM-DD</code
 <div class="ulist">
 <ul>
 <li>
-<p><code>INDEX</code> must be a positive integer value, within range of the number of entries in the trip list.</p>
+<p><code>INDEX</code> must be a positive integer value, within range of the number of trips in the trip list.</p>
 </li>
 <li>
-<p>Please write the date range in the format <code>d/YYYY-MM-DD to YYYY-MM-DD</code>.</p>
+<p>The date range should be written in the format <code>d/DD-MM-YYYY to DD-MM-YYYY</code>.</p>
 </li>
 </ul>
 </div>
@@ -647,10 +647,10 @@ Please write the date range in the format <code>d/YYYY-MM-DD to YYYY-MM-DD</code
 </table>
 </div>
 <div class="paragraph">
-<p><strong>Example of Outcome</strong></p>
+<p><strong>Expected Outcome</strong></p>
 </div>
 <div class="paragraph">
-<p>The details of the trip will be edited according to the parameters provided.</p>
+<p>The details of the trip will be updated according to the parameters provided.</p>
 </div>
 <div class="paragraph">
 <p>DIAGRAM TO BE INSERTED HERE.</p>
@@ -671,7 +671,7 @@ Please write the date range in the format <code>d/YYYY-MM-DD to YYYY-MM-DD</code
 <p>Navigates to a specific feature within each trip.</p>
 </div>
 <div class="paragraph">
-<p><strong>Example of Usage</strong></p>
+<p><strong>Usage</strong></p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -696,9 +696,10 @@ Please write the date range in the format <code>d/YYYY-MM-DD to YYYY-MM-DD</code
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="paragraph">
-<p><strong>List of available features (can be typed in any case):</strong></p>
-</div>
+<div class="ulist">
+<ul>
+<li>
+<p>List of available <code>TRIP_FEATURE</code> (can be typed in any case):</p>
 <div class="ulist">
 <ul>
 <li>
@@ -709,12 +710,28 @@ Please write the date range in the format <code>d/YYYY-MM-DD to YYYY-MM-DD</code
 </li>
 </ul>
 </div>
+</li>
+<li>
+<p><code>TRIP_FEATURE</code> shortcuts are also available:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>goto i</code> is equivalent to <code>goto itinerary</code>.</p>
+</li>
+<li>
+<p><code>goto j</code> is equivalent to <code>goto journal</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p><strong>Example of Outcome</strong></p>
+<p><strong>Expected Outcome</strong></p>
 </div>
 <div class="paragraph">
 <p>You will be navigated to the <code>ITINERARY</code> page of the trip.</p>
@@ -733,10 +750,10 @@ Here, you can manipulate the itinerary, as well as navigate to other pages.</p>
 <div class="sect3">
 <h4 id="adding-an-activity-code-add-code"><a class="link" href="#adding-an-activity-code-add-code">4.5.1. Adding an activity: <code>add</code></a></h4>
 <div class="paragraph">
-<p>Adds an activity to the itinerary.</p>
+<p>Adds an activity to the itinerary with the details provided.</p>
 </div>
 <div class="paragraph">
-<p><strong>Example of Usage</strong></p>
+<p><strong>Usage</strong></p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -746,11 +763,11 @@ Here, you can manipulate the itinerary, as well as navigate to other pages.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Syntax</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add a/TITLE l/LOCATION d/DATE t/TIME</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add a/ACTIVITY l/LOCATION d/DATE t/TIME</code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Example</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add a/Visit the World Trade Center l/New York d/09-11-2001 t/08:52</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add a/Visit Central Park l/New York d/01-04-2020 t/09:00</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -776,23 +793,23 @@ Here, you can manipulate the itinerary, as well as navigate to other pages.</p>
 </table>
 </div>
 <div class="paragraph">
-<p><strong>Example of Outcome</strong></p>
+<p><strong>Expected Outcome</strong></p>
 </div>
 <div class="paragraph">
-<p>An activity named <strong>Visit the World Trade Center</strong> in <strong>New York</strong> at <strong>08:52AM</strong> on <strong>11th September 2001</strong> will be added
+<p>An activity named <strong>Visit Central Park</strong> in <strong>New York</strong> at <strong>09:00AM</strong> on <strong>1st April 2020</strong> will be added
 to the itinerary.</p>
 </div>
 <div class="paragraph">
-<p>ADD DIAGRAM HERE</p>
+<p>INSERT DIAGRAM HERE.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="deleting-an-activity-code-delete-code"><a class="link" href="#deleting-an-activity-code-delete-code">4.5.2. Deleting an activity: <code>delete</code></a></h4>
 <div class="paragraph">
-<p>Deletes an activity from the itinerary at a speficied <code>INDEX</code>.</p>
+<p>Deletes an activity from the itinerary at a specified <code>INDEX</code>.</p>
 </div>
 <div class="paragraph">
-<p><strong>Example of Usage</strong></p>
+<p><strong>Usage</strong></p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -820,7 +837,7 @@ to the itinerary.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>INDEX</code> must be a positive integer value, within range of the number of trips in the trip list.</p>
+<p><code>INDEX</code> must be a positive integer value, within range of the number of activities in the itinerary.</p>
 </li>
 </ul>
 </div>
@@ -829,33 +846,53 @@ to the itinerary.</p>
 </table>
 </div>
 <div class="paragraph">
-<p><strong>Example of Outcome</strong></p>
+<p><strong>Expected Outcome</strong></p>
 </div>
 <div class="paragraph">
 <p>The activity at the specified index, <code>INDEX</code> will be deleted from the itinerary.</p>
 </div>
 <div class="paragraph">
-<p>DIAGRAM TO BE INSERTED HERE.</p>
+<p>INSERT DIAGRAM HERE.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-an-acitivity-code-edit-code"><a class="link" href="#editing-an-acitivity-code-edit-code">4.5.3. Editing an acitivity: <code>edit</code></a></h4>
+<h4 id="editing-an-activity-code-edit-code"><a class="link" href="#editing-an-activity-code-edit-code">4.5.3. Editing an activity: <code>edit</code></a></h4>
 <div class="paragraph">
-<p>Edits an existing activity.</p>
+<p>Edits an existing activity in the itinerary at a specified <code>INDEX</code> with the details provided.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>edit INDEX [title/TITLE] [l/LOCATION] [d/DATE] [t/TIME]</code></p>
+<p><strong>Usage</strong></p>
 </div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Syntax</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit INDEX [a/ACTIVITY] [l/LOCATION] [d/DATE] [t/TIME]</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit 2 l/Starbucks t/10:00</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Edits the activity at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed itinerary list. The index must * be a positive integer 1, 2, 3, …​</p>
+<p><code>INDEX</code> must be a positive integer value, within range of the number of activities in the itinerary.</p>
 </li>
 <li>
 <p>At least one of the optional fields must be provided.</p>
-</li>
-<li>
-<p>Existing values will be updated to the input values.</p>
 </li>
 <li>
 <p>Date must be specified in the following format: <code>DD-MM-YYYY</code></p>
@@ -864,6 +901,19 @@ to the itinerary.</p>
 <p>Time must be specified in the following format: <code>HH:MM</code></p>
 </li>
 </ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome</strong></p>
+</div>
+<div class="paragraph">
+<p>The second activity in the itinerary will be edited to reflect the new location <strong>Starbucks</strong> and the new time <strong>10:00AM</strong>.</p>
+</div>
+<div class="paragraph">
+<p>INSERT DIAGRAM HERE.</p>
 </div>
 </div>
 <div class="sect3">
@@ -872,8 +922,31 @@ to the itinerary.</p>
 <p>Searches the itinerary for any activity that matches the input field.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>find FIELD [title/TITLE] [l/LOCATION] [d/DATE] [t/TIME]</code></p>
+<p><strong>Usage</strong></p>
 </div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Syntax</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>find [a/ACTIVITY] [l/LOCATION] [d/DATE] [t/TIME]</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>find a/Climbing</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -884,16 +957,18 @@ to the itinerary.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Example:</p>
+</td>
+</tr>
+</table>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>find Itinerary title/Climbing</code><br>
-Returns all activities related to climbing.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p><strong>Expected Outcome</strong></p>
+</div>
+<div class="paragraph">
+<p>Returns all activities related to climbing.</p>
+</div>
+<div class="paragraph">
+<p>INSERT DIAGRAM HERE.</p>
 </div>
 </div>
 </div>
@@ -905,8 +980,31 @@ Returns all activities related to climbing.</p>
 <p>Adds a journal entry to the entry list.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>add d/DATE t/TIME c/CONTENT [l/LOCATION] [f/FEELING] [w/WEATHER]</code></p>
+<p><strong>Usage</strong></p>
 </div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Syntax</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add d/DATE t/TIME c/CONTENT [l/LOCATION] [f/FEELING] [w/WEATHER]</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add d/12-09-2021 t/12:51 c/Visited the Statue of Liberty today! It was grand. l/New York f/confused</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -948,16 +1046,18 @@ Returns all activities related to climbing.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Example:</p>
+</td>
+</tr>
+</table>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>add d/12-09-2021 t/12:51 c/Visited the Statue of Liberty today! It was grand. l/New York f/confused</code><br>
-Adds a new journal entry to the entry list with the specified content, date, time, location and feeling fields.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p><strong>Expected Outcome</strong></p>
+</div>
+<div class="paragraph">
+<p>Adds a new journal entry to the entry list with the specified content, date, time, location and feeling fields.</p>
+</div>
+<div class="paragraph">
+<p>INSERT DIAGRAM HERE</p>
 </div>
 </div>
 <div class="sect3">
@@ -966,7 +1066,7 @@ Adds a new journal entry to the entry list with the specified content, date, tim
 <p>Deletes a trip from the trip list at the specified index, <code>INDEX</code>.</p>
 </div>
 <div class="paragraph">
-<p><strong>Example of Usage</strong></p>
+<p><strong>Usage</strong></p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -1003,10 +1103,10 @@ Adds a new journal entry to the entry list with the specified content, date, tim
 </table>
 </div>
 <div class="paragraph">
-<p><strong>Example of Outcome</strong></p>
+<p><strong>Expected Outcome</strong></p>
 </div>
 <div class="paragraph">
-<p>The trip at the specified index, <code>INDEX</code> will be deleted along with its other data (itinerary, journal, etc).</p>
+<p>The second trip will be deleted along with its entries.</p>
 </div>
 <div class="paragraph">
 <p>DIAGRAM TO BE INSERTED HERE.</p>
@@ -1018,18 +1118,50 @@ Adds a new journal entry to the entry list with the specified content, date, tim
 <p>Edits specific metadata within a chosen journal entry using index number.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>edit INDEX [d/NEW_DATE] [t/NEW_TIME] [c/NEW_CONTENT] [l/NEW_LOCATION] [f/NEW_FEELING] [w/NEW_WEATHER]</code></p>
+<p><strong>Usage</strong></p>
 </div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Syntax</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit INDEX [d/NEW_DATE] [t/NEW_TIME] [c/NEW_CONTENT] [l/NEW_LOCATION] [f/NEW_FEELING] [w/NEW_WEATHER]</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit 4 d/21-12-2012 f/scared</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit 4 d/21-12-2012 f/scared</code><br>
-Changes date and feeling of fourth journal entry to “21-12-2012” and “SCARED” respectively</p>
+<p>At least one of the optional fields must be provided.</p>
 </li>
 </ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome</strong></p>
+</div>
+<div class="paragraph">
+<p>Changes date and feeling of fourth journal entry to <strong>21st December 2012</strong> and <strong>SCARED</strong> respectively.</p>
+</div>
+<div class="paragraph">
+<p>INSERT DIAGRAM HERE.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1038,8 +1170,31 @@ Changes date and feeling of fourth journal entry to “21-12-2012” and “SCAR
 <p>Sorts the list of current journal entry lists in a specified order.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>sort [SORT_TYPE]</code></p>
+<p><strong>Usage</strong></p>
 </div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Syntax</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sort [SORT_TYPE]</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* <code>sort LOCATION</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -1066,16 +1221,18 @@ Changes date and feeling of fourth journal entry to “21-12-2012” and “SCAR
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Example:</p>
+</td>
+</tr>
+</table>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>sort LOCATION</code><br>
-Sorts the list of journal entries by alphabetical order of locations.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p><strong>Expected Outcome</strong></p>
+</div>
+<div class="paragraph">
+<p>Sorts the list of journal entries by alphabetical order of locations.</p>
+</div>
+<div class="paragraph">
+<p>INSERT DIAGRAM HERE.</p>
 </div>
 </div>
 </div>
@@ -1085,8 +1242,8 @@ Sorts the list of journal entries by alphabetical order of locations.</p>
 <h2 id="faq"><a class="link" href="#faq">5. FAQ</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
-<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
+<p><strong>Q</strong>: How do I transfer my data to another computer?<br>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Volant folder.</p>
 </div>
 </div>
 </div>
@@ -1163,25 +1320,6 @@ Sorts the list of journal entries by alphabetical order of locations.</p>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="contact-list"><a class="link" href="#contact-list">6.5. Contact List</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Add contact</strong>: <code>add n/NAME [p/PHONE_NUMBER] [a/AGE] [l/LOCATION] [h/HOW_YOU_MET] [f/FAVOURITE]</code><br></p>
-</li>
-<li>
-<p><strong>Delete contact</strong>: <code>delete INDEX</code><br></p>
-</li>
-<li>
-<p><strong>Edit contact</strong>: <code>edit INDEX [n/NAME] [p/PHONE_NUMBER] [a/AGE] [l/LOCATION] [h/HOW_YOU_MET] [f/FAVOURITE]</code><br></p>
-</li>
-<li>
-<p><strong>Find contact</strong>: <code>find FIELD [n/NAME] [p/PHONE_NUMBER] [a/AGE]/ [l/LOCATION] [h/HOW_YOU_MET] [f/FAVOURITE]</code><br></p>
-</li>
-</ul>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1189,4 +1327,4 @@ Sorts the list of journal entries by alphabetical order of locations.</p>
 <div class="sectionbody">
 
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-29 03:04:06 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-01 09:52:18 UTC</div></div></div></body></html>
