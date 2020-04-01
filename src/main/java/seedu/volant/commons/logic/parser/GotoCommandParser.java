@@ -58,13 +58,13 @@ public class GotoCommandParser implements Parser<GotoCommand> {
                     return new GotoItineraryCommand(trip.getItinerary());
                 } else if (argumentTrimmed.equalsIgnoreCase("journal")
                         || argumentTrimmed.equalsIgnoreCase("j")) {
-                    gotoCommand = new GotoJournalCommand(trip.getJournal());
+                    return new GotoJournalCommand(trip.getJournal());
                 }
             }
 
             if (page == HOME) {
                 Index index = ParserUtil.parseIndex(argument);
-                gotoCommand = new GotoTripCommand(index);
+                return new GotoTripCommand(index);
             }
 
             if (page == ITINERARY || page == JOURNAL) {
@@ -73,7 +73,8 @@ public class GotoCommandParser implements Parser<GotoCommand> {
                 }
             }
 
-            return gotoCommand;
+            /* If this statement is reached, it means that the command is invalid therefore throw exception */
+            throw new ParseException("");
 
         } catch (ParseException pE) {
             if (page == HOME) {
