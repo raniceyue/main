@@ -16,6 +16,7 @@ import seedu.volant.home.model.trip.DateRange;
 import seedu.volant.home.model.trip.Location;
 import seedu.volant.home.model.trip.Name;
 import seedu.volant.itinerary.model.activity.Title;
+import seedu.volant.journal.exceptions.ContentTooLongException;
 import seedu.volant.journal.model.entry.Feeling;
 import seedu.volant.journal.model.entry.Weather;
 
@@ -78,11 +79,29 @@ public class ParserUtil {
     public static DateRange parseDateRange(String dateRange) throws ParseException {
         requireNonNull(dateRange);
         String trimmedDateRange = dateRange.trim();
+
         if (!DateRange.isValidDateRange(trimmedDateRange)) {
             throw new ParseException(DateRange.MESSAGE_CONSTRAINTS);
         }
+
         String[] splitDate = trimmedDateRange.split(" to ");
-        return new DateRange(LocalDate.parse(splitDate[0]), LocalDate.parse(splitDate[1]));
+        String[] fromFields = splitDate[0].strip().split("-");
+        int fromDay = Integer.valueOf(fromFields[0]);
+        int fromMonth = Integer.valueOf(fromFields[1]);
+        int fromYear = Integer.valueOf(fromFields[2]);
+        LocalDate parsedFromDate;
+        String[] toFields = splitDate[1].strip().split("-");
+        int toDay = Integer.valueOf(toFields[0]);
+        int toMonth = Integer.valueOf(toFields[1]);
+        int toYear = Integer.valueOf(toFields[2]);
+        LocalDate parsedToDate;
+        try {
+            parsedFromDate = LocalDate.of(fromYear, fromMonth, fromDay);
+            parsedToDate = LocalDate.of(toYear, toMonth, toDay);
+        } catch (Exception e) {
+            throw new ParseException("Please input a valid date in DD-MM-YYYY format!");
+        }
+        return new DateRange(parsedFromDate, parsedToDate);
     }
 
 
@@ -183,7 +202,7 @@ public class ParserUtil {
         try {
             parsedWeather = Weather.valueOf(trimmedCappedWeather);
         } catch (Exception e) {
-            throw new ParseException("Global warming hasn't gotten THAT bad yet. Please try again.");
+            throw new ParseException(Weather.MESSAGE_CONSTRAINTS);
         }
         return parsedWeather;
     }
@@ -191,8 +210,13 @@ public class ParserUtil {
     /**
      * Parses {@code String text} into a formatted {@code String}.
      */
-    public static String parseText(String text) throws ParseException {
+    public static String parseText(String text) throws ContentTooLongException {
         requireNonNull(text);
+        int contentLength = text.trim().length();
+        if (contentLength > 280) {
+            int charactersOverLimit = contentLength - 280;
+            throw new ContentTooLongException(charactersOverLimit);
+        }
         return text.trim();
     }
 }
