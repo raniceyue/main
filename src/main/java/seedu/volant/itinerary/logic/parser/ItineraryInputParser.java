@@ -1,7 +1,7 @@
 package seedu.volant.itinerary.logic.parser;
 
 import static seedu.volant.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.volant.commons.core.Messages.MESSAGE_UNKNOWN_COMMAND;
+import static seedu.volant.commons.core.Messages.MESSAGE_UNKNOWN_COMMAND_ITINERARY;
 import static seedu.volant.commons.logic.parser.Parser.BASIC_COMMAND_FORMAT;
 
 import java.util.regex.Matcher;
@@ -64,7 +64,7 @@ public class ItineraryInputParser {
             return new HomeCommand();
 
         default:
-            throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
+            throw new ParseException(MESSAGE_UNKNOWN_COMMAND_ITINERARY);
 
         }
     }

@@ -143,12 +143,12 @@ public class ParserUtil {
      */
     public static LocalDate parseDate(String date) throws ParseException {
         requireNonNull(date);
-        String[] dateFields = date.strip().split("-");
-        int day = Integer.valueOf(dateFields[0]);
-        int month = Integer.valueOf(dateFields[1]);
-        int year = Integer.valueOf(dateFields[2]);
+        String[] dateFields = date.strip().split("-", 3);
         LocalDate parsedDate;
         try {
+            int day = Integer.valueOf(dateFields[0]);
+            int month = Integer.valueOf(dateFields[1]);
+            int year = Integer.valueOf(dateFields[2]);
             parsedDate = LocalDate.of(year, month, day);
         } catch (Exception e) {
             throw new ParseException("Please input a valid date in DD-MM-YYYY format!");
@@ -161,11 +161,11 @@ public class ParserUtil {
      */
     public static LocalTime parseTime(String time) throws ParseException {
         requireNonNull(time);
-        String[] timeFields = time.strip().split(":");
-        int hour = Integer.valueOf(timeFields[0]);
-        int minute = Integer.valueOf(timeFields[1]);
+        String[] timeFields = time.strip().split(":", 2);
         LocalTime parsedTime;
         try {
+            int hour = Integer.valueOf(timeFields[0]);
+            int minute = Integer.valueOf(timeFields[1]);
             parsedTime = LocalTime.of(hour, minute);
         } catch (Exception e) {
             throw new ParseException("Please input a valid time in HH:MM format!");

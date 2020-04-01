@@ -49,6 +49,7 @@ public class GotoCommandParser implements Parser<GotoCommand> {
      */
     @Override
     public GotoCommand parse(String argument) throws ParseException {
+        GotoCommand gotoCommand = null;
         try {
             String argumentTrimmed = argument.trim();
             if (page == TRIP) {
@@ -57,13 +58,13 @@ public class GotoCommandParser implements Parser<GotoCommand> {
                     return new GotoItineraryCommand(trip.getItinerary());
                 } else if (argumentTrimmed.equalsIgnoreCase("journal")
                         || argumentTrimmed.equalsIgnoreCase("j")) {
-                    return new GotoJournalCommand(trip.getJournal());
+                    gotoCommand = new GotoJournalCommand(trip.getJournal());
                 }
             }
 
             if (page == HOME) {
                 Index index = ParserUtil.parseIndex(argument);
-                return new GotoTripCommand(index);
+                gotoCommand = new GotoTripCommand(index);
             }
 
             if (page == ITINERARY || page == JOURNAL) {
@@ -72,16 +73,15 @@ public class GotoCommandParser implements Parser<GotoCommand> {
                 }
             }
 
-            //TODO: Figure out what to do here
-            throw new ParseException("");
+            return gotoCommand;
 
-        } catch (ParseException pe) {
+        } catch (ParseException pE) {
             if (page == HOME) {
                 throw new ParseException(
-                        String.format(MESSAGE_INVALID_COMMAND_FORMAT, GotoCommand.MESSAGE_USAGE_HOME, pe));
+                        String.format(MESSAGE_INVALID_COMMAND_FORMAT, GotoCommand.MESSAGE_USAGE_HOME, pE));
             } else {
                 throw new ParseException(
-                        String.format(MESSAGE_INVALID_COMMAND_FORMAT, GotoCommand.MESSAGE_USAGE_TRIP, pe));
+                        String.format(MESSAGE_INVALID_COMMAND_FORMAT, GotoCommand.MESSAGE_USAGE_TRIP, pE));
             }
         }
     }

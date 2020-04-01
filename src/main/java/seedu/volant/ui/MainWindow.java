@@ -8,6 +8,7 @@ import static seedu.volant.commons.logic.Page.TRIP;
 import java.nio.file.Paths;
 import java.util.logging.Logger;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuItem;
@@ -32,6 +33,7 @@ import seedu.volant.home.model.TripList;
 import seedu.volant.home.model.trip.Trip;
 import seedu.volant.itinerary.logic.ItineraryLogicManager;
 import seedu.volant.itinerary.model.ItineraryModelManager;
+import seedu.volant.itinerary.model.activity.Activity;
 import seedu.volant.journal.logic.JournalLogicManager;
 import seedu.volant.journal.model.JournalModelManager;
 import seedu.volant.trip.logic.TripLogicManager;
@@ -166,6 +168,82 @@ public class MainWindow extends UiPart<Stage> {
         }
     }
 
+    void show() {
+        primaryStage.show();
+    }
+
+
+    /**
+     * Executes the command and returns the result.
+     * @see Logic#execute(String)
+     */
+    private CommandResult executeCommand(String commandText) throws CommandException, ParseException {
+        try {
+            CommandResult commandResult = logic.execute(commandText);
+            logger.info("Result: " + commandResult.getFeedbackToUser());
+            resultDisplay.setFeedbackToUser(commandResult.getFeedbackToUser());
+            handleResult(commandResult);
+            return commandResult;
+
+        } catch (CommandException | ParseException e) {
+            logger.info("Invalid command: " + commandText);
+            resultDisplay.setFeedbackToUser(e.getMessage());
+            throw e;
+        }
+    }
+
+    /**
+     * Handles the result of the command to manage the stage.
+     * @param commandResult Contains the result to be handled.
+     */
+    private void handleResult(CommandResult commandResult) {
+        if (commandResult.isShowHelp()) {
+            handleHelp();
+        }
+
+        if (commandResult.isExit()) {
+            handleExit();
+        }
+
+        if (commandResult.isGoto()) {
+            handleGoto(commandResult);
+        }
+
+        if (commandResult.isBack()) {
+            handleBack(commandResult);
+        }
+    }
+
+    /**
+     * Handles the result of the command 'back'.
+     * @param commandResult Contains list needed to populate the stage.
+     */
+    private void handleBack(CommandResult commandResult) {
+        if (currentPage == TRIP) {
+            handleGoToHome(commandResult.getTripList());
+        }
+
+        if (currentPage == ITINERARY || currentPage == JOURNAL) {
+            handleGotoTrip(commandResult.getTrip());
+        }
+    }
+
+    /**
+     * Handles the result of the 'goto' command.
+     * @param commandResult Contains list needed to populate the stage.
+     */
+    private void handleGoto(CommandResult commandResult) {
+        // Going from HOME page to TRIP page
+        if (currentPage == HOME) {
+            handleGotoTrip(commandResult.getTrip());
+        }
+
+        // Going from TRIP page to TRIP_FEATURE page
+        if (currentPage == TRIP) {
+            handleGoToTripFeature(commandResult.getTripFeature());
+        }
+    }
+
     /**
      * Opens the help window or focuses on it if it's already opened.
      */
@@ -176,10 +254,6 @@ public class MainWindow extends UiPart<Stage> {
         } else {
             helpWindow.focus();
         }
-    }
-
-    void show() {
-        primaryStage.show();
     }
 
     /**
@@ -259,7 +333,8 @@ public class MainWindow extends UiPart<Stage> {
         logic = new ItineraryLogicManager(itineraryModelManager, logic.getStorage());
 
         mainPanelPlaceholder.getChildren().removeAll(mainPanel.getRoot()); // Remove GUI nodes from prev. display
-        mainPanel = new ItineraryPage((itineraryModelManager.getFilteredActivityList()));
+        ObservableList<Activity> activityObservableList = itineraryModelManager.getFilteredActivityList();
+        mainPanel = new ItineraryPage(activityObservableList);
         mainPanelPlaceholder.getChildren().add(mainPanel.getRoot());
         setCurrentPage(ITINERARY);
     }
