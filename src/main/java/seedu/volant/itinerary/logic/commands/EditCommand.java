@@ -78,7 +78,7 @@ public class EditCommand extends Command {
         }
 
         itineraryModel.setActivity(activityToEdit, editedActivity);
-        itineraryModel.updateFilteredActivityList(itineraryModel.getPredicateShowAllTrips());
+        itineraryModel.updateFilteredActivityList(itineraryModel.getPredicateShowAllActivities());
         return new CommandResult(String.format(MESSAGE_EDIT_ITINERARY_SUCCESS, editedActivity));
     }
 

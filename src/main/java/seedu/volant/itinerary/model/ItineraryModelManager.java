@@ -108,7 +108,7 @@ public class ItineraryModelManager implements Model {
         activityList.setActivities(target, editedTrip);
     }
 
-    public Predicate<Activity> getPredicateShowAllTrips() {
+    public Predicate<Activity> getPredicateShowAllActivities() {
         return predicateShowAllActivities;
     }
 
