@@ -2,6 +2,7 @@ package seedu.volant.home.model;
 
 import static java.util.Objects.requireNonNull;
 
+import java.io.File;
 import java.util.List;
 
 import javafx.collections.ObservableList;
@@ -9,7 +10,7 @@ import seedu.volant.home.model.trip.Trip;
 import seedu.volant.home.model.trip.UniqueTripList;
 
 /**
- * Wraps all data at the address-book level
+ * Wraps all data at the trip level
  * Duplicates are not allowed (by .isSameTrip comparison)
  */
 public class TripList implements ReadOnlyTripList {
@@ -74,6 +75,8 @@ public class TripList implements ReadOnlyTripList {
      */
     public void addTrip(Trip p) {
         trips.add(p);
+        File file = new File("data/" + p.getName());
+        file.mkdir();
     }
 
     /**
@@ -95,16 +98,11 @@ public class TripList implements ReadOnlyTripList {
         trips.remove(key);
     }
 
-    public Trip gotoTrip(int targetIndex) {
-        return trips.gotoTrip(targetIndex);
-    }
-
     //// util methods
 
     @Override
     public String toString() {
-        return trips.asUnmodifiableObservableList().size() + " ";
-        // TODO: refine later
+        return "" + trips.asUnmodifiableObservableList().size();
     }
 
     @Override

@@ -14,6 +14,7 @@ import seedu.volant.commons.logic.commands.exceptions.CommandException;
 import seedu.volant.commons.model.Model;
 import seedu.volant.journal.model.JournalModelManager;
 import seedu.volant.journal.model.entry.Entry;
+import seedu.volant.journal.model.entry.SortType;
 
 /**
  * Adds an entry to the Journal.
@@ -62,6 +63,7 @@ public class AddCommand extends Command {
         }
 
         journalModel.addEntry(toAdd);
+        journalModel.sortEntries(SortType.NEW);
         return new CommandResult(String.format(MESSAGE_SUCCESS, toAdd));
     }
 

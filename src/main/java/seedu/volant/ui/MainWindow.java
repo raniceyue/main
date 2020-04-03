@@ -171,7 +171,6 @@ public class MainWindow extends UiPart<Stage> {
         primaryStage.show();
     }
 
-
     /**
      * Handles the result of the command 'back'.
      * @param commandResult Contains list needed to populate the stage.

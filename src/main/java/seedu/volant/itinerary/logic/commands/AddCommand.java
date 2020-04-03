@@ -6,10 +6,15 @@ import static seedu.volant.commons.logic.parser.CliSyntax.PREFIX_LOCATION;
 import static seedu.volant.commons.logic.parser.CliSyntax.PREFIX_TIME;
 import static seedu.volant.commons.logic.parser.CliSyntax.PREFIX_TITLE;
 
+import java.time.LocalDate;
+
+import seedu.volant.commons.exceptions.DatePassedException;
+import seedu.volant.commons.exceptions.DateRangeOutOfBoundsException;
 import seedu.volant.commons.logic.commands.Command;
 import seedu.volant.commons.logic.commands.CommandResult;
 import seedu.volant.commons.logic.commands.exceptions.CommandException;
 import seedu.volant.commons.model.Model;
+import seedu.volant.itinerary.exceptions.TimeClashException;
 import seedu.volant.itinerary.model.ItineraryModelManager;
 import seedu.volant.itinerary.model.activity.Activity;
 
@@ -54,6 +59,26 @@ public class AddCommand extends Command {
             throw new CommandException(MESSAGE_DUPLICATE_ITEM);
         }
 
+        if (toAdd.getDate().compareTo(((ItineraryModelManager) model).getTrip()
+                .getDateRange().getFrom()) < 0) {
+            throw new DateRangeOutOfBoundsException("Date of activity is before the trip!\n"
+                    + "Please enter a date within the duration of the trip: "
+                    + itineraryModel.getTrip().getDateRange());
+        }
+        if (toAdd.getDate().compareTo(itineraryModel.getTrip()
+                .getDateRange().getTo()) > 0) {
+            throw new DateRangeOutOfBoundsException("Date of activity is after the trip!\n"
+                    + "Please enter a date within the duration of the trip: "
+                    + itineraryModel.getTrip().getDateRange());
+        }
+        if (toAdd.getDate().compareTo(LocalDate.now()) < 0) {
+            throw new DatePassedException("Date of activity has passed. "
+                    + "Please entire a current or future date.");
+        }
+        if (itineraryModel.hasTimeClash(toAdd)) {
+            throw new TimeClashException("There is already another activity scheduled for "
+                    + toAdd.getDate() + " " + toAdd.getTime() + ". Try another timing.");
+        }
         itineraryModel.addActivity(toAdd);
         return new CommandResult(String.format(MESSAGE_SUCCESS, toAdd));
     }

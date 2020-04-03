@@ -123,6 +123,10 @@ public class JournalPageCard extends UiPart<Region> {
             entryFeeling.setBackground(new Background(new BackgroundFill(
                 Color.rgb(240, 216, 21), CornerRadii.EMPTY, Insets.EMPTY)));
             break;
+        case "WORRIED":
+            entryFeeling.setBackground(new Background(new BackgroundFill(
+                    Color.rgb(128, 0, 128), CornerRadii.EMPTY, Insets.EMPTY)));
+            break;
         default:
             entryFeeling.setText("NULL");
             break;

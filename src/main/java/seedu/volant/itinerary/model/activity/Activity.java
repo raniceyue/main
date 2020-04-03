@@ -55,6 +55,26 @@ public class Activity {
         return builder.toString();
     }
 
+    /**
+     * Compares 2 objects to see if they have the same date and time.
+     * @param other The other object to be compared to.
+     * @return True if the date and time of both objects are the same.
+     */
+    public boolean equalsDateTime(Object other) {
+        boolean result = false;
+        if (other == this) {
+            result = true;
+        }
+        if (!(other instanceof Activity)) {
+            result = false;
+        } else if (this.getDate().equals(((Activity) other).getDate())
+                && (this.getTime().equals(((Activity) other).getTime()))) {
+            result = true;
+        }
+
+        return result;
+    }
+
     @Override
     public boolean equals(Object other) {
         boolean result = false;
@@ -63,7 +83,9 @@ public class Activity {
         }
         if (!(other instanceof Activity)) {
             result = false;
-        } else if (this.getDate().equals(((Activity) other).getDate())
+        } else if (this.getTitle().equals(((Activity) other).getTitle())
+                && this.getLocation().equals(((Activity) other).getLocation())
+                && this.getDate().equals(((Activity) other).getDate())
             && (this.getTime().equals(((Activity) other).getTime()))) {
             result = true;
         }
