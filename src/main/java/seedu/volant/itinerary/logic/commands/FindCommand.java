@@ -42,7 +42,7 @@ public class FindCommand extends Command {
             + "[" + PREFIX_DATE + "DATE] "
             + "[" + PREFIX_TIME + "TIME] "
             + "[" + PREFIX_LOCATION + "LOCATION] \n"
-            + "Example: " + COMMAND_WORD + " title/visit l/NEW.";
+            + "Example: " + COMMAND_WORD + PREFIX_TITLE + "visit l/NEW.";
 
     public static final String MESSAGE_EMPTY_FIELD = "At least one field to find must be provided.";
 

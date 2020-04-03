@@ -27,7 +27,7 @@ public class AddCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds an activity to the itinerary.\n"
             + "Parameters: \n"
-            + PREFIX_TITLE + "TITLE "
+            + PREFIX_TITLE + "ACTIVITY_TITLE "
             + PREFIX_LOCATION + "LOCATION "
             + PREFIX_DATE + "DATE "
             + PREFIX_TIME + "TIME \n"
