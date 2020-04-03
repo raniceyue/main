@@ -1,4 +1,4 @@
-package seedu.volant.journal.model.entry;
+package seedu.volant.journal.model;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.volant.commons.util.CollectionUtil.requireAllNonNull;
@@ -15,6 +15,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import seedu.volant.home.model.trip.Location;
 import seedu.volant.journal.model.exceptions.EntryNotFoundException;
+import seedu.volant.journal.model.util.FeelingComparator;
+import seedu.volant.journal.model.util.LocationComparator;
+import seedu.volant.journal.model.util.NewestDateTimeComparator;
+import seedu.volant.journal.model.util.OldestDateTimeComparator;
+import seedu.volant.journal.model.util.SortType;
 
 /**
  * A list of persons that enforces uniqueness between its elements and does not allow nulls.

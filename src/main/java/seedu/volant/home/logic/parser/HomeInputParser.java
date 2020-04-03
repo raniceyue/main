@@ -19,7 +19,6 @@ import seedu.volant.home.logic.commands.ClearCommand;
 import seedu.volant.home.logic.commands.DeleteCommand;
 import seedu.volant.home.logic.commands.EditCommand;
 import seedu.volant.home.logic.commands.FindCommand;
-import seedu.volant.home.logic.commands.ListCommand;
 
 /**
  * Parses user input when on the HOME page.
@@ -57,9 +56,6 @@ public class HomeInputParser {
 
         case FindCommand.COMMAND_WORD:
             return new FindCommandParser().parse(arguments);
-
-        case ListCommand.COMMAND_WORD:
-            return new ListCommand();
 
         case ExitCommand.COMMAND_WORD:
             return new ExitCommand();

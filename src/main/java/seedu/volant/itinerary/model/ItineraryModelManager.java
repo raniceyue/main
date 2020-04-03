@@ -22,7 +22,7 @@ import seedu.volant.commons.storage.Storage;
 import seedu.volant.home.model.TripList;
 import seedu.volant.home.model.trip.Trip;
 import seedu.volant.itinerary.model.activity.Activity;
-import seedu.volant.itinerary.model.activity.DateTimeComparator;
+import seedu.volant.itinerary.model.activity.util.DateTimeComparator;
 import seedu.volant.trip.model.Itinerary;
 import seedu.volant.trip.model.TripFeature;
 

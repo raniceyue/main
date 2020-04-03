@@ -1,6 +1,9 @@
-package seedu.volant.journal.model.entry;
+package seedu.volant.journal.model.util;
 
 import java.util.Comparator;
+
+import seedu.volant.journal.model.Entry;
+import seedu.volant.journal.model.Feeling;
 
 /**
  * Comparator for sorting by Feeling.

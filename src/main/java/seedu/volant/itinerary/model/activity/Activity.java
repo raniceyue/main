@@ -45,11 +45,12 @@ public class Activity {
     @Override
     public String toString() {
         final StringBuilder builder = new StringBuilder();
-        builder.append(getTitle())
+        builder.append("\nTitle: ")
+                .append(getTitle())
                 .append("\nLocation: ")
                 .append(this.getTitle())
                 .append("\nDate: ")
-                .append(formatDate(this.getDate()))
+                .append(formatDate(getDate()))
                 .append("\nTime: ")
                 .append(formatTime(this.getTime()));
         return builder.toString();

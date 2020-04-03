@@ -1,7 +1,9 @@
-package seedu.volant.itinerary.model.activity;
+package seedu.volant.itinerary.model.activity.util;
 
 import java.time.LocalTime;
 import java.util.function.Predicate;
+
+import seedu.volant.itinerary.model.activity.Activity;
 
 /**
  * Tests that a {@code Activity}'s {@code Time} matches any of the keywords given.

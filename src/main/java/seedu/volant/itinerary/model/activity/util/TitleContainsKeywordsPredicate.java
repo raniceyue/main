@@ -1,9 +1,10 @@
-package seedu.volant.itinerary.model.activity;
+package seedu.volant.itinerary.model.activity.util;
 
 import java.util.List;
 import java.util.function.Predicate;
 
 import seedu.volant.commons.util.StringUtil;
+import seedu.volant.itinerary.model.activity.Activity;
 
 /**
  * Tests that a {@code Activity}'s {@code Title} matches any of the keywords given.

@@ -1,6 +1,8 @@
-package seedu.volant.journal.model.entry;
+package seedu.volant.journal.model.util;
 
 import java.util.Comparator;
+
+import seedu.volant.journal.model.Entry;
 
 /**
  * Comparator for sorting by Location.

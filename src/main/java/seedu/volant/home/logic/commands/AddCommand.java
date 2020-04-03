@@ -20,11 +20,13 @@ public class AddCommand extends Command {
     public static final String COMMAND_WORD = "add";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a trip to the trip list. "
-            + "Parameters: "
+            + "\nParameters:\t"
             + PREFIX_NAME + "NAME "
             + PREFIX_LOCATION + "LOCATION "
-            + PREFIX_DATERANGE + "DATE RANGE \n"
-            + "Example: " + COMMAND_WORD + " "
+            + PREFIX_DATERANGE + "DATE RANGE"
+
+            + "\nExample:\t"
+            + COMMAND_WORD + " "
             + PREFIX_NAME + "Bali 2020 "
             + PREFIX_LOCATION + "Bali "
             + PREFIX_DATERANGE + "02-01-2020 to 02-05-2020 ";

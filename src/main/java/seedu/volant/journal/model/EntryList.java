@@ -5,9 +5,7 @@ import static java.util.Objects.requireNonNull;
 import java.util.List;
 
 import javafx.collections.ObservableList;
-import seedu.volant.journal.model.entry.Entry;
-import seedu.volant.journal.model.entry.SortType;
-import seedu.volant.journal.model.entry.UniqueEntryList;
+import seedu.volant.journal.model.util.SortType;
 
 /**
  * Wraps all data at the Journal level

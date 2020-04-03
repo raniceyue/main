@@ -12,9 +12,9 @@ import seedu.volant.commons.logic.commands.Command;
 import seedu.volant.commons.logic.commands.CommandResult;
 import seedu.volant.commons.logic.commands.exceptions.CommandException;
 import seedu.volant.commons.model.Model;
+import seedu.volant.journal.model.Entry;
 import seedu.volant.journal.model.JournalModelManager;
-import seedu.volant.journal.model.entry.Entry;
-import seedu.volant.journal.model.entry.SortType;
+import seedu.volant.journal.model.util.SortType;
 
 /**
  * Adds an entry to the Journal.
@@ -41,7 +41,7 @@ public class AddCommand extends Command {
             + PREFIX_FEELING + "EXCITED "
             + PREFIX_WEATHER + "COOL ";
 
-    public static final String MESSAGE_SUCCESS = "New entry added: %1$s";
+    public static final String MESSAGE_SUCCESS = "New journal entry added: %1$s";
     public static final String MESSAGE_DUPLICATE_ENTRY = "This entry already exists in the journal.";
 
     private final Entry toAdd;

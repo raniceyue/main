@@ -30,12 +30,19 @@ public class EditCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the trip identified "
             + "by the index number used in the displayed trip list. "
-            + "Existing values will be overwritten by the input values.\n"
-            + "Parameters: INDEX (must be a positive integer) "
+            + "Existing values will be overwritten by the input values."
+            + "\nParameters:\t"
+            + "INDEX "
             + "[" + PREFIX_NAME + "NAME] "
             + "[" + PREFIX_LOCATION + "LOCATION] "
-            + "[" + PREFIX_DATERANGE + "DATE RANGE] \n"
-            + "Example: " + COMMAND_WORD + " 1 ";
+            + "[" + PREFIX_DATERANGE + "DATE RANGE]"
+
+            + "\nExample:\t"
+            + COMMAND_WORD + " 1 " + PREFIX_NAME + "Bali Trip 2020"
+
+            + "\nNOTE:\n"
+            + "+ INDEX must be a positive integer within range of trip list size.\n"
+            + "+ At least one of the parameters must be provided.";
 
     public static final String MESSAGE_EDIT_PERSON_SUCCESS = "Edited Trip: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";

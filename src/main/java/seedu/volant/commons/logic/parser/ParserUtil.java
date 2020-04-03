@@ -17,9 +17,9 @@ import seedu.volant.home.model.trip.Location;
 import seedu.volant.home.model.trip.Name;
 import seedu.volant.itinerary.model.activity.Title;
 import seedu.volant.journal.exceptions.ContentTooLongException;
-import seedu.volant.journal.model.entry.Feeling;
-import seedu.volant.journal.model.entry.SortType;
-import seedu.volant.journal.model.entry.Weather;
+import seedu.volant.journal.model.Feeling;
+import seedu.volant.journal.model.Weather;
+import seedu.volant.journal.model.util.SortType;
 
 /**
  * Contains utility methods used for parsing strings in the various *Parser classes.

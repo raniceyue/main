@@ -21,8 +21,7 @@ import seedu.volant.commons.model.UserPrefs;
 import seedu.volant.commons.storage.Storage;
 import seedu.volant.home.model.TripList;
 import seedu.volant.home.model.trip.Trip;
-import seedu.volant.journal.model.entry.Entry;
-import seedu.volant.journal.model.entry.SortType;
+import seedu.volant.journal.model.util.SortType;
 import seedu.volant.trip.model.Journal;
 
 /**

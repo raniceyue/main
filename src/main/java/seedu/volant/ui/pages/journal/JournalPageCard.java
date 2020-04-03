@@ -11,7 +11,7 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
-import seedu.volant.journal.model.entry.Entry;
+import seedu.volant.journal.model.Entry;
 import seedu.volant.ui.UiPart;
 import seedu.volant.ui.pages.home.HomePageTripCard;
 

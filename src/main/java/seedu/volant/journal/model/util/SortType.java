@@ -1,4 +1,4 @@
-package seedu.volant.journal.model.entry;
+package seedu.volant.journal.model.util;
 
 /**
  * Represents SortTypes for SortCommand in Journal.

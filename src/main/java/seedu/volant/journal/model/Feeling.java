@@ -1,4 +1,4 @@
-package seedu.volant.journal.model.entry;
+package seedu.volant.journal.model;
 
 /**
  * Represents a state of Feeling in a journal Entry.
