@@ -5,18 +5,17 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
+
 <StackPane styleClass="stack-pane-commandBox" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1">
-   <HBox prefHeight="3.0" prefWidth="200.0">
+   <HBox prefHeight="3.0" prefWidth="70.0">
       <children>
+          <TextField fx:id="commandTextField" onAction="#handleCommandEntered" promptText="Hello! :D What can I help you with?" HBox.hgrow="ALWAYS" />
 
-          <TextField fx:id="commandTextField" onAction="#handleCommandEntered" promptText="What can I help you with?" HBox.hgrow="ALWAYS" />
-
-          <Button fx:id="enterBtn" alignment="CENTER_RIGHT" mnemonicParsing="false" styleClass="button-enter" prefHeight="27.0" text="ENTER">
+          <Button fx:id="enterBtn" alignment="CENTER" mnemonicParsing="false" styleClass="button-enter" prefHeight="40.0" prefWidth="80.0" text="ENTER" onAction="#handleCommandButtonPressed">
             <HBox.margin>
-                <Insets left="20.0" />
+                <Insets left="10.0" />
             </HBox.margin>
           </Button>
-
       </children>
    </HBox>
 </StackPane>

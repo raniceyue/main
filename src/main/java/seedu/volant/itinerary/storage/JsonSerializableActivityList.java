@@ -20,7 +20,7 @@ import seedu.volant.itinerary.model.activity.Activity;
 @JsonRootName(value = "volant")
 public class JsonSerializableActivityList {
 
-    public static final String MESSAGE_DUPLICATE_PERSON = "Trip list contains duplicate trip(s).";
+    public static final String MESSAGE_DUPLICATE_PERSON = "Trip list contains duplicate activities.";
 
     private final List<JsonAdaptedActivity> activities = new ArrayList<>();
 

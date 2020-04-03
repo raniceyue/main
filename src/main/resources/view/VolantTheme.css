@@ -11,7 +11,7 @@
 
 .background {
     -fx-background-color: derive(#FEFBF7, 0%);
-    background-color: #000; /* Used in the default.html file */
+    background-color: #fff; /* Used in the default.html file */
 }
 
 .root {
@@ -23,7 +23,7 @@
 .label {
     -fx-font-size: 11pt;
     -fx-font-family: "Roboto Mono";
-    -fx-text-fill: #555555;
+    -fx-text-fill: #ffffff;
     -fx-opacity: 0.9;
 }
 
@@ -65,6 +65,15 @@
     -fx-border-width: 1px 0px 2px 0px;
     -fx-border-color: black;
 }
+
+/*Header for trip list views*/
+.trip-list-header {
+    -fx-alignment: center;
+    -fx-background-color: #8BD4B1;
+    -fx-border-width: 1px 0px 2px 0px;
+    -fx-border-color: black;
+}
+
 
 .label-welcome {
     -fx-font-size: 26pt;
@@ -133,19 +142,19 @@
 
 .split-pane:horizontal .split-pane-divider {
     -fx-background-color: derive(#FEFBF7, 0%);
-    -fx-border-color: transparent transparent transparent #4d4d4d;
+    -fx-border-color: transparent transparent transparent;
 }
 
 .split-pane {
     -fx-border-radius: 1;
     -fx-border-width: 2px;
-    -fx-background-color: derive(#FEFBF7, 20%);
+    -fx-background-color: #FEFBF7;
 }
 
 .list-view {
     -fx-background-insets: 0;
     -fx-padding: 0;
-    -fx-background-color: derive(#FEFBF7, 0%);
+    -fx-background-color: #FEFBF7;
 }
 
 .list-cell {
@@ -218,8 +227,8 @@
 }
 
 .status-bar-with-border {
-    -fx-background-color: derive(#FEFBF7, 30%);
-    -fx-border-color: derive(#1d1d1d, 25%);
+    -fx-background-color: #FEFBF7;
+    -fx-border-color: #1d1d1d;
     -fx-border-width: 2px;
 }
 
@@ -228,20 +237,21 @@
 }
 
 .grid-pane {
-    -fx-background-color: derive(#FEFBF7, 0%);
-    -fx-border-color: derive(#1d1d1d, 30%);
+    -fx-background-color: #FEFBF7;
 }
 
 .grid-pane .stack-pane {
-    -fx-background-color: derive(#FEFBF7, 0%);
+    -fx-background-color: #fff968;
 }
 
 .context-menu {
-    -fx-background-color: derive(#FEFBF7, 0%);
+    -fx-background-color: #fff968;
+    -fx-border-color: #000;
+    -fx-border-width: 2px;
 }
 
 .context-menu .label {
-    -fx-text-fill: white;
+    -fx-text-fill: #000000;
 }
 
 /*Menu buttons*/
@@ -262,6 +272,11 @@
     -fx-font-family: "Roboto Mono Bold";
     -fx-text-fill: black;
     -fx-opacity: 0.9;
+}
+
+.menu-item:hover{
+    -fx-text-fill: black;
+    -fx-background-color: transparent;
 }
 
 .menu .left-container {
@@ -290,13 +305,13 @@
 }
 
 .button-enter {
-    -fx-padding: 9 22 9 22;
+    -fx-padding: 0;
     -fx-border-color: black;
     -fx-border-width: 2px;
     -fx-background-radius: 0;
     -fx-background-color: #8bd4b1;
     -fx-font-family: "Roboto Mono Bold", monospace;
-    -fx-font-size: 11pt;
+    -fx-font-size: 12pt;
     -fx-text-fill: black;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
 }
@@ -352,32 +367,36 @@
 
 /*SCROLL BAR */
 .scroll-bar {
+    -fx-min-width: 30px;
     -fx-background-color: derive(#F08080, 20%);
-    -fx-border-width: 2px;
+    -fx-border-width: 0px 0px 0px 2px;
     -fx-border-color: black;
 }
 
 .scroll-bar .thumb {
-    -fx-background-color: #FEFBF7;
-    -fx-border-width: 2px 0px 2px 0px;
+    -fx-min-width: 30px;
+    -fx-background-color: #fff;
+    -fx-border-width: 2px 1px 2px 0px;
     -fx-border-color: black;
+    -fx-background-radius: 0em;
+    -fx-background-insets: 0px;
 }
 
-.scroll-bar .increment-button, .scroll-bar .decrement-button {
-    -fx-padding: 0 0 0 0;
+.scroll-bar .increment-button {
+    -fx-min-width: 20px;
+    -fx-min-height: 20px;
 }
 
-.scroll-bar .increment-arrow, .scroll-bar .decrement-arrow {
-    -fx-shape: "";
+.scroll-bar .decrement-button {
+    -fx-min-width: 20px;
+    -fx-min-height: 20px;
 }
 
-.scroll-bar:vertical .increment-arrow, .scroll-bar:vertical .decrement-arrow {
-    -fx-padding: 1 8 1 8;
+.scroll-bar > .increment-button > .increment-arrow,
+.scroll-bar > .decrement-button > .decrement-arrow {
+    -fx-background-color: black;
 }
 
-.scroll-bar:horizontal .increment-arrow, .scroll-bar:horizontal .decrement-arrow {
-    -fx-padding: 8 1 8 1;
-}
 
 #cardPane {
     -fx-background-color: transparent;
@@ -392,7 +411,7 @@
 
 .stackPane-ResultBox {
     -fx-background-color: #FBFCDD;
-    -fx-border-width: 1px 1px 0px 1px;
+    -fx-border-width: 2px 1px 0px 1px;
     -fx-border-color: #000;
 }
 
@@ -460,9 +479,17 @@
     -fx-background-color: #FEFBF7;
 }
 
+/* At the top of the journal card*/
 .hBox-journal {
     -fx-background-color: #FBFCDD;
     -fx-border-width: 2px 2px 0px 2px;
+    -fx-border-color: black;
+    -fx-padding: 5px 0px 0px 0px;
+}
+
+.hBox-journal-metadata {
+    -fx-background-color: #FBFCDD;
+    -fx-border-width: 0px 2px 0px 2px;
     -fx-border-color: black;
 }
 
@@ -476,20 +503,22 @@
     -fx-background-color: #FBFCDD;
     -fx-border-width: 0px 2px 2px 2px;
     -fx-border-color: black;
+    -fx-text-fill: #f0585f;
+    -fx-padding: 0 10 10 10;
 }
 
 .label-entry-metadata {
-    -fx-font-family: "Roboto Mono";
+    -fx-font-family: "Roboto Mono Bold";
     -fx-font-size: 16px;
     -fx-text-fill: #010504;
-    -fx-padding:10 0 0 10
+    -fx-padding: 5 0 5 15;
 }
 
 .label-entry {
     -fx-font-family: "Roboto Mono";
     -fx-font-size: 16px;
     -fx-text-fill: #010504;
-    -fx-padding:0 0 0 15;
+    -fx-padding: 10 0 0 15;
 }
 
 .label-feeling {
@@ -503,7 +532,12 @@
     -fx-padding:8 25 0 0;
 }
 
-
+.label-journal-id {
+    -fx-text-fill: #f0585f;
+    -fx-font-size: 20px;
+    -fx-background-color: #FBFCDD;
+    -fx-padding: 0px 10px 5px 0px;
+}
 
 #entryListView .list-cell{
     -fx-border-width: 1px 0px 1px 0px;

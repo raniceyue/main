@@ -3,6 +3,8 @@ package seedu.volant.ui.pages.journal;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
@@ -45,23 +47,46 @@ public class JournalPageCard extends UiPart<Region> {
     @FXML
     private Label id;
 
+    @FXML
+    private ImageView locationIcon;
+
+    @FXML
+    private ImageView weatherIcon;
+
     public JournalPageCard(Entry entry, int displayedIndex) {
         super(FXML);
+
+        /* ICONS FOR METADATA */
+        Image locationImg = new Image("/images/locationIcon.png");
+        locationIcon.setImage(locationImg);
+
+        Image weatherImg = new Image("/images/weatherIcon.png");
+        weatherIcon.setImage(weatherImg);
+
         this.entry = entry;
-        id.setText(displayedIndex + ". ");
+
+        id.setText(Integer.toString(displayedIndex));
         entryTitle.setText(entry.getText());
         entryDate.setText(entry.getDateAsString() + ",");
         entryTime.setText(entry.getTimeAsString());
+
         if (entry.getLocationAsString().equals("null")) {
-            entryLocation.setText("\nLocation: Not specified");
+            entryLocation.setText("Not specified");
+            entryLocation.setGraphic(locationIcon);
+
         } else {
-            entryLocation.setText("\nLocation: " + entry.getLocationAsString());
+            entryLocation.setText(entry.getLocation().toString());
+            entryLocation.setGraphic(locationIcon);
         }
+
         if (entry.getWeather().toString().equals("NULL")) {
-            entryWeather.setText("Weather: Not specified");
+            entryWeather.setText("Not specified");
+            entryWeather.setGraphic(weatherIcon);
+
         } else {
             String weather = entry.getWeather().toString();
-            entryWeather.setText("Weather: " + weather.substring(0, 1) + weather.substring(1).toLowerCase());
+            entryWeather.setText(weather.substring(0, 1) + weather.substring(1).toLowerCase());
+            entryWeather.setGraphic(weatherIcon);
             String feeling = entry.getFeeling().toString();
             setFeeling(feeling);
         }
@@ -72,18 +97,34 @@ public class JournalPageCard extends UiPart<Region> {
         switch(feeling) {
         case "CONFUSED":
             entryFeeling.setBackground(new Background(new BackgroundFill(
-                    Color.rgb(204, 195, 234), CornerRadii.EMPTY, Insets.EMPTY)));
+                    Color.rgb(117, 102, 65), CornerRadii.EMPTY, Insets.EMPTY)));
             break;
         case "TIRED":
             entryFeeling.setBackground(new Background(new BackgroundFill(
-                    Color.rgb(47, 233, 167), CornerRadii.EMPTY, Insets.EMPTY)));
+                    Color.rgb(149, 149, 141), CornerRadii.EMPTY, Insets.EMPTY)));
             break;
         case "HAPPY":
             entryFeeling.setBackground(new Background(new BackgroundFill(
-                    Color.rgb(240, 128, 128), CornerRadii.EMPTY, Insets.EMPTY)));
+                    Color.rgb(47, 233, 167), CornerRadii.EMPTY, Insets.EMPTY)));
+            break;
+        case "SCARED":
+            entryFeeling.setBackground(new Background(new BackgroundFill(
+                Color.rgb(204, 195, 234), CornerRadii.EMPTY, Insets.EMPTY)));
+            break;
+        case "SAD":
+            entryFeeling.setBackground(new Background(new BackgroundFill(
+                Color.rgb(130, 205, 240), CornerRadii.EMPTY, Insets.EMPTY)));
+            break;
+        case "ANGRY":
+            entryFeeling.setBackground(new Background(new BackgroundFill(
+                Color.rgb(240, 128, 128), CornerRadii.EMPTY, Insets.EMPTY)));
+            break;
+        case "EXCITED":
+            entryFeeling.setBackground(new Background(new BackgroundFill(
+                Color.rgb(240, 216, 21), CornerRadii.EMPTY, Insets.EMPTY)));
             break;
         default:
-            entryFeeling.setText("Feeling: Not specified");
+            entryFeeling.setText("NULL");
             break;
         }
     }

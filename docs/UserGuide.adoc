@@ -57,24 +57,28 @@ This section consists of an overview of the features available in Volant.
 In Volant, a trip represents a set of travel plans to a certain location within a date range. You can able to create and store trips in Volant to keep track of all your travels, and plan your future travels.
 Each `TRIP` contains trip features such as an `ITINERARY` and `JOURNAL`.
 
-=== Trip List
+=== Home Page
 All trips are stored in a trip list.
-The trip list displayed on the `HOME` page of Volant.
+The trip list displayed on the Home Page of Volant.
 It gives a list view of all the trips stored in Volant's data files.
 
-The trip list is sorted such that you are able to view upcoming and past trips.
+The trip list is sorted such that you are able to view both upcoming and past trips.
 
 === Journal
 Volant has a journal feature that allows you to write and store journal entries per trip.
-These entries are limited to 140 characters and have other metadata including the `LOCATION` and `WEATHER` for you
+These entries are limited to 280 characters and have other metadata including the `LOCATION` and `WEATHER` for you
 to record when writing journal entries.
 
 === Itinerary
 Volant has an itinerary feature that enables you to keep track of their daily activities planned for their trip.
 All activities are sorted in chronological orderby date and time from oldest to newest activity.
 
-=== Auto-saving of Data
-All changes in Volant will be automatically saved upon every command that changes the data in the application.
+=== Auto-Saving of Data
+All changes in data will automatically be saved upon every command that the user gives to Volant.
+
+=== Fast In-App Navigation
+Navigation within the different pages in Volant is simple and fast, with universal commands like `home` and `back`.
+In addition, navigating to a specific item in a list can be done with a shortcut. For example, users can input `goto i` instead of `goto itinerary`.
 
 In this application, commands are used to utilise and switch between these features. The upcoming section will cover the
 usage of these commands.
@@ -89,29 +93,26 @@ in the application's GUI. After which, the program will give feedback on the res
 
 * *Parameters in `UPPER_CASE`* +
     Words in `UPPER_CASE` are compulsory parameters to be supplied by the user. +
-    e.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe`.
+    e.g. In `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe`.
 * *Parameters in `[SQUARE_BRACKETS]`* +
     Words in square brackets (i.e. `[f/FEELING]`), are optional. +
     e.g `n/NAME [a/AGE]` can be used as `n/John Doe a/26` or as `n/John Doe`.
-* *Parameters with trailing ellipses `...`* +
-    Words with `…`​ (ellipses) after them can be used multiple times including 0 times. +
-    e.g. `[f/FEELING]...` can be used as `{nbsp}` (i.e. 0 times), `f/FEELING f/FEELING w/WEATHER` (i.e 2 times) etc.
 ====
 
 === Pages in Volant
 
-Volant has 4 different types of pages.
+Volant has 4 different pages.
 Commands entered will produce a different outcome depending on which page you are on.
-However, there are some commands that are universal, and will work on every page.
+Additionally, there are a number of commands that are universal, and will work on every page.
 
 *Types of Pages*
 [cols="1, 3", width="60%", options="header"]
 |===
 | Page | Details
-|`HOME`| Volant's home page, featuring the entire list of trips in Volant.
+|`HOME`| Volant's Home page, featuring the entire list of trips in Volant.
 |`TRIP`| A page featuring the details of a specific trip.
-|`JOURNAL`| A page displaying the `JOURNAL` of a specific trip.
-|`ITINERARY`|  A page displaying the `ITINERARY` of a specific trip.
+|`JOURNAL`| A page displaying the Journal of a specific trip.
+|`ITINERARY`|  A page displaying the Itinerary of a specific trip.
 |===
 
 <<<
@@ -122,31 +123,30 @@ Universal commands are commands that can be used on all pages.
 ==== Going back to a previous page: `back`
 Navigates to a previous page depending on which page you are on.
 
-*Example of Usage*
+*Usage*
 [cols="1h, 5"]
 |=======================
 |Syntax     |   `back`
 |Example    |   `back`
 |=======================
 
-*Example of Outcome*
+*Expected Outcome*
 
-The outcome of the `back` command is dependant on which page the user is on.
+The outcome of the `back` command is dependent on which page the user is on.
 
-For example, if the user is in any `ITINERARY` page, using the `back` command will navigate the user to the `TRIP` page
-of the trip in which the itinerary is stored.
+For example, if the user is in an `ITINERARY` page, using the `back` command will navigate the user to the `TRIP` page associated with the `ITINERARY`.
 
 DIAGRAM TO BE INSERTED HERE.
 
 [TIP]
 
 ====
-*Table of Outcomes*
+*Table of Possible Outcomes*
 [cols="1, 2", options="header,footer"]
 |=======================
 |Page                   |Outcome
-|Any `JOURNAL` page     | User will be directed to `TRIP` page of the trip in which the journal is stored.
-|Any `ITINERARY` page   | User will be directed to `TRIP` page of the trip in which the itinerary is stored.
+|Any `JOURNAL` page     | User will be directed to `TRIP` page of the trip in which the `JOURNAL` is stored.
+|Any `ITINERARY` page   | User will be directed to `TRIP` page of the trip in which the `ITINERARY` is stored.
 |Any `TRIP` page        | User will be directed to the `HOME` page.
 |The `HOME` page        | Nothing will happen as it is the root page.
 |=======================
@@ -156,29 +156,28 @@ DIAGRAM TO BE INSERTED HERE.
 ==== Going back to the Home Page: `home`
 Navigates to the `HOME` page from any page.
 
-*Example of Usage*
+*Usage*
 [cols="1h, 5"]
 |=======================
 |Syntax     |`home`
 |Example    |`home`
 |=======================
 
-*Example of Outcome*
+*Expected Outcome*
 
 DIAGRAM TO BE INSERTED HERE.
 
-==== Opening the help window: `help` `[coming in v2.0]`
-Opens the Help Window.
+==== Opening the Help window: `help` `[coming in v2.0]`
+Opens the Help window.
 
-*Example of Usage*
+*Usage*
 [cols="1h, 5"]
 |=======================
 |Syntax     |`help`
 |Example    |`help`
 |=======================
 
-*Example of Outcome*
-You will be navigated to the `HOME` page.
+*Expected Outcome*
 
 DIAGRAM TO BE INSERTED HERE.
 
@@ -193,10 +192,10 @@ Here, you can manipulate the trip list, as well as navigate to other pages.
 
 Navigates to the page of a specific trip with index `INDEX` in the trip list.
 
-*Example of Usage*
+*Usage*
 [cols="1h, 5"]
 |=======================
-|Syntax     |`goto`
+|Syntax     |`goto INDEX`
 |Example    |`goto 12`
 |=======================
 
@@ -204,9 +203,9 @@ Navigates to the page of a specific trip with index `INDEX` in the trip list.
 NOTE: `INDEX` must be a positive integer value, within range of the number of entries in the trip list.
 
 
-*Example of Outcome*
+*Expected Outcome*
 
-Navigates to the 12th trip on the trip list.
+Navigates to the twelveth trip on the trip list.
 
 DIAGRAM TO BE INSERTED HERE.
 
@@ -215,19 +214,19 @@ DIAGRAM TO BE INSERTED HERE.
 
 Adds a trip to the trip list with the specified `NAME`, `LOCATION` and date range, `TRIP_START_DATE` to `TRIP_END_DATE`.
 
-*Example of Usage*
+*Usage*
 [cols="1h, 5"]
 |=======================
 |Syntax     |`add n/TRIP_NAME l/LOCATION d/TRIP_START_DATE to TRIP_END_DATE`
-|Example    | `add n/Graduation Trip l/Bangkok d/2020-02-01 to 2020-02-05`
+|Example    |`add n/Graduation Trip l/Bangkok d/01-02-2020 to 05-02-2020`
 |=======================
 
-NOTE: Please write the date range in the format `d/YYYY-MM-DD to YYYY-MM-DD`.
+NOTE: The date range should be written in the format `d/DD-MM-YYYY to DD-MM-YYYY`.
 
-*Example of Outcome*
+*Expected Outcome*
 
-Adds a trip to the trip list with the name *Graduation Trip*, location *Bangkok*, and date range of the trip being from
-*1st February 2020 to 5th February 2020*.
+Adds a trip to the trip list with the name *Graduation Trip*, location being *Bangkok*, and date range of the trip being from
+*1st February 2020* to *5th February 2020*.
 
 DIAGRAM TO BE INSERTED HERE.
 
@@ -235,11 +234,11 @@ DIAGRAM TO BE INSERTED HERE.
 ==== Deleting a trip: `delete`
 Deletes a trip from the trip list at the specified index, `INDEX`.
 
-*Example of Usage*
+*Usage*
 [cols="1h, 5"]
 |=======================
 |Syntax     |`delete INDEX`
-|Example    | `delete 2`
+|Example    |`delete 2`
 |=======================
 
 [NOTE]
@@ -247,32 +246,32 @@ Deletes a trip from the trip list at the specified index, `INDEX`.
 * `INDEX` must be a positive integer value, within range of the number of trips in the trip list.
 ====
 
-*Example of Outcome*
+*Expected Outcome*
 
-The trip at the specified index, `INDEX` will be deleted along with its other data (itinerary, journal, etc).
+The second trip on the list will be deleted along with its associated data (itinerary, journal, etc).
 
 DIAGRAM TO BE INSERTED HERE.
 
 ==== Editing trip details: `edit`
 Edits the details of a trip at index `INDEX` according to the details provided.
 
-*Example of Usage*
+*Usage*
 [cols="1h, 5"]
 |=======================
 |Syntax     |`edit INDEX [n/TRIP_NAME] [l/LOCATION] [d/TRIP_START_DATE to TRIP_END_DATE]`
-|Example    | `edit 2 n/School Trip l/France`
+|Example    |`edit 2 n/School Trip l/France`
 |=======================
 
 [NOTE]
 ====
-* `INDEX` must be a positive integer value, within range of the number of entries in the trip list.
-* Please write the date range in the format `d/YYYY-MM-DD to YYYY-MM-DD`.
+* `INDEX` must be a positive integer value, within range of the number of trips in the trip list.
+* The date range should be written in the format `d/DD-MM-YYYY to DD-MM-YYYY`.
 ====
 
 
-*Example of Outcome*
+*Expected Outcome*
 
-The details of the trip will be edited according to the parameters provided.
+The details of the trip will be updated according to the parameters provided.
 
 DIAGRAM TO BE INSERTED HERE.
 
@@ -285,7 +284,7 @@ From this page, you can nagivate to the `ITINERARY` and `JOURNAL` pages.
 ==== Navigating to a feature in the trip page: `goto`
 Navigates to a specific feature within each trip.
 
-*Example of Usage*
+*Usage*
 [cols="1h, 5"]
 |=======================
 |Syntax     |`goto TRIP_FEATURE`
@@ -294,13 +293,15 @@ Navigates to a specific feature within each trip.
 
 [NOTE]
 ====
-*List of available features (can be typed in any case):*
-
-* `itinerary`
-* `journal`
+* List of available `TRIP_FEATURE` (can be typed in any case):
+** `itinerary`
+** `journal`
+* `TRIP_FEATURE` shortcuts are also available:
+** `goto i` is equivalent to `goto itinerary`.
+** `goto j` is equivalent to `goto journal`.
 ====
 
-*Example of Outcome*
+*Expected Outcome*
 
 You will be navigated to the `ITINERARY` page of the trip.
 
@@ -311,13 +312,13 @@ The `ITINERARY` page of a specific trip consists of a list of all the planned ac
 Here, you can manipulate the itinerary, as well as navigate to other pages.
 
 ==== Adding an activity: `add`
-Adds an activity to the itinerary.
+Adds an activity to the itinerary with the details provided.
 
-*Example of Usage*
+*Usage*
 [cols="1h, 5"]
 |=======================
-|Syntax     |`add a/TITLE l/LOCATION d/DATE t/TIME`
-|Example    |`add a/Visit the World Trade Center l/New York d/09-11-2001 t/08:52`
+|Syntax     |`add a/ACTIVITY l/LOCATION d/DATE t/TIME`
+|Example    |`add a/Visit Central Park l/New York d/01-04-2020 t/09:00`
 |=======================
 
 [NOTE]
@@ -326,65 +327,94 @@ Adds an activity to the itinerary.
 * Time must be specified in the following format: `HH:MM`
 ====
 
-*Example of Outcome*
+*Expected Outcome*
 
-An activity named *Visit the World Trade Center* in *New York* at *08:52AM* on *11th September 2001* will be added
+An activity named *Visit Central Park* in *New York* at *09:00AM* on *1st April 2020* will be added
 to the itinerary.
 
-ADD DIAGRAM HERE
+INSERT DIAGRAM HERE.
 
 ==== Deleting an activity: `delete`
-Deletes an activity from the itinerary at a speficied `INDEX`.
+Deletes an activity from the itinerary at a specified `INDEX`.
 
-*Example of Usage*
+*Usage*
 [cols="1h, 5"]
 |=======================
 |Syntax     |`delete INDEX`
-|Example    | `delete 2`
+|Example    |`delete 2`
 |=======================
 
 [NOTE]
 ====
-* `INDEX` must be a positive integer value, within range of the number of trips in the trip list.
+* `INDEX` must be a positive integer value, within range of the number of activities in the itinerary.
 ====
 
-*Example of Outcome*
+*Expected Outcome*
 
 The activity at the specified index, `INDEX` will be deleted from the itinerary.
 
-DIAGRAM TO BE INSERTED HERE.
+INSERT DIAGRAM HERE.
 
-==== Editing an acitivity: `edit`
-Edits an existing activity.
+==== Editing an activity: `edit`
+Edits an existing activity in the itinerary at a specified `INDEX` with the details provided.
 
-Format: `edit INDEX [title/TITLE] [l/LOCATION] [d/DATE] [t/TIME]`
+*Usage*
+[cols="1h, 5"]
+|=======================
+|Syntax     |`edit INDEX [a/ACTIVITY] [l/LOCATION] [d/DATE] [t/TIME]`
+|Example    |`edit 2 l/Starbucks t/10:00`
+|=======================
 
-* Edits the activity at the specified `INDEX`. The index refers to the index number shown in the displayed itinerary list. The index must * be a positive integer 1, 2, 3, …​
+[NOTE]
+====
+* `INDEX` must be a positive integer value, within range of the number of activities in the itinerary.
 * At least one of the optional fields must be provided.
-* Existing values will be updated to the input values.
 * Date must be specified in the following format: `DD-MM-YYYY`
 * Time must be specified in the following format: `HH:MM`
+====
+
+*Expected Outcome*
+
+The second activity in the itinerary will be edited to reflect the new location *Starbucks* and the new time *10:00AM*.
+
+INSERT DIAGRAM HERE.
 
 ==== Locating an activity: `find`
 Searches the itinerary for any activity that matches the input field.
 
-Format: `find FIELD [title/TITLE] [l/LOCATION] [d/DATE] [t/TIME]`
+*Usage*
+[cols="1h, 5"]
+|=======================
+|Syntax     |`find [a/ACTIVITY] [l/LOCATION] [d/DATE] [t/TIME]`
+|Example    |`find a/Climbing`
+|=======================
 
+[NOTE]
+====
 * Date must be specified in the following format: `DD-MM-YYYY`
 * Time must be specified in the following format: `HH:MM`
+====
 
-Example:
+*Expected Outcome*
 
-* `find Itinerary title/Climbing` +
 Returns all activities related to climbing.
+
+INSERT DIAGRAM HERE.
 
 === Journal
 
 ==== Adding a journal entry: `add`
 Adds a journal entry to the entry list.
 
-Format: `add d/DATE t/TIME c/CONTENT [l/LOCATION] [f/FEELING] [w/WEATHER]`
+*Usage*
+[cols="1h, 5"]
+|=======================
+|Syntax     |`add d/DATE t/TIME c/CONTENT [l/LOCATION] [f/FEELING] [w/WEATHER]`
+|Example    |`add d/12-09-2021 t/12:51 c/Visited the Statue of Liberty today! It was grand. l/New York f/confused`
+|=======================
 
+[NOTE]
+====
 * Date must be specified in the following format: `DD-MM-YYYY`
 * Time must be specified in the following format: `HH:MM`
 * CONTENT is limited to 280 characters
@@ -396,21 +426,22 @@ Format: `add d/DATE t/TIME c/CONTENT [l/LOCATION] [f/FEELING] [w/WEATHER]`
 ** `SCARED`
 ** `SURPRISED`
 ** `CONFUSED`
+====
 
+*Expected Outcome*
 
-Example:
-
-* `add d/12-09-2021 t/12:51 c/Visited the Statue of Liberty today! It was grand. l/New York f/confused` +
 Adds a new journal entry to the entry list with the specified content, date, time, location and feeling fields.
+
+INSERT DIAGRAM HERE
 
 ==== Deleting a journal entry: `delete`
 Deletes a trip from the trip list at the specified index, `INDEX`.
 
-*Example of Usage*
+*Usage*
 [cols="1h, 5"]
 |=======================
 |Syntax     |`delete INDEX`
-|Example    | `delete 2`
+|Example    |`delete 2`
 |=======================
 
 [NOTE]
@@ -418,44 +449,64 @@ Deletes a trip from the trip list at the specified index, `INDEX`.
 * `INDEX` must be a positive integer value, within range of the number of trips in the trip list.
 ====
 
-*Example of Outcome*
+*Expected Outcome*
 
-The trip at the specified index, `INDEX` will be deleted along with its other data (itinerary, journal, etc).
+The second trip will be deleted along with its entries.
 
 DIAGRAM TO BE INSERTED HERE.
 
 ==== Editing a journal entry: `edit`
 Edits specific metadata within a chosen journal entry using index number.
 
-Format: `edit INDEX [d/NEW_DATE] [t/NEW_TIME] [c/NEW_CONTENT] [l/NEW_LOCATION] [f/NEW_FEELING] [w/NEW_WEATHER]`
+*Usage*
+[cols="1h, 5"]
+|=======================
+|Syntax     |`edit INDEX [d/NEW_DATE] [t/NEW_TIME] [c/NEW_CONTENT] [l/NEW_LOCATION] [f/NEW_FEELING] [w/NEW_WEATHER]`
+|Example    |`edit 4 d/21-12-2012 f/scared`
+|=======================
 
-Example:
 
-* `edit 4 d/21-12-2012 f/scared` +
-Changes date and feeling of fourth journal entry to “21-12-2012” and “SCARED” respectively
+[NOTE]
+====
+* At least one of the optional fields must be provided.
+====
+
+*Expected Outcome*
+
+Changes date and feeling of fourth journal entry to *21st December 2012* and *SCARED* respectively.
+
+INSERT DIAGRAM HERE.
 
 ==== Sorting a list of current journal entries: `sort`
 Sorts the list of current journal entry lists in a specified order.
 
-Format: `sort [SORT_TYPE]`
+*Usage*
+[cols="1h, 5"]
+|=======================
+|Syntax     |`sort [SORT_TYPE]`
+|Example    |* `sort LOCATION`
+|=======================
 
+[NOTE]
+====
 * Available `SORT_TYPE`:
 ** `OLDESTFIRST` - oldest entries first (default if SORT_TYPE is left empty)
 ** `NEWESTFIRST` - newest entries first
 ** `LOCATION` - alphabetical order of locations
 ** `FEELING` - alphabetical order of feelings
 * Default sorting of journal entries is in order of oldest entries first
+====
 
+*Expected Outcome*
 
-Example:
-
-* `sort LOCATION` +
 Sorts the list of journal entries by alphabetical order of locations.
+
+INSERT DIAGRAM HERE.
 
 == FAQ
 
-*Q*: How do I transfer my data to another Computer? +
-*A*: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.
+*Q*: How do I transfer my data to another computer? +
+*A*: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Volant folder.
 
 == Command Summary
 
@@ -480,11 +531,5 @@ Sorts the list of journal entries by alphabetical order of locations.
 * *Delete entry*: `delete INDEX` +
 * *Edit entry*: `edit INDEX [d/NEW_DATE] [t/NEW_TIME] [c/NEW_CONTENT] [l/NEW_LOCATION] [f/NEW_FEELING] [w/NEW_WEATHER]` +
 * *Sort entries*: `sort [SORT_TYPE]` +
-
-=== Contact List
-* *Add contact*: `add n/NAME [p/PHONE_NUMBER] [a/AGE] [l/LOCATION] [h/HOW_YOU_MET] [f/FAVOURITE]` +
-* *Delete contact*: `delete INDEX` +
-* *Edit contact*: `edit INDEX [n/NAME] [p/PHONE_NUMBER] [a/AGE] [l/LOCATION] [h/HOW_YOU_MET] [f/FAVOURITE]` +
-* *Find contact*: `find FIELD [n/NAME] [p/PHONE_NUMBER] [a/AGE]/ [l/LOCATION] [h/HOW_YOU_MET] [f/FAVOURITE]` +
 
 == Glossary

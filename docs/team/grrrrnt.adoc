@@ -5,6 +5,14 @@
 
 == Introduction
 
+Hi there, my name is Grant. I am currently a Year 2 Computer Science undergraduate student at the National University
+of Singapore (NUS). Additionally, I am a software developer in Team Volant. That's the team that is working on this
+wonderful travel companion app! We're really passionate about this project, so we hope that you enjoy the product
+as much as we enjoy the process.
+
+You can find more about me via https://www.linkedin.com/in/grantleeyx[my LinkedIn profile] and
+https://github.com/grrrrnt[my GitHub profile].
+
 == PROJECT: Volant
 
 Volant is a travel assistant desktop application aimed at assisting solo travellers with the logistics of planning
@@ -12,12 +20,33 @@ their travels. The user interacts with it using a CLI, and it has a GUI created 
 it is primarily based off of the Address Book 3 application developed by the CS2103T teaching team.
 
 === Summary of Contributions
+You can view my code contributions to this project on
+https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=grrrrnt[RepoSense].
+
+* *Major Enhancement:* Designed the class structure of the base code
+** Highlights: The class structure had to be adapted from the Address Book 3 code to support multiple views. By
+carefully designing the new class structure, it was easier for all developers in Team Volant to understand the project
+structure of Volant, effectively accelerating the initial development process.
+
+* *Major Enhancement:* Implemented the Journal page of the application (with Mikhail)
+** What it does: The Journal page allows users to view and manipulate the journal entries in the application.
+
+* *Major Enhancement:* Implemented fast navigation in Trip page
+** What it does: Users can input `goto i` (or `goto j`) while on the Trip page to navigate to the Itinerary (or Journal)
+page.
+** Justification: This feature allows users to navigate more quickly from the Trip page to the subsequent feature pages.
+This is especially useful since the words "itinerary" and "journal" may be long or commonly misspelled.
 
 === Contributions to User Guide
 ==== Sections Written
-* Section 1
-* Section 2
-* Section 3
+* https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/UserGuide.adoc#fast-in-app-navigation[Section 3.6. Fast In-App Navigation]
+* https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/UserGuide.adoc#journal-1[Section 4.6. Journal]
+* https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/UserGuide.adoc#command-summary[Section 6.1. Command Summary]
+* Updated format of User Guide (with Ranice)
+* Prepared and embedded diagrams to all sections of User Guide
+* Reviewed all sections of User Guide for mid-v1.3 submission
+* Reviewed all sections of User Guide for v1.3 submission
+* Reviewed all sections of User Guide for v1.4 submission
 
 === Contributions to Developer Guide
 ==== Sections Written

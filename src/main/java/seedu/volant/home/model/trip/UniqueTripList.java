@@ -9,7 +9,7 @@ import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import seedu.volant.home.model.trip.exceptions.DuplicateTripException;
-import seedu.volant.home.model.trip.exceptions.PersonNotFoundException;
+import seedu.volant.home.model.trip.exceptions.TripNotFoundException;
 
 /**
  * A list of persons that enforces uniqueness between its elements and does not allow nulls.
@@ -46,6 +46,7 @@ public class UniqueTripList implements Iterable<Trip> {
             throw new DuplicateTripException();
         }
         internalList.add(toAdd);
+        internalList.sort(new TripDateComparator());
     }
 
     /**
@@ -58,7 +59,7 @@ public class UniqueTripList implements Iterable<Trip> {
 
         int index = internalList.indexOf(target);
         if (index == -1) {
-            throw new PersonNotFoundException();
+            throw new TripNotFoundException();
         }
 
         if (!target.isSameTrip(editedTrip) && contains(editedTrip)) {
@@ -75,8 +76,9 @@ public class UniqueTripList implements Iterable<Trip> {
     public void remove(Trip toRemove) {
         requireNonNull(toRemove);
         if (!internalList.remove(toRemove)) {
-            throw new PersonNotFoundException();
+            throw new TripNotFoundException();
         }
+        internalList.sort(new TripDateComparator());
     }
 
 
@@ -95,11 +97,13 @@ public class UniqueTripList implements Iterable<Trip> {
         }
 
         internalList.setAll(trips);
+        internalList.sort(new TripDateComparator());
     }
 
     public void setTrips(UniqueTripList replacement) {
         requireNonNull(replacement);
         internalList.setAll(replacement.internalList);
+        internalList.sort(new TripDateComparator());
     }
 
     /**
