@@ -15,6 +15,7 @@ import seedu.volant.home.model.tag.Tag;
 import seedu.volant.home.model.trip.DateRange;
 import seedu.volant.home.model.trip.Location;
 import seedu.volant.home.model.trip.Name;
+import seedu.volant.home.model.trip.exceptions.StartAfterEndException;
 import seedu.volant.itinerary.model.activity.Title;
 import seedu.volant.journal.exceptions.ContentTooLongException;
 import seedu.volant.journal.model.Feeling;
@@ -99,6 +100,13 @@ public class ParserUtil {
         try {
             parsedFromDate = LocalDate.of(fromYear, fromMonth, fromDay);
             parsedToDate = LocalDate.of(toYear, toMonth, toDay);
+            if (parsedFromDate.compareTo(parsedToDate) > 0) {
+                throw new StartAfterEndException(String.format("Hey, your trip start date: %s, occurs"
+                                + " after your trip end date: %s.\nRevise the dates and try again!",
+                        parsedFromDate, parsedToDate));
+            }
+        } catch (StartAfterEndException e) {
+            throw new StartAfterEndException(e.getMessage());
         } catch (Exception e) {
             throw new ParseException("Please input a valid date in DD-MM-YYYY format!");
         }

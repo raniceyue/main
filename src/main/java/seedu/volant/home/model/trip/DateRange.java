@@ -57,7 +57,7 @@ public class DateRange {
     public boolean equals(Object other) {
         return other == this
                 || (other instanceof DateRange)
-                && value.equals(value); // state check
+                && other.toString().equals(this.toString()); // state check
     }
 
 }

@@ -5,6 +5,7 @@ import static seedu.volant.commons.logic.parser.CliSyntax.PREFIX_DATERANGE;
 import static seedu.volant.commons.logic.parser.CliSyntax.PREFIX_LOCATION;
 import static seedu.volant.commons.logic.parser.CliSyntax.PREFIX_NAME;
 
+import java.io.File;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,9 +45,9 @@ public class EditCommand extends Command {
             + "+ INDEX must be a positive integer within range of trip list size.\n"
             + "+ At least one of the parameters must be provided.";
 
-    public static final String MESSAGE_EDIT_PERSON_SUCCESS = "Edited Trip: %1$s";
+    public static final String MESSAGE_EDIT_TRIP_SUCCESS = "Edited Trip: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
-    public static final String MESSAGE_DUPLICATE_PERSON = "This trip already exists in the location book.";
+    public static final String MESSAGE_DUPLICATE_TRIP = "This trip already exists in the location book.";
 
     private final Index index;
     private final EditTripDescriptor editTripDescriptor;
@@ -77,12 +78,18 @@ public class EditCommand extends Command {
         Trip editedTrip = createEditedPerson(tripToEdit, editTripDescriptor);
 
         if (!tripToEdit.isSameTrip(editedTrip) && homeModel.hasTrip(editedTrip)) {
-            throw new CommandException(MESSAGE_DUPLICATE_PERSON);
+            throw new CommandException(MESSAGE_DUPLICATE_TRIP);
+        }
+
+        if (!tripToEdit.getName().equals(editedTrip.getName())) {
+            File oldDir = new File("data/" + tripToEdit.getName());
+            File newDir = new File("data/" + editedTrip.getName());
+            oldDir.renameTo(newDir);
         }
 
         homeModel.setTrip(tripToEdit, editedTrip);
         homeModel.updateFilteredTripList(homeModel.getPredicateShowAllTrips());
-        return new CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS, editedTrip));
+        return new CommandResult(String.format(MESSAGE_EDIT_TRIP_SUCCESS, editedTrip));
     }
 
     /**

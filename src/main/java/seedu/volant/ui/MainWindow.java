@@ -254,13 +254,16 @@ public class MainWindow extends UiPart<Stage> {
         } else {
             t = ((HomeLogicManager) logic).getTripList();
         }
-
-        logic.getStorage().setVolantFilePath(Paths.get("data", "volant.json"));
-        logic = new TripLogicManager(new TripModelManager(t, trip, new UserPrefs()), logic.getStorage());
+        UserPrefs newUserPrefs = new UserPrefs();
+        newUserPrefs.setVolantFilePath(Paths.get("data", trip.getName().toString()));
+        logic.getStorage().setVolantFilePath(Paths.get("data", trip.getName().toString()));
+        logic = new TripLogicManager(new TripModelManager(t, trip, newUserPrefs), logic.getStorage());
 
         mainPanelPlaceholder.getChildren().removeAll(mainPanel.getRoot()); // Remove GUI nodes from prev. display
         mainPanel = new TripPage(trip);
         mainPanelPlaceholder.getChildren().add(mainPanel.getRoot());
+        StatusBarFooter statusBarFooter = new StatusBarFooter(logic.getVolantFilePath());
+        statusbarPlaceholder.getChildren().add(statusBarFooter.getRoot());
         setCurrentPage(TRIP);
     }
 
@@ -301,6 +304,8 @@ public class MainWindow extends UiPart<Stage> {
         ObservableList<Activity> activityObservableList = itineraryModelManager.getFilteredActivityList();
         mainPanel = new ItineraryPage(activityObservableList);
         mainPanelPlaceholder.getChildren().add(mainPanel.getRoot());
+        StatusBarFooter statusBarFooter = new StatusBarFooter(logic.getVolantFilePath());
+        statusbarPlaceholder.getChildren().add(statusBarFooter.getRoot());
         setCurrentPage(ITINERARY);
     }
 
@@ -326,6 +331,8 @@ public class MainWindow extends UiPart<Stage> {
         mainPanelPlaceholder.getChildren().removeAll(mainPanel.getRoot()); // Remove GUI nodes from prev. display
         mainPanel = new JournalPage(journalModelManager.getFilteredEntryList());
         mainPanelPlaceholder.getChildren().add(mainPanel.getRoot());
+        StatusBarFooter statusBarFooter = new StatusBarFooter(logic.getVolantFilePath());
+        statusbarPlaceholder.getChildren().add(statusBarFooter.getRoot());
         setCurrentPage(JOURNAL);
     }
 
@@ -345,6 +352,8 @@ public class MainWindow extends UiPart<Stage> {
         mainPanelPlaceholder.getChildren().removeAll(mainPanel.getRoot()); // Remove GUI nodes from prev. display
         mainPanel = new HomePage(homeModelManager.getFilteredTripList());
         mainPanelPlaceholder.getChildren().add(mainPanel.getRoot());
+        StatusBarFooter statusBarFooter = new StatusBarFooter(logic.getVolantFilePath());
+        statusbarPlaceholder.getChildren().add(statusBarFooter.getRoot());
         setCurrentPage(HOME);
     }
 

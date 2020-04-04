@@ -70,6 +70,14 @@ public class TripList implements ReadOnlyTripList {
     }
 
     /**
+     * Returns true if a trip with date range coinciding with {@code trip} exists in the trip list.
+     */
+    public boolean hasClash(Trip trip) {
+        requireNonNull(trip);
+        return trips.clashes(trip);
+    }
+
+    /**
      * Adds a trip to the trip list.
      * The trip must not already exist in the trip list.
      */
