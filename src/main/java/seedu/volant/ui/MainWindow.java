@@ -23,6 +23,7 @@ import seedu.volant.commons.core.LogsCenter;
 import seedu.volant.commons.logic.Logic;
 import seedu.volant.commons.logic.Page;
 import seedu.volant.commons.logic.commands.CommandResult;
+import seedu.volant.commons.logic.commands.RefreshCommandResult;
 import seedu.volant.commons.logic.commands.exceptions.CommandException;
 import seedu.volant.commons.logic.parser.exceptions.ParseException;
 import seedu.volant.commons.model.UserPrefs;
@@ -76,6 +77,9 @@ public class MainWindow extends UiPart<Stage> {
     private MenuItem helpMenuItem;
 
     @FXML
+    private MenuItem refreshMenuItem;
+
+    @FXML
     private StackPane mainPanelPlaceholder;
 
     @FXML
@@ -103,8 +107,13 @@ public class MainWindow extends UiPart<Stage> {
         return primaryStage;
     }
 
+    /**
+     * Sets the key bindings for the application.
+     * Note: When user is using key bindings, there will be no result display.
+     */
     private void setAccelerators() {
         setAccelerator(helpMenuItem, KeyCombination.valueOf("F1"));
+        setAccelerator(refreshMenuItem, KeyCombination.valueOf("F5"));
     }
 
     /**
@@ -171,6 +180,12 @@ public class MainWindow extends UiPart<Stage> {
         primaryStage.show();
     }
 
+    /** METHODS TO HANDLE CONTEXT SWITCHING **/
+
+    public void setCurrentPage(Page page) {
+        this.currentPage = page;
+    }
+
     /**
      * Handles the result of the command 'back'.
      * @param commandResult Contains list needed to populate the stage.
@@ -224,13 +239,6 @@ public class MainWindow extends UiPart<Stage> {
         helpWindow.hide();
         primaryStage.hide();
     }
-
-    /** METHODS TO HANDLE CONTEXT SWITCHING **/
-
-    public void setCurrentPage(Page page) {
-        this.currentPage = page;
-    }
-
 
     /**
      * Handles command to go to a TRIP page from the HOME page or TRIP_FEATURE page.
@@ -341,10 +349,36 @@ public class MainWindow extends UiPart<Stage> {
     }
 
     /**
+     * Handles refreshing a page.
+     */
+    @FXML
+    private void handleRefresh() throws CommandException, ParseException {
+        if (currentPage == HOME) {
+            HomeModelManager currentModel = ((HomeLogicManager) logic).getModel();
+            currentModel.updateFilteredTripList(currentModel.getPredicateShowAllTrips());
+            mainPanelPlaceholder.getChildren().removeAll(mainPanel.getRoot());
+            mainPanel = new HomePage(currentModel.getFilteredTripList());
+            mainPanelPlaceholder.getChildren().add(mainPanel.getRoot());
+        }
+
+        if (currentPage == ITINERARY) {
+            ItineraryModelManager currentModel = ((ItineraryLogicManager) logic).getModel();
+            mainPanelPlaceholder.getChildren().remove(mainPanel.getRoot());
+            mainPanel = new ItineraryPage(currentModel.getActivityList().getActivityList());
+            mainPanelPlaceholder.getChildren().add(mainPanel.getRoot());
+        }
+
+        if (currentPage == JOURNAL) {
+            // Upon refreshing journal page, revert journal page to sorting by NEW
+            executeCommand("sort NEW");
+        }
+    }
+
+    /**
      * Handles the result of the command to manage the stage.
      * @param commandResult Contains the result to be handled.
      */
-    private void handleResult(CommandResult commandResult) {
+    private void handleResult(CommandResult commandResult) throws CommandException, ParseException {
         if (commandResult.isShowHelp()) {
             handleHelp();
         }
@@ -364,6 +398,10 @@ public class MainWindow extends UiPart<Stage> {
         if (commandResult.isHome()) {
             handleGoToHome(commandResult.getModel().getTripList());
         }
+
+        if (commandResult instanceof RefreshCommandResult) {
+            handleRefresh();
+        }
     }
 
     /**
@@ -376,7 +414,7 @@ public class MainWindow extends UiPart<Stage> {
             logger.info("Result: " + commandResult.getFeedbackToUser());
             resultDisplay.setFeedbackToUser(commandResult.getFeedbackToUser());
 
-
+            /*If the command is something that alters the trip list, page will be refreshed after execution*/
             if (currentPage == HOME) {
                 HomeModelManager currentModel = ((HomeLogicManager) logic).getModel();
                 mainPanelPlaceholder.getChildren().removeAll(mainPanel.getRoot());
