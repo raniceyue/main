@@ -7,14 +7,22 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.Scene?>
 <?import javafx.stage.Stage?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import java.net.URL?>
 <fx:root resizable="false" title="Help" type="javafx.stage.Stage" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1">
-  <icons>
-    <Image url="@/images/help_icon.png" />
-  </icons>
   <scene>
     <Scene>
-         <HBox alignment="CENTER">
-            <children>
+        <stylesheets>
+            <URL value="@VolantTheme.css" />
+            <URL value="@Extensions.css" />
+        </stylesheets>
+         <VBox alignment="CENTER" style="-fx-background-color: #fff">
+             <StackPane>
+                 <Label text="Help Window: Trip Page" styleClass="label-header"/>
+             </StackPane>
+             <TextArea fx:id="textArea" styleClass="text-field" VBox.vgrow="ALWAYS">
                <Label fx:id="helpMessage" text="Label">
                   <HBox.margin>
                      <Insets right="5.0" />
@@ -25,7 +33,7 @@
                      <Insets left="5.0" />
                   </HBox.margin>
                </Button>
-            </children>
+             </TextArea>
 
             <opaqueInsets>
                <Insets bottom="10.0" left="5.0" right="10.0" top="5.0" />
@@ -34,7 +42,7 @@
              <padding>
                <Insets bottom="10.0" left="5.0" right="10.0" top="5.0" />
             </padding>
-         </HBox>
+         </VBox>
     </Scene>
   </scene>
 </fx:root>

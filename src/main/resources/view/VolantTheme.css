@@ -27,6 +27,32 @@
     -fx-opacity: 0.9;
 }
 
+.text-field {
+    -fx-background-color: -fx-text-box-border, -fx-background ;
+    -fx-border-color: #000;
+    -fx-border-width: 2px;
+    -fx-focus-color: transparent;
+    -fx-indent: 0;
+}
+
+.text-field:focused {
+    -fx-background-color: -fx-focus-color, -fx-background ;
+}
+
+.text-area .content {
+    -fx-background-color: transparent, white, transparent, white;
+    -fx-font-size: 10px;
+}
+
+.text-area:focused .content {
+    -fx-background-color: transparent, white, transparent, white;
+    -fx-font-size: 10px;
+}
+
+.help-window-text {
+    -fx-font-size: 10px;
+}
+
 .label-bright {
     -fx-font-size: 11pt;
     -fx-font-family: "Roboto Mono";

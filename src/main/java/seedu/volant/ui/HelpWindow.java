@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.stage.Stage;
@@ -27,6 +28,9 @@ public class HelpWindow extends UiPart<Stage> {
     @FXML
     private Label helpMessage;
 
+    @FXML
+    private TextArea textArea;
+
     /**
      * Creates a new HelpWindow.
      *
@@ -34,7 +38,10 @@ public class HelpWindow extends UiPart<Stage> {
      */
     public HelpWindow(Stage root) {
         super(FXML, root);
+        root.setResizable(true);
         helpMessage.setText(HELP_MESSAGE);
+        textArea.setEditable(false);
+        textArea.setWrapText(true);
     }
 
     /**
