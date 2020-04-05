@@ -23,8 +23,10 @@ By: `AY1920S2-2103T-F09-4`      Since: `Jan 2020`      Licence: `MIT`
 Volant is a travel companion application for solo travellers for who *prefer to use a desktop app to manage their travels*.
 This user guide aims to provide users with information on how to use each and every function of the Volant app.
 
+
 .Home page of Volant
 image::Ui.png[width="790"]
+
 
 Volant is *optimized for those who prefer to work with a Command Line Interface* (CLI) while still having the benefits of a Graphical User Interface (GUI).
 If you can type fast, Volant can get you planning, executing and reflecting on your trip faster than traditional GUI apps.
@@ -44,7 +46,7 @@ In this user guide, you will see certain icons that will aid in highlighting tip
 |Icon       |Meaning
 a|image::user-guide/tip_icon.png[] | This icon denotes useful tips to note when using Volant.
 a|image::user-guide/info_icon.png[]  | This icon denotes important details to take note of when using Volant.
-|=================
+
 
 ==== Markdown Notations
 
@@ -58,7 +60,7 @@ There will also be certain markdown notations to distinguish between normal text
 | `delete INDEX` +
 `TRIP_FEATURE` +
 `TRIP PAGE` | This markdown notation highlights commands and terminology specific to the use of Volant.
-|=================
+
 
 == Quick Start
 This section contains instructions on how to get the Volant app up and running.
@@ -253,6 +255,7 @@ command will conveniently move you directly to the `HOME` page.
 [caption=]
 .You are on the `ITINERARY` page of a specific `TRIP`
 image::user-guide/back-command-before.png[width="600"]
+
 
 [caption=]
 .After using the `home` command, you will be moved to the `HOME` page
