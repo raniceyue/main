@@ -376,7 +376,7 @@ If you would like to update the details of a trip, this command allows you to co
 
 *Expected Outcome*
 
-For example, you would like to edit the details of the first trip on your trip list, and would like to only change 
+For example, you would like to edit the details of the first trip on your trip list, and would like to only change
 the `TRIP_NAME` of the `TRIP`, from _Family Trip_ to _Family Trip 2020_, and the `LOCATION` of the `TRIP` from _Berlin_ to _Frankfurt_.
 
 [caption=]
