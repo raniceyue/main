@@ -23,8 +23,8 @@ By: `AY1920S2-2103T-F09-4`      Since: `Jan 2020`      Licence: `MIT`
 Volant is a travel companion application for solo travellers for who *prefer to use a desktop app to manage their travels*.
 This user guide aims to provide users with information on how to use each and every function of the Volant app.
 
-image::Ui.png[width="790"]
 .Home page of Volant
+image::Ui.png[width="790"]
 
 Volant is *optimized for those who prefer to work with a Command Line Interface* (CLI) while still having the benefits of a Graphical User Interface (GUI).
 If you can type fast, Volant can get you planning, executing and reflecting on your trip faster than traditional GUI apps.
@@ -39,23 +39,25 @@ There are some important notations that you should take note of when reading thi
 In this user guide, you will see certain icons that will aid in highlighting tips and important information that will help and instruct you on things to take note of when using Volant.
 
 .Table of Icons
-[width="50%", cols="1, 2", options="header"]
+[cols="1, 2", options="header"]
 |=================
 |Icon       |Meaning
-a|image::/images/user-guide/tip_icon.png[] | This icon denotes useful tips to note when using Volant.
-a|image::/images/user-guide/info_icon.png[]  | This icon denotes important details to take note of when using Volant.
+a|image::user-guide/tip_icon.png[] | This icon denotes useful tips to note when using Volant.
+a|image::user-guide/info_icon.png[]  | This icon denotes important details to take note of when using Volant.
 |=================
 
 ==== Markdown Notations
 
-There will also be certain markdown notations to distinguish between
+There will also be certain markdown notations to distinguish between normal text in the user guide and commands to use in Volant, etc.
 
 .Table of Markdown Notations
-[width="50%", cols="1, 2", options="header"]
+[cols="1, 2", options="header"]
 |=================
 |Markdown       |Meaning
 |kbd:[Enter] kbd:[F1] kbd:[F5] | This markdown notation highlights keys to press on your keyboard.
-| `command`  | This markdown notation highlights
+| `delete INDEX` +
+`TRIP_FEATURE` +
+`TRIP PAGE` | This markdown notation highlights commands and terminology specific to the use of Volant.
 |=================
 
 == Quick Start
@@ -83,7 +85,7 @@ Each `TRIP` contains trip features such as an `ITINERARY` and `JOURNAL`.
 
 === Home Page
 If you would like to view all your past trips and upcoming trips at one glance, you can view them on the Home Page.
-The trip list is neatly organised into two section: upcoming trips and past trips.
+your trip list is neatly organised into two section: upcoming trips and past trips.
 
 === Journal
 If you have some thoughts that you would like to pen down during, before or after your trip, you can write it into a journal entry.
@@ -128,7 +130,7 @@ Commands entered will produce a different outcome depending on which page you ar
 Additionally, there are a number of commands that are universal, and will work on every page.
 
 *Table 1: Types of Pages*
-[cols="1, 3", width="60%", options="header"]
+[cols="1, 3", options="header"]
 |===
 | Page | Details
 |`HOME`| Volant's Home page, featuring the entire list of trips in Volant.
@@ -142,11 +144,60 @@ Additionally, there are a number of commands that are universal, and will work o
 === Universal Commands
 Universal commands are commands that can be used on all pages.
 
+==== Opening the Help window: `help`
+Opens the Help window.
+
+[caption=]
+.Usage
+[cols="1h, 5"]
+|=======================
+|Syntax     |`help`
+|Example    |`help`
+|=======================
+
+TIP: You can also execute this command by using the kbd:[F1] key on your keyboard.
+
+*Expected Outcome*
+
+A separate help window will appear with details on the available commands for the current page, and their usage.
+
+image::user-guide/helpwindow.png[width="600"]
+
+[[refresh]]
+==== Refreshing a page: `rf`
+If you would like to refresh a page to its original state after executing a command, the `rf` command will help you
+to reload the page.
+
+[caption=]
+.Usage
+[cols="1h, 5"]
+|=======================
+|Syntax     |`rf`
+|Example    |`rf`
+|=======================
+
+TIP: You can also execute this command by using the kbd:[F5] key on your keyboard.
+
+*Expected Outcome*
+
+For example, after using the `find` command on the `HOME` page, the `HOME` page will display the results of the `find` command.
+To return the `HOME` page to its original state (listing all trips), you can use the `rf` command.
+
+[caption=]
+.After using the `find` command on the `HOME` page, only the results of the command will be displayed.
+image::user-guide/refresh-command-before.png[width="600"]
+
+[caption=]
+.After using the `rf` command, the `HOME` page will return to its original state and will list all trips.
+image::user-guide/refresh-command-after.png[width="600"]
+
+
 ==== Going back to a previous page: `back`
-If you would like return to the previous page to access other features, this command navigates Volant to the previous page,
+If you would like return back to the previous page to access other features, this command navigates you to the previous page,
 depending on which page you are currently on.
 
-*Usage*
+[caption=]
+.Usage
 [cols="1h, 5"]
 |=======================
 |Syntax     |   `back`
@@ -155,68 +206,69 @@ depending on which page you are currently on.
 
 *Expected Outcome*
 
-The outcome of the `back` command is dependent on which page the user is on.
+For example, if the user is in a `TRIP` page, using the `back` command will navigate the user to the `TRIP` page associated with the `ITINERARY`.
 
-For example, if the user is in an `ITINERARY` page, using the `back` command will navigate the user to the `TRIP` page associated with the `ITINERARY`.
+[caption=]
+.You are on the `ITINERARY` page of a specific `TRIP`
+image::user-guide/back-command-before.png[width="600"]
 
-DIAGRAM TO BE INSERTED HERE.
+[caption=]
+.After using the `back` command, you will be moved to the `TRIP` page of the specific `TRIP`
+image::user-guide/back-command-after.png[width="600"]
+
 
 [TIP]
-
 ====
-*Table 2: Possible Outcomes for `back` Command*
+[caption=]
+.Table of possible outcome for the `back` Command
 [cols="1, 2", options="header,footer"]
 |=======================
-|Page                   |Outcome
-|Any `JOURNAL` page     | User will be directed to `TRIP` page of the trip in which the `JOURNAL` is stored.
-|Any `ITINERARY` page   | User will be directed to `TRIP` page of the trip in which the `ITINERARY` is stored.
-|Any `TRIP` page        | User will be directed to the `HOME` page.
+|Your current page      | Outcome
+|Any `JOURNAL` page     | You will be directed to `TRIP` of the trip in which the `JOURNAL` is stored.
+|Any `ITINERARY` page   | You will be directed to `TRIP` of the trip in which the `ITINERARY` is stored.
+|Any `TRIP` page        | You will be directed to the `HOME`.
 |The `HOME` page        | Nothing will happen as it is the root page.
 |=======================
 
 ====
 
 ==== Going back to the Home Page: `home`
-If you would like to see your list of trips, this command will return Volant to the `HOME` page from any page.
+If you want to quickly jump back to the `HOME` page, this command will return you to the `HOME` page from any other page.
 
-*Usage*
+[caption=]
+.Usage
 [cols="1h, 5"]
 |=======================
 |Syntax     |`home`
 |Example    |`home`
 |=======================
 
-*Expected Outcome*
-
-
-
-==== Opening the Help window: `help` `[coming in v2.0]`
-Opens the Help window.
-
-*Usage*
-[cols="1h, 5"]
-|=======================
-|Syntax     |`help`
-|Example    |`help`
-|=======================
+NOTE: This command does not work while you are on the `HOME` page.
 
 *Expected Outcome*
 
-A separate help window will appear with details on the available commands for the current view, and their usage.
+For example, if you would like to return to the `HOME` page of Volant from a specific `ITINERARY` page, using the `home`
+command will conveniently move you directly to the `HOME` page.
 
-image::/images/user-guide/helpwindow.png[]
+[caption=]
+.You are on the `ITINERARY` page of a specific `TRIP`
+image::user-guide/back-command-before.png[width="600"]
 
+[caption=]
+.After using the `home` command, you will be moved to the `HOME` page
+image::user-guide/home-page.png[width="600"]
 
-=== Home Page
+=== Commands for the Home Page
 
-The `HOME` page consists of a list of all trips stored in the program.
+The `HOME` page consists of a list of all your upcoming and past trips.
 
-From this page, you can manipulate the trip list, as well as navigate to other pages.
+From this page, you can manipulate your trip list, as well as navigate to other pages.
 
 ==== Navigating to a `TRIP` page: `goto`
 If you would like to access the features in a particular trip, this command navigates to the page of a trip at the specified `INDEX`.
 
-*Usage*
+[caption=]
+.Usage
 [cols="1h, 5"]
 |=======================
 |Syntax     |`goto INDEX`
@@ -224,42 +276,59 @@ If you would like to access the features in a particular trip, this command navi
 |=======================
 
 
-NOTE: `INDEX` must be a positive integer value, within range of the number of entries in the trip list.
+NOTE: `INDEX` must be a positive integer value, within range of the number of entries in your trip list.
 
 
 *Expected Outcome*
 
-Navigates to the twelveth trip on the trip list.
+For example, you are on the `HOME` page and would like to navigate to the `TRIP` page of the trip, _Winter Break_.
 
-DIAGRAM TO BE INSERTED HERE.
+[caption=]
+.You are on the `HOME` page and you want to navigate to the `TRIP` page of the 3rd `TRIP`, _Winter Break_.
+image::user-guide/home-goto-before.png[width="600"]
 
+[caption=]
+.After using command `goto 3` you will be navigated to the 3rd `TRIP`, _Winter Break_.
+image::user-guide/home-goto-after.png[width="600"]
 
-==== Adding a trip to the trip list: `add`
+==== Adding a trip to your trip list: `add`
 
-If you would like to add a trip to the trip list, this command allows you to do so, while specifying the `NAME` of the trip,
+If you would like to add a trip to your trip list, this command allows you to do so, while specifying the `TRIP_NAME` of the trip,
 the trip `LOCATION`, and the date range from `TRIP_START_DATE` to `TRIP_END_DATE`.
 
-*Usage*
+Upon adding a `TRIP` to Volant, a new folder with the name `TRIP_NAME` will be created in the *data file*.
+
+[caption=]
+.Usage
 [cols="1h, 5"]
 |=======================
 |Syntax     |`add n/TRIP_NAME l/LOCATION d/TRIP_START_DATE to TRIP_END_DATE`
-|Example    |`add n/Graduation Trip l/Bangkok d/01-02-2020 to 05-02-2020`
+|Example    |`add n/Graduation Trip l/Bangkok d/01-06-2020 to 05-06-2020`
 |=======================
 
 NOTE: The date range should be written in the format `d/DD-MM-YYYY to DD-MM-YYYY`.
 
 *Expected Outcome*
 
-Adds a trip to the trip list with the name *Graduation Trip*, location being *Bangkok*, and date range of the trip being from
-*1st February 2020* to *5th February 2020*.
+For example, you would like to add a `TRIP` to your trip list with the name *Graduation Trip*, location being *Bangkok*,
+and date range of the trip being from *1st February 2020* to *5th February 2020*. Executing the command will add the `TRIP`
+to your trip list.
 
-DIAGRAM TO BE INSERTED HERE.
+[caption=]
+.You would like to add a `TRIP` to your trip list and enter the `add` command including the specific metadata of the `TRIP`
+image::user-guide/home-add-before.png[width="600"]
 
+[caption=]
+.After using the `add` command, the new `TRIP` will be added to your trip list and displayed under _UPCOMING TRIPS_.
+image::user-guide/home-add-after.png[width="600"]
 
 ==== Deleting a trip: `delete`
 If you would like to remove a trip, this command deletes the trip at the specified `INDEX`.
 
-*Usage*
+Upon deletion of the `TRIP`, the folder containing the trip and its associated data will be deleted.
+
+[caption=]
+.Usage
 [cols="1h, 5"]
 |=======================
 |Syntax     |`delete INDEX`
@@ -268,39 +337,92 @@ If you would like to remove a trip, this command deletes the trip at the specifi
 
 [NOTE]
 ====
-* `INDEX` must be a positive integer value, within range of the number of trips in the trip list.
+* `INDEX` must be a positive integer value, within range of the number of trips in your trip list.
 ====
 
 *Expected Outcome*
 
-The second trip on the list will be deleted along with its associated data (itinerary, journal, etc).
+For example, you would like to delete the second trip on your trip list, _Graduation Trip_. After using this command, the
+`TRIP` will be removed from your trip list.
 
-DIAGRAM TO BE INSERTED HERE.
+[caption=]
+.You want to delete the second trip on your trip list, _Graduation Trip_.
+image::user-guide/home-delete-before.png[width="600"]
+
+[caption=]
+.After using the `delete` command, the trip will be removed from your trip list.
+image::user-guide/home-delete-after.png[width="600"]
 
 ==== Editing trip details: `edit`
-If you would like to update the details of a trip, this command allows you to edit the details of the trip at a specified `INDEX`.
+If you would like to update the details of a trip, this command allows you to conveniently edit the details of the trip at a specified `INDEX`.
 
-*Usage*
+[caption=]
+.Usage
 [cols="1h, 5"]
 |=======================
 |Syntax     |`edit INDEX [n/TRIP_NAME] [l/LOCATION] [d/TRIP_START_DATE to TRIP_END_DATE]`
-|Example    |`edit 2 n/School Trip l/France`
+|Example    |`edit 1 n/Family Trip 2020 l/Frankfurt`
 |=======================
 
 [NOTE]
 ====
-* `INDEX` must be a positive integer value, within range of the number of trips in the trip list.
+* `INDEX` must be a positive integer value, within range of the number of trips in your trip list.
 * The date range should be written in the format `d/DD-MM-YYYY to DD-MM-YYYY`.
+* If you were to edit the `TRIP_NAME` of a `TRIP`, the name of the data folder of the specific `TRIP` will simultaneously be edited.
 ====
-
 
 *Expected Outcome*
 
-The details of the trip will be updated according to the parameters provided.
+For example, you would like to edit the details of the first trip on your trip list, and would like to only change 
+the `TRIP_NAME` of the `TRIP`, from _Family Trip_ to _Family Trip 2020_, and the `LOCATION` of the `TRIP` from _Berlin_ to _Frankfurt_.
 
-DIAGRAM TO BE INSERTED HERE.
+[caption=]
+.You want to edit the `TRIP_NAME` and `LOCATION` of the first trip in your trip list.
+image::user-guide/home-edit-before.png[width="600"]
 
-=== Trip Page
+[caption=]
+.After using the `edit` command, the `TRIP_NAME` and `LOCATION` of the trip will be changed accordingly.
+image::user-guide/home-edit-after.png[width="600"]
+
+==== Finding a trip in the list: `find`
+If you would like to search for a specific trip in your trip list, you can use the `find` command to locate any trip with a
+a specific `KEYWORD` in its name.
+
+Volant will then locate all trips with names containing the specific `KEYWORD`, and display
+them on the `HOME` page.
+
+[caption=]
+.Usage
+[cols="1h, 5"]
+|=======================
+|Syntax     |`find KEYWORD`
+|Example    |`find fuji`
+|=======================
+
+[TIP]
+====
+* The `KEYWORD` parameter is case insensitive, meaning that using the `KEYWORD` "fUji" will return all trips with the word
+"fuji" in their names regardless of the case of each character.
+* If you would like to revert the `HOME` page to its original state after viewing the results of the `find` command, you can
+use the `rf` command to refresh the page. +
++
+See <<refresh>> for more details.
+====
+
+*Expected Outcome*
+
+For example, you would like search for a trip on the trip list with the `KEYWORD`, "fuji" in the `TRIP` 's name.
+Volant will locate all `TRIP` s with the `KEYWORD`, "fuji".
+
+[caption=]
+.You want to search for all `TRIP` s with names containing the `KEYWORD`, "fuji".
+image::user-guide/home-find-before.png[width="600"]
+
+[caption=]
+.After using the `find` command, Volant will display all trips with the specified `KEYWORD`.
+image::user-guide/home-find-after.png[width="600"]
+
+=== Commands for the Trip Page
 
 The `TRIP` page of a specific trip displays the details of the trip as well as the details of the trip's `ITINERARY` and `JOURNAL` at a glance.
 From this page, you can navigate to the `ITINERARY` and `JOURNAL` pages associated with the trip.
@@ -308,7 +430,8 @@ From this page, you can navigate to the `ITINERARY` and `JOURNAL` pages associat
 ==== Navigating to a feature in the trip page: `goto`
 If you would like to access either the `JOURNAL` or `ITINERARY` of the trip, this command will navigate Volant to the feature.
 
-*Usage*
+[caption=]
+.Usage
 [cols="1h, 5"]
 |=======================
 |Syntax     |`goto TRIP_FEATURE`
@@ -339,7 +462,8 @@ From this page, you can manipulate the itinerary, as well as navigate to other p
 ==== Adding an activity: `add`
 If you would like to plan a new activity for the itinerary, this command allows you to add a new activity to the itinerary.
 
-*Usage*
+[caption=]
+.Usage
 [cols="1h, 5"]
 |=======================
 |Syntax     |`add a/ACTIVITY_TITLE l/LOCATION d/DATE t/TIME`
@@ -362,7 +486,8 @@ INSERT DIAGRAM HERE.
 ==== Deleting an activity: `delete`
 If you would like to remove an activity from the itinerary, this command deletes the activity at a specified `INDEX`.
 
-*Usage*
+[caption=]
+.Usage
 [cols="1h, 5"]
 |=======================
 |Syntax     |`delete INDEX`
@@ -383,7 +508,8 @@ INSERT DIAGRAM HERE.
 ==== Editing an activity: `edit`
 If you would like to update the details of a particular activity in the itinerary, this commands allows you to edit the activity at a specified `INDEX`.
 
-*Usage*
+[caption=]
+.Usage
 [cols="1h, 5"]
 |=======================
 |Syntax     |`edit INDEX [a/ACTIVITY_TITLE] [l/LOCATION] [d/DATE] [t/TIME]`
@@ -408,7 +534,8 @@ INSERT DIAGRAM HERE.
 If you would like to search for a particular activity that matches a certain name, location, date or time, this command
 allows you to find the activity/activities that match(es) the search keyword.
 
-*Usage*
+[caption=]
+.Usage
 [cols="1h, 5"]
 |=======================
 |Syntax     |`find [a/ACTIVITY_TITLE] [l/LOCATION] [d/DATE] [t/TIME]`
@@ -435,7 +562,8 @@ Here, you can manipulate the list of journal entries, as well as navigate to oth
 ==== Adding a journal entry: `add`
 If you would like to record a new journal entry, this command adds a new entry to the journal.
 
-*Usage*
+[caption=]
+.Usage
 [cols="1h, 5"]
 |=======================
 |Syntax     |`add d/DATE t/TIME c/CONTENT [l/LOCATION] [f/FEELING] [w/WEATHER]`
@@ -475,7 +603,8 @@ INSERT DIAGRAM HERE
 ==== Deleting a journal entry: `delete`
 If you would like to remove an entry from the journal, this command deletes the entry at the specified `INDEX`.
 
-*Usage*
+[caption=]
+.Usage
 [cols="1h, 5"]
 |=======================
 |Syntax     |`delete INDEX`
@@ -484,7 +613,7 @@ If you would like to remove an entry from the journal, this command deletes the 
 
 [NOTE]
 ====
-* `INDEX` must be a positive integer value, within range of the number of trips in the trip list.
+* `INDEX` must be a positive integer value, within range of the number of trips in your trip list.
 ====
 
 *Expected Outcome*
@@ -497,7 +626,8 @@ DIAGRAM TO BE INSERTED HERE.
 If you would like to update a journal entry with new content, a new location, a new date, a new time, a new feeling or
 a new weather, this command allows you to edit the entry at a specified `INDEX`.
 
-*Usage*
+[caption=]
+.Usage
 [cols="1h, 5"]
 |=======================
 |Syntax     |`edit INDEX [d/NEW_DATE] [t/NEW_TIME] [c/NEW_CONTENT] [l/NEW_LOCATION] [f/NEW_FEELING] [w/NEW_WEATHER]`
@@ -519,7 +649,8 @@ INSERT DIAGRAM HERE.
 ==== Sorting a list of current journal entries: `sort`
 If you would like arrange your journal entries in a certain order, this command sorts the list of entries in a specified order.
 
-*Usage*
+[caption=]
+.Usage
 [cols="1h, 5"]
 |=======================
 |Syntax     |`sort [SORT_TYPE]`
