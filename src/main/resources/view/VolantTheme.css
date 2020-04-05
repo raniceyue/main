@@ -88,7 +88,7 @@
 .stack-header {
     -fx-alignment: center;
     -fx-background-color: #6892ff;
-    -fx-border-width: 1px 0px 2px 0px;
+    -fx-border-width: 0px 0px 2px 0px;
     -fx-border-color: black;
 }
 
@@ -106,11 +106,12 @@
     -fx-font-family: "Roboto Mono Bold";
     -fx-text-fill: black;
     -fx-padding: 10 10 10 10;
+    -fx-border-width: 0;
 }
 
 .stack-welcome {
     -fx-background-color: #FEFBF7;
-    -fx-border-width: 1px 0px 1px 0px;
+    -fx-border-width: 0px 0px 1px 0px;
     -fx-border-color: black;
 }
 
@@ -230,7 +231,7 @@
 
 .status-bar {
     -fx-background-color: derive(#F08080, 20%);
-    -fx-border-width: 1px 1px 0px 1px;
+    -fx-border-width: 1px 0px 0px 0px;
     -fx-border-color: black;
 }
 
@@ -289,7 +290,7 @@
 
 .menu-bar {
     -fx-background-color: derive(#fff968, 0%);
-    -fx-border-width: 1px 1px 0px 1px;
+    -fx-border-width: 1px 0px 2px 0px;
     -fx-border-color: black;
 }
 
@@ -400,29 +401,51 @@
 }
 
 .scroll-bar .thumb {
-    -fx-min-width: 30px;
     -fx-background-color: #fff;
-    -fx-border-width: 2px 1px 2px 0px;
+    -fx-border-width: 2px 0px 2px 0px;
     -fx-border-color: black;
     -fx-background-radius: 0em;
     -fx-background-insets: 0px;
 }
 
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: white;
+    -fx-background-insets: white;
+    -fx-border-color: black;
+    -fx-border-width: 1px 1px 0px 0px;
+}
+
 .scroll-bar .increment-button {
-    -fx-min-width: 20px;
-    -fx-min-height: 20px;
+    -fx-border-width: 2px 0px 0px 0px;
 }
 
 .scroll-bar .decrement-button {
-    -fx-min-width: 20px;
-    -fx-min-height: 20px;
+    -fx-border-width: 0px 0px 2px 0px;
 }
 
 .scroll-bar > .increment-button > .increment-arrow,
 .scroll-bar > .decrement-button > .decrement-arrow {
     -fx-background-color: black;
+    -fx-border-color: black;
+    -fx-pref-height: 14;
+    -fx-pref-width: 15;
 }
 
+.scroll-bar > .increment-button > .increment-arrow {
+    -fx-shape: "M 210 460 L 280 460 L 440 260 L 390 220 L 280 360 L 280 90 L 210 90 L 210 360 L 100 220 L 50 260 L 210 460 ";
+}
+
+
+.scroll-bar > .decrement-button > .decrement-arrow {
+    -fx-shape: "M 210 40 L 290 40 L 470 260 L 410 310 L 290 150 L 290 460 L 210 460 L 210 150 L 80 310 L 20 260 L 210 40";
+}
+
+.scroll-bar > .increment-button:hover,
+.scroll-bar > .decrement-button:hover {
+    -fx-background-insets: 0 0 0 0, 0;
+    -fx-background-color: transparent;
+}
 
 #cardPane {
     -fx-background-color: transparent;
@@ -437,13 +460,13 @@
 
 .stackPane-ResultBox {
     -fx-background-color: #FBFCDD;
-    -fx-border-width: 2px 1px 0px 1px;
+    -fx-border-width: 2px 0px 0px 0px;
     -fx-border-color: #000;
 }
 
 .stackPane-CommandBox {
     -fx-background-color: #FBFCDD;
-    -fx-border-width: 0px 1px 1px 1px;
+    -fx-border-width: 0px 0px 1px 0px;
     -fx-border-color: #000;
 }
 

@@ -40,10 +40,11 @@ public class HomePage extends UiPart<Region> {
             }
         }
 
+
         if (upcoming.isEmpty()) {
-            tripListViewUpcoming.setMaxHeight(0);
+            tripListViewUpcoming.setPrefHeight(0);
         } else {
-            tripListViewUpcoming.setMaxHeight(upcoming.size() * 105);
+            tripListViewUpcoming.setPrefHeight(upcoming.size() * 105);
         }
 
         tripListViewUpcoming.setItems(upcoming);

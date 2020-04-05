@@ -38,8 +38,8 @@
           </MenuBar>
 
           <!--  MAIN PANEL: THIS SWITCHES WITH EVERY NAVIGATION COMMAND -->
-          <ScrollPane fx:id="scrollPane">
-            <VBox fx:id="mainPanel" minWidth="340" prefWidth="340" styleClass="pane-with-border" VBox.vgrow="ALWAYS">
+          <ScrollPane fx:id="scrollPane" styleClass="edge-to-edge">
+            <VBox fx:id="mainPanel" minWidth="340" prefWidth="340" VBox.vgrow="ALWAYS">
               <StackPane fx:id="mainPanelPlaceholder" VBox.vgrow="ALWAYS" />
             </VBox>
           </ScrollPane>
