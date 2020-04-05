@@ -42,6 +42,7 @@ import seedu.volant.trip.model.Itinerary;
 import seedu.volant.trip.model.Journal;
 import seedu.volant.trip.model.TripFeature;
 import seedu.volant.trip.model.TripModelManager;
+import seedu.volant.ui.pages.home.HomeHelpWindow;
 import seedu.volant.ui.pages.home.HomePage;
 import seedu.volant.ui.pages.itinerary.ItineraryPage;
 import seedu.volant.ui.pages.journal.JournalPage;
@@ -69,7 +70,7 @@ public class MainWindow extends UiPart<Stage> {
 
     private ResultDisplay resultDisplay;
 
-    private HelpWindow helpWindow;
+    private HomeHelpWindow homeHelpWindow;
 
     @FXML
     private StackPane commandBoxPlaceholder;
@@ -105,7 +106,7 @@ public class MainWindow extends UiPart<Stage> {
         setWindowDefaultSize(logic.getGuiSettings());
         setAccelerators();
 
-        helpWindow = new HelpWindow();
+        homeHelpWindow = new HomeHelpWindow();
         scrollPane.setFitToWidth(true);
     }
 
@@ -227,10 +228,10 @@ public class MainWindow extends UiPart<Stage> {
      */
     @FXML
     public void handleHelp() {
-        if (!helpWindow.isShowing()) {
-            helpWindow.show();
+        if (!homeHelpWindow.isShowing()) {
+            homeHelpWindow.show();
         } else {
-            helpWindow.focus();
+            homeHelpWindow.focus();
         }
     }
 
@@ -242,7 +243,7 @@ public class MainWindow extends UiPart<Stage> {
         GuiSettings guiSettings = new GuiSettings(primaryStage.getWidth(), primaryStage.getHeight(),
             (int) primaryStage.getX(), (int) primaryStage.getY());
         logic.setGuiSettings(guiSettings);
-        helpWindow.hide();
+        homeHelpWindow.hide();
         primaryStage.hide();
     }
 

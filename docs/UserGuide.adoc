@@ -8,6 +8,7 @@
 :imagesDir: images
 :stylesDir: stylesheets
 :xrefstyle: full
+:icons: font
 :experimental:
 ifdef::env-github[]
 :tip-caption: :bulb:
@@ -22,30 +23,49 @@ By: `AY1920S2-2103T-F09-4`      Since: `Jan 2020`      Licence: `MIT`
 Volant is a travel companion application for solo travellers for who *prefer to use a desktop app to manage their travels*.
 This user guide aims to provide users with information on how to use each and every function of the Volant app.
 
+image::Ui.png[width="790"]
+.Home page of Volant
+
 Volant is *optimized for those who prefer to work with a Command Line Interface* (CLI) while still having the benefits of a Graphical User Interface (GUI).
 If you can type fast, Volant can get you planning, executing and reflecting on your trip faster than traditional GUI apps.
 
 Interested? Jump to the <<Quick Start>> to get started. Enjoy!
 
-====
-*Reading this User Guide*
+=== Reading this User Guide
+There are some important notations that you should take note of when reading this user guide!
 
-TIP: This icon denotes useful tips to note when using Volant.
+==== Icons and their meanings
 
-NOTE: This icon denotes important details to take note of when using Volant.
-====
+In this user guide, you will see certain icons that will aid in highlighting tips and important information that will help and instruct you on things to take note of when using Volant.
+
+.Table of Icons
+[width="50%", cols="1, 2", options="header"]
+|=================
+|Icon       |Meaning
+a|image::/images/user-guide/tip_icon.png[] | This icon denotes useful tips to note when using Volant.
+a|image::/images/user-guide/info_icon.png[]  | This icon denotes important details to take note of when using Volant.
+|=================
+
+==== Markdown Notations
+
+There will also be certain markdown notations to distinguish between
+
+.Table of Markdown Notations
+[width="50%", cols="1, 2", options="header"]
+|=================
+|Markdown       |Meaning
+|kbd:[Enter] kbd:[F1] kbd:[F5] | This markdown notation highlights keys to press on your keyboard.
+| `command`  | This markdown notation highlights
+|=================
 
 == Quick Start
 This section contains instructions on how to get the Volant app up and running.
 
-.  Ensure you have Java `11` or above installed on your computer.
+.  Ensure you have *Java 11* or above installed on your computer.
 .  Download the latest `volant.jar` file from our link:{https://github.com/AY1920S2-CS2103T-F09-4/main}/releases[releases page].
 .  Copy the file to the folder you want to use as the home folder for the application.
 .  Double-click the JAR file to start the app.
 .  The GUI should appear in a few seconds.
-+
-image::Ui.png[width="790"]
-+
 .  Type the command in the command box and press kbd:[Enter] to execute it. +
 e.g. Typing *`help`* and pressing kbd:[Enter] will open the help window.
 .  Refer to <<Features>> for a summary of the available features in this application.
@@ -168,7 +188,7 @@ If you would like to see your list of trips, this command will return Volant to 
 
 *Expected Outcome*
 
-DIAGRAM TO BE INSERTED HERE.
+
 
 ==== Opening the Help window: `help` `[coming in v2.0]`
 Opens the Help window.
@@ -182,9 +202,10 @@ Opens the Help window.
 
 *Expected Outcome*
 
-DIAGRAM TO BE INSERTED HERE.
+A separate help window will appear with details on the available commands for the current view, and their usage.
 
-NOTE: This command does not work when you are already on the `HOME` page.
+image::/images/user-guide/helpwindow.png[]
+
 
 === Home Page
 
