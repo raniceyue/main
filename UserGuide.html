@@ -14,7 +14,6 @@
 <li><a href="#reading-this-user-guide">1.1. Reading this User Guide</a>
 <ul class="sectlevel3">
 <li><a href="#icons-and-their-meanings">1.1.1. Icons and their meanings</a></li>
-<li><a href="#markdown-notations">1.1.2. Markdown Notations</a></li>
 </ul>
 </li>
 </ul>
@@ -35,20 +34,22 @@
 <li><a href="#pages-in-volant">4.1. Pages in Volant</a></li>
 <li><a href="#universal-commands">4.2. Universal Commands</a>
 <ul class="sectlevel3">
-<li><a href="#going-back-to-a-previous-page-code-back-code">4.2.1. Going back to a previous page: <code>back</code></a></li>
-<li><a href="#going-back-to-the-home-page-code-home-code">4.2.2. Going back to the Home Page: <code>home</code></a></li>
-<li><a href="#opening-the-help-window-code-help-code-code-coming-in-v2-0-code">4.2.3. Opening the Help window: <code>help</code> <code>[coming in v2.0]</code></a></li>
+<li><a href="#opening-the-help-window-code-help-code">4.2.1. Opening the Help window: <code>help</code></a></li>
+<li><a href="#refresh">4.2.2. Refreshing a page: <code>rf</code></a></li>
+<li><a href="#going-back-to-a-previous-page-code-back-code">4.2.3. Going back to a previous page: <code>back</code></a></li>
+<li><a href="#going-back-to-the-home-page-code-home-code">4.2.4. Going back to the Home Page: <code>home</code></a></li>
 </ul>
 </li>
-<li><a href="#home-page-2">4.3. Home Page</a>
+<li><a href="#commands-for-the-home-page">4.3. Commands for the Home Page</a>
 <ul class="sectlevel3">
 <li><a href="#navigating-to-a-code-trip-code-page-code-goto-code">4.3.1. Navigating to a <code>TRIP</code> page: <code>goto</code></a></li>
-<li><a href="#adding-a-trip-to-the-trip-list-code-add-code">4.3.2. Adding a trip to the trip list: <code>add</code></a></li>
+<li><a href="#adding-a-trip-to-your-trip-list-code-add-code">4.3.2. Adding a trip to your trip list: <code>add</code></a></li>
 <li><a href="#deleting-a-trip-code-delete-code">4.3.3. Deleting a trip: <code>delete</code></a></li>
 <li><a href="#editing-trip-details-code-edit-code">4.3.4. Editing trip details: <code>edit</code></a></li>
+<li><a href="#finding-a-trip-in-the-list-code-find-code">4.3.5. Finding a trip in the list: <code>find</code></a></li>
 </ul>
 </li>
-<li><a href="#trip-page">4.4. Trip Page</a>
+<li><a href="#commands-for-the-trip-page">4.4. Commands for the Trip Page</a>
 <ul class="sectlevel3">
 <li><a href="#navigating-to-a-feature-in-the-trip-page-code-goto-code">4.4.1. Navigating to a feature in the trip page: <code>goto</code></a></li>
 </ul>
@@ -74,8 +75,8 @@
 <li><a href="#faq">5. FAQ</a></li>
 <li><a href="#command-summary">6. Command Summary</a>
 <ul class="sectlevel2">
-<li><a href="#home-page-3">6.1. Home Page</a></li>
-<li><a href="#trip-page-2">6.2. Trip page</a></li>
+<li><a href="#home-page-2">6.1. Home Page</a></li>
+<li><a href="#trip-page">6.2. Trip page</a></li>
 <li><a href="#itinerary-2">6.3. Itinerary</a></li>
 <li><a href="#journal-3">6.4. Journal</a></li>
 </ul>
@@ -95,9 +96,9 @@ This user guide aims to provide users with information on how to use each and ev
 <div class="content">
 <img src="images/Ui.png" alt="Ui" width="790">
 </div>
+<div class="title">Figure 1. Home page of Volant</div>
 </div>
 <div class="paragraph">
-<div class="title">Home page of Volant</div>
 <p>Volant is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI).
 If you can type fast, Volant can get you planning, executing and reflecting on your trip faster than traditional GUI apps.</p>
 </div>
@@ -114,7 +115,7 @@ If you can type fast, Volant can get you planning, executing and reflecting on y
 <div class="paragraph">
 <p>In this user guide, you will see certain icons that will aid in highlighting tips and important information that will help and instruct you on things to take note of when using Volant.</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 50%;">
+<table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 1. Table of Icons</caption>
 <colgroup>
 <col style="width: 33.3333%;">
@@ -130,7 +131,7 @@ If you can type fast, Volant can get you planning, executing and reflecting on y
 <tr>
 <td class="tableblock halign-left valign-top"><div><div class="imageblock">
 <div class="content">
-<img src="/images/user-guide/tip_icon.png" alt="tip icon">
+<img src="images/user-guide/tip_icon.png" alt="tip icon">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This icon denotes useful tips to note when using Volant.</p></td>
@@ -138,42 +139,24 @@ If you can type fast, Volant can get you planning, executing and reflecting on y
 <tr>
 <td class="tableblock halign-left valign-top"><div><div class="imageblock">
 <div class="content">
-<img src="/images/user-guide/info_icon.png" alt="info icon">
+<img src="images/user-guide/info_icon.png" alt="info icon">
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This icon denotes important details to take note of when using Volant.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This icon denotes important details to take note of when using Volant.</p>
+<p class="tableblock">==== Markdown Notations</p>
+<p class="tableblock">There will also be certain markdown notations to distinguish between normal text in the user guide and commands to use in Volant, etc.</p>
+<p class="tableblock">.Table of Markdown Notations
+[cols="1, 2", options="header"]</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="sect3">
-<h4 id="markdown-notations"><a class="link" href="#markdown-notations">1.1.2. Markdown Notations</a></h4>
 <div class="paragraph">
-<p>There will also be certain markdown notations to distinguish between</p>
+<p>|Markdown       |Meaning
+|<kbd>Enter</kbd> <kbd>F1</kbd> <kbd>F5</kbd> | This markdown notation highlights keys to press on your keyboard.
+| <code>delete INDEX</code><br>
+<code>TRIP_FEATURE</code><br>
+<code>TRIP PAGE</code> | This markdown notation highlights commands and terminology specific to the use of Volant.</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 50%;">
-<caption class="title">Table 2. Table of Markdown Notations</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Markdown</th>
-<th class="tableblock halign-left valign-top">Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>Enter</kbd> <kbd>F1</kbd> <kbd>F5</kbd></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This markdown notation highlights keys to press on your keyboard.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>command</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This markdown notation highlights</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 </div>
@@ -234,7 +217,7 @@ Each <code>TRIP</code> contains trip features such as an <code>ITINERARY</code> 
 <h3 id="home-page"><a class="link" href="#home-page">3.2. Home Page</a></h3>
 <div class="paragraph">
 <p>If you would like to view all your past trips and upcoming trips at one glance, you can view them on the Home Page.
-The trip list is neatly organised into two section: upcoming trips and past trips.</p>
+your trip list is neatly organised into two section: upcoming trips and past trips.</p>
 </div>
 </div>
 <div class="sect2">
@@ -311,7 +294,7 @@ Additionally, there are a number of commands that are universal, and will work o
 <div class="paragraph">
 <p><strong>Table 1: Types of Pages</strong></p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 60%;">
+<table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -349,15 +332,114 @@ Additionally, there are a number of commands that are universal, and will work o
 <p>Universal commands are commands that can be used on all pages.</p>
 </div>
 <div class="sect3">
-<h4 id="going-back-to-a-previous-page-code-back-code"><a class="link" href="#going-back-to-a-previous-page-code-back-code">4.2.1. Going back to a previous page: <code>back</code></a></h4>
+<h4 id="opening-the-help-window-code-help-code"><a class="link" href="#opening-the-help-window-code-help-code">4.2.1. Opening the Help window: <code>help</code></a></h4>
 <div class="paragraph">
-<p>If you would like return to the previous page to access other features, this command navigates Volant to the previous page,
-depending on which page you are currently on.</p>
-</div>
-<div class="paragraph">
-<p><strong>Usage</strong></p>
+<p>Opens the Help window.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
+<caption class="title">Usage</caption>
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Syntax</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can also execute this command by using the <kbd>F1</kbd> key on your keyboard.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome</strong></p>
+</div>
+<div class="paragraph">
+<p>A separate help window will appear with details on the available commands for the current page, and their usage.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/user-guide/helpwindow.png" alt="helpwindow" width="600">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="refresh"><a class="link" href="#refresh">4.2.2. Refreshing a page: <code>rf</code></a></h4>
+<div class="paragraph">
+<p>If you would like to refresh a page to its original state after executing a command, the <code>rf</code> command will help you
+to reload the page.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Usage</caption>
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Syntax</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rf</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rf</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can also execute this command by using the <kbd>F5</kbd> key on your keyboard.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome</strong></p>
+</div>
+<div class="paragraph">
+<p>For example, after using the <code>find</code> command on the <code>HOME</code> page, the <code>HOME</code> page will display the results of the <code>find</code> command.
+To return the <code>HOME</code> page to its original state (listing all trips), you can use the <code>rf</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/user-guide/refresh-command-before.png" alt="refresh command before" width="600">
+</div>
+<div class="title">After using the <code>find</code> command on the <code>HOME</code> page, only the results of the command will be displayed.</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/user-guide/refresh-command-after.png" alt="refresh command after" width="600">
+</div>
+<div class="title">After using the <code>rf</code> command, the <code>HOME</code> page will return to its original state and will list all trips.</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="going-back-to-a-previous-page-code-back-code"><a class="link" href="#going-back-to-a-previous-page-code-back-code">4.2.3. Going back to a previous page: <code>back</code></a></h4>
+<div class="paragraph">
+<p>If you would like return back to the previous page to access other features, this command navigates you to the previous page,
+depending on which page you are currently on.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Usage</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 83.3334%;">
@@ -377,13 +459,19 @@ depending on which page you are currently on.</p>
 <p><strong>Expected Outcome</strong></p>
 </div>
 <div class="paragraph">
-<p>The outcome of the <code>back</code> command is dependent on which page the user is on.</p>
+<p>For example, if the user is in a <code>TRIP</code> page, using the <code>back</code> command will navigate the user to the <code>TRIP</code> page associated with the <code>ITINERARY</code>.</p>
 </div>
-<div class="paragraph">
-<p>For example, if the user is in an <code>ITINERARY</code> page, using the <code>back</code> command will navigate the user to the <code>TRIP</code> page associated with the <code>ITINERARY</code>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/user-guide/back-command-before.png" alt="back command before" width="600">
 </div>
-<div class="paragraph">
-<p>DIAGRAM TO BE INSERTED HERE.</p>
+<div class="title">You are on the <code>ITINERARY</code> page of a specific <code>TRIP</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/user-guide/back-command-after.png" alt="back command after" width="600">
+</div>
+<div class="title">After using the <code>back</code> command, you will be moved to the <code>TRIP</code> page of the specific <code>TRIP</code></div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -392,17 +480,15 @@ depending on which page you are currently on.</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="paragraph">
-<p><strong>Table 2: Possible Outcomes for <code>back</code> Command</strong></p>
-</div>
 <table class="tableblock frame-all grid-all spread">
+<caption class="title">Table of possible outcome for the <code>back</code> Command</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Page</th>
+<th class="tableblock halign-left valign-top">Your current page</th>
 <th class="tableblock halign-left valign-top">Outcome</th>
 </tr>
 </thead>
@@ -415,15 +501,15 @@ depending on which page you are currently on.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Any <code>JOURNAL</code> page</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">User will be directed to <code>TRIP</code> page of the trip in which the <code>JOURNAL</code> is stored.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You will be directed to <code>TRIP</code> of the trip in which the <code>JOURNAL</code> is stored.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Any <code>ITINERARY</code> page</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">User will be directed to <code>TRIP</code> page of the trip in which the <code>ITINERARY</code> is stored.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You will be directed to <code>TRIP</code> of the trip in which the <code>ITINERARY</code> is stored.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Any <code>TRIP</code> page</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">User will be directed to the <code>HOME</code> page.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You will be directed to the <code>HOME</code>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -433,14 +519,12 @@ depending on which page you are currently on.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="going-back-to-the-home-page-code-home-code"><a class="link" href="#going-back-to-the-home-page-code-home-code">4.2.2. Going back to the Home Page: <code>home</code></a></h4>
+<h4 id="going-back-to-the-home-page-code-home-code"><a class="link" href="#going-back-to-the-home-page-code-home-code">4.2.4. Going back to the Home Page: <code>home</code></a></h4>
 <div class="paragraph">
-<p>If you would like to see your list of trips, this command will return Volant to the <code>HOME</code> page from any page.</p>
-</div>
-<div class="paragraph">
-<p><strong>Usage</strong></p>
+<p>If you want to quickly jump back to the <code>HOME</code> page, this command will return you to the <code>HOME</code> page from any other page.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
+<caption class="title">Usage</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 83.3334%;">
@@ -456,64 +540,54 @@ depending on which page you are currently on.</p>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><strong>Expected Outcome</strong></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="opening-the-help-window-code-help-code-code-coming-in-v2-0-code"><a class="link" href="#opening-the-help-window-code-help-code-code-coming-in-v2-0-code">4.2.3. Opening the Help window: <code>help</code> <code>[coming in v2.0]</code></a></h4>
-<div class="paragraph">
-<p>Opens the Help window.</p>
-</div>
-<div class="paragraph">
-<p><strong>Usage</strong></p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<tbody>
+<div class="admonitionblock note">
+<table>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">Syntax</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This command does not work while you are on the <code>HOME</code> page.
+</td>
 </tr>
-<tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">Example</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
-</tr>
-</tbody>
 </table>
+</div>
 <div class="paragraph">
 <p><strong>Expected Outcome</strong></p>
 </div>
 <div class="paragraph">
-<p>A separate help window will appear with details on the available commands for the current view, and their usage.</p>
+<p>For example, if you would like to return to the <code>HOME</code> page of Volant from a specific <code>ITINERARY</code> page, using the <code>home</code>
+command will conveniently move you directly to the <code>HOME</code> page.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="/images/user-guide/helpwindow.png" alt="helpwindow">
+<img src="images/user-guide/back-command-before.png" alt="back command before" width="600">
 </div>
+<div class="title">You are on the <code>ITINERARY</code> page of a specific <code>TRIP</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/user-guide/home-page.png" alt="home page" width="600">
+</div>
+<div class="title">After using the <code>home</code> command, you will be moved to the <code>HOME</code> page</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="home-page-2"><a class="link" href="#home-page-2">4.3. Home Page</a></h3>
+<h3 id="commands-for-the-home-page"><a class="link" href="#commands-for-the-home-page">4.3. Commands for the Home Page</a></h3>
 <div class="paragraph">
-<p>The <code>HOME</code> page consists of a list of all trips stored in the program.</p>
+<p>The <code>HOME</code> page consists of a list of all your upcoming and past trips.</p>
 </div>
 <div class="paragraph">
-<p>From this page, you can manipulate the trip list, as well as navigate to other pages.</p>
+<p>From this page, you can manipulate your trip list, as well as navigate to other pages.</p>
 </div>
 <div class="sect3">
 <h4 id="navigating-to-a-code-trip-code-page-code-goto-code"><a class="link" href="#navigating-to-a-code-trip-code-page-code-goto-code">4.3.1. Navigating to a <code>TRIP</code> page: <code>goto</code></a></h4>
 <div class="paragraph">
 <p>If you would like to access the features in a particular trip, this command navigates to the page of a trip at the specified <code>INDEX</code>.</p>
 </div>
-<div class="paragraph">
-<p><strong>Usage</strong></p>
-</div>
 <table class="tableblock frame-all grid-all spread">
+<caption class="title">Usage</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 83.3334%;">
@@ -536,7 +610,7 @@ depending on which page you are currently on.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<code>INDEX</code> must be a positive integer value, within range of the number of entries in the trip list.
+<code>INDEX</code> must be a positive integer value, within range of the number of entries in your trip list.
 </td>
 </tr>
 </table>
@@ -545,22 +619,32 @@ depending on which page you are currently on.</p>
 <p><strong>Expected Outcome</strong></p>
 </div>
 <div class="paragraph">
-<p>Navigates to the twelveth trip on the trip list.</p>
+<p>For example, you are on the <code>HOME</code> page and would like to navigate to the <code>TRIP</code> page of the trip, <em>Winter Break</em>.</p>
 </div>
-<div class="paragraph">
-<p>DIAGRAM TO BE INSERTED HERE.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/user-guide/home-goto-before.png" alt="home goto before" width="600">
+</div>
+<div class="title">You are on the <code>HOME</code> page and you want to navigate to the <code>TRIP</code> page of the 3rd <code>TRIP</code>, <em>Winter Break</em>.</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/user-guide/home-goto-after.png" alt="home goto after" width="600">
+</div>
+<div class="title">After using command <code>goto 3</code> you will be navigated to the 3rd <code>TRIP</code>, <em>Winter Break</em>.</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="adding-a-trip-to-the-trip-list-code-add-code"><a class="link" href="#adding-a-trip-to-the-trip-list-code-add-code">4.3.2. Adding a trip to the trip list: <code>add</code></a></h4>
+<h4 id="adding-a-trip-to-your-trip-list-code-add-code"><a class="link" href="#adding-a-trip-to-your-trip-list-code-add-code">4.3.2. Adding a trip to your trip list: <code>add</code></a></h4>
 <div class="paragraph">
-<p>If you would like to add a trip to the trip list, this command allows you to do so, while specifying the <code>NAME</code> of the trip,
+<p>If you would like to add a trip to your trip list, this command allows you to do so, while specifying the <code>TRIP_NAME</code> of the trip,
 the trip <code>LOCATION</code>, and the date range from <code>TRIP_START_DATE</code> to <code>TRIP_END_DATE</code>.</p>
 </div>
 <div class="paragraph">
-<p><strong>Usage</strong></p>
+<p>Upon adding a <code>TRIP</code> to Volant, a new folder with the name <code>TRIP_NAME</code> will be created in the <strong>data file</strong>.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
+<caption class="title">Usage</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 83.3334%;">
@@ -572,7 +656,7 @@ the trip <code>LOCATION</code>, and the date range from <code>TRIP_START_DATE</c
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Example</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add n/Graduation Trip l/Bangkok d/01-02-2020 to 05-02-2020</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add n/Graduation Trip l/Bangkok d/01-06-2020 to 05-06-2020</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -592,11 +676,21 @@ The date range should be written in the format <code>d/DD-MM-YYYY to DD-MM-YYYY<
 <p><strong>Expected Outcome</strong></p>
 </div>
 <div class="paragraph">
-<p>Adds a trip to the trip list with the name <strong>Graduation Trip</strong>, location being <strong>Bangkok</strong>, and date range of the trip being from
-<strong>1st February 2020</strong> to <strong>5th February 2020</strong>.</p>
+<p>For example, you would like to add a <code>TRIP</code> to your trip list with the name <strong>Graduation Trip</strong>, location being <strong>Bangkok</strong>,
+and date range of the trip being from <strong>1st February 2020</strong> to <strong>5th February 2020</strong>. Executing the command will add the <code>TRIP</code>
+to your trip list.</p>
 </div>
-<div class="paragraph">
-<p>DIAGRAM TO BE INSERTED HERE.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/user-guide/home-add-before.png" alt="home add before" width="600">
+</div>
+<div class="title">You would like to add a <code>TRIP</code> to your trip list and enter the <code>add</code> command including the specific metadata of the <code>TRIP</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/user-guide/home-add-after.png" alt="home add after" width="600">
+</div>
+<div class="title">After using the <code>add</code> command, the new <code>TRIP</code> will be added to your trip list and displayed under <em>UPCOMING TRIPS</em>.</div>
 </div>
 </div>
 <div class="sect3">
@@ -605,9 +699,10 @@ The date range should be written in the format <code>d/DD-MM-YYYY to DD-MM-YYYY<
 <p>If you would like to remove a trip, this command deletes the trip at the specified <code>INDEX</code>.</p>
 </div>
 <div class="paragraph">
-<p><strong>Usage</strong></p>
+<p>Upon deletion of the <code>TRIP</code>, the folder containing the trip and its associated data will be deleted.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
+<caption class="title">Usage</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 83.3334%;">
@@ -633,7 +728,7 @@ The date range should be written in the format <code>d/DD-MM-YYYY to DD-MM-YYYY<
 <div class="ulist">
 <ul>
 <li>
-<p><code>INDEX</code> must be a positive integer value, within range of the number of trips in the trip list.</p>
+<p><code>INDEX</code> must be a positive integer value, within range of the number of trips in your trip list.</p>
 </li>
 </ul>
 </div>
@@ -645,21 +740,29 @@ The date range should be written in the format <code>d/DD-MM-YYYY to DD-MM-YYYY<
 <p><strong>Expected Outcome</strong></p>
 </div>
 <div class="paragraph">
-<p>The second trip on the list will be deleted along with its associated data (itinerary, journal, etc).</p>
+<p>For example, you would like to delete the second trip on your trip list, <em>Graduation Trip</em>. After using this command, the
+<code>TRIP</code> will be removed from your trip list.</p>
 </div>
-<div class="paragraph">
-<p>DIAGRAM TO BE INSERTED HERE.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/user-guide/home-delete-before.png" alt="home delete before" width="600">
+</div>
+<div class="title">You want to delete the second trip on your trip list, <em>Graduation Trip</em>.</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/user-guide/home-delete-after.png" alt="home delete after" width="600">
+</div>
+<div class="title">After using the <code>delete</code> command, the trip will be removed from your trip list.</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="editing-trip-details-code-edit-code"><a class="link" href="#editing-trip-details-code-edit-code">4.3.4. Editing trip details: <code>edit</code></a></h4>
 <div class="paragraph">
-<p>If you would like to update the details of a trip, this command allows you to edit the details of the trip at a specified <code>INDEX</code>.</p>
-</div>
-<div class="paragraph">
-<p><strong>Usage</strong></p>
+<p>If you would like to update the details of a trip, this command allows you to conveniently edit the details of the trip at a specified <code>INDEX</code>.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
+<caption class="title">Usage</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 83.3334%;">
@@ -671,7 +774,7 @@ The date range should be written in the format <code>d/DD-MM-YYYY to DD-MM-YYYY<
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Example</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit 2 n/School Trip l/France</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit 1 n/Family Trip 2020 l/Frankfurt</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -685,10 +788,13 @@ The date range should be written in the format <code>d/DD-MM-YYYY to DD-MM-YYYY<
 <div class="ulist">
 <ul>
 <li>
-<p><code>INDEX</code> must be a positive integer value, within range of the number of trips in the trip list.</p>
+<p><code>INDEX</code> must be a positive integer value, within range of the number of trips in your trip list.</p>
 </li>
 <li>
 <p>The date range should be written in the format <code>d/DD-MM-YYYY to DD-MM-YYYY</code>.</p>
+</li>
+<li>
+<p>If you were to edit the <code>TRIP_NAME</code> of a <code>TRIP</code>, the name of the data folder of the specific <code>TRIP</code> will simultaneously be edited.</p>
 </li>
 </ul>
 </div>
@@ -700,15 +806,98 @@ The date range should be written in the format <code>d/DD-MM-YYYY to DD-MM-YYYY<
 <p><strong>Expected Outcome</strong></p>
 </div>
 <div class="paragraph">
-<p>The details of the trip will be updated according to the parameters provided.</p>
+<p>For example, you would like to edit the details of the first trip on your trip list, and would like to only change
+the <code>TRIP_NAME</code> of the <code>TRIP</code>, from <em>Family Trip</em> to <em>Family Trip 2020</em>, and the <code>LOCATION</code> of the <code>TRIP</code> from <em>Berlin</em> to <em>Frankfurt</em>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/user-guide/home-edit-before.png" alt="home edit before" width="600">
+</div>
+<div class="title">You want to edit the <code>TRIP_NAME</code> and <code>LOCATION</code> of the first trip in your trip list.</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/user-guide/home-edit-after.png" alt="home edit after" width="600">
+</div>
+<div class="title">After using the <code>edit</code> command, the <code>TRIP_NAME</code> and <code>LOCATION</code> of the trip will be changed accordingly.</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="finding-a-trip-in-the-list-code-find-code"><a class="link" href="#finding-a-trip-in-the-list-code-find-code">4.3.5. Finding a trip in the list: <code>find</code></a></h4>
+<div class="paragraph">
+<p>If you would like to search for a specific trip in your trip list, you can use the <code>find</code> command to locate any trip with a
+a specific <code>KEYWORD</code> in its name.</p>
 </div>
 <div class="paragraph">
-<p>DIAGRAM TO BE INSERTED HERE.</p>
+<p>Volant will then locate all trips with names containing the specific <code>KEYWORD</code>, and display
+them on the <code>HOME</code> page.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Usage</caption>
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Syntax</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>find KEYWORD</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>find fuji</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>KEYWORD</code> parameter is case insensitive, meaning that using the <code>KEYWORD</code> "fUji" will return all trips with the word
+"fuji" in their names regardless of the case of each character.</p>
+</li>
+<li>
+<p>If you would like to revert the <code>HOME</code> page to its original state after viewing the results of the <code>find</code> command, you can
+use the <code>rf</code> command to refresh the page.<br></p>
+<div class="paragraph">
+<p>See <a href="#refresh">Section 4.2.2, &#8220;Refreshing a page: <code>rf</code>&#8221;</a> for more details.</p>
+</div>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome</strong></p>
+</div>
+<div class="paragraph">
+<p>For example, you would like search for a trip on the trip list with the <code>KEYWORD</code>, "fuji" in the <code>TRIP</code> 's name.
+Volant will locate all <code>TRIP</code> s with the <code>KEYWORD</code>, "fuji".</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/user-guide/home-find-before.png" alt="home find before" width="600">
+</div>
+<div class="title">You want to search for all <code>TRIP</code> s with names containing the <code>KEYWORD</code>, "fuji".</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/user-guide/home-find-after.png" alt="home find after" width="600">
+</div>
+<div class="title">After using the <code>find</code> command, Volant will display all trips with the specified <code>KEYWORD</code>.</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="trip-page"><a class="link" href="#trip-page">4.4. Trip Page</a></h3>
+<h3 id="commands-for-the-trip-page"><a class="link" href="#commands-for-the-trip-page">4.4. Commands for the Trip Page</a></h3>
 <div class="paragraph">
 <p>The <code>TRIP</code> page of a specific trip displays the details of the trip as well as the details of the trip&#8217;s <code>ITINERARY</code> and <code>JOURNAL</code> at a glance.
 From this page, you can navigate to the <code>ITINERARY</code> and <code>JOURNAL</code> pages associated with the trip.</p>
@@ -718,10 +907,8 @@ From this page, you can navigate to the <code>ITINERARY</code> and <code>JOURNAL
 <div class="paragraph">
 <p>If you would like to access either the <code>JOURNAL</code> or <code>ITINERARY</code> of the trip, this command will navigate Volant to the feature.</p>
 </div>
-<div class="paragraph">
-<p><strong>Usage</strong></p>
-</div>
 <table class="tableblock frame-all grid-all spread">
+<caption class="title">Usage</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 83.3334%;">
@@ -802,10 +989,8 @@ From this page, you can navigate to the <code>ITINERARY</code> and <code>JOURNAL
 <div class="paragraph">
 <p>If you would like to plan a new activity for the itinerary, this command allows you to add a new activity to the itinerary.</p>
 </div>
-<div class="paragraph">
-<p><strong>Usage</strong></p>
-</div>
 <table class="tableblock frame-all grid-all spread">
+<caption class="title">Usage</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 83.3334%;">
@@ -858,10 +1043,8 @@ to the itinerary.</p>
 <div class="paragraph">
 <p>If you would like to remove an activity from the itinerary, this command deletes the activity at a specified <code>INDEX</code>.</p>
 </div>
-<div class="paragraph">
-<p><strong>Usage</strong></p>
-</div>
 <table class="tableblock frame-all grid-all spread">
+<caption class="title">Usage</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 83.3334%;">
@@ -910,10 +1093,8 @@ to the itinerary.</p>
 <div class="paragraph">
 <p>If you would like to update the details of a particular activity in the itinerary, this commands allows you to edit the activity at a specified <code>INDEX</code>.</p>
 </div>
-<div class="paragraph">
-<p><strong>Usage</strong></p>
-</div>
 <table class="tableblock frame-all grid-all spread">
+<caption class="title">Usage</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 83.3334%;">
@@ -972,10 +1153,8 @@ to the itinerary.</p>
 <p>If you would like to search for a particular activity that matches a certain name, location, date or time, this command
 allows you to find the activity/activities that match(es) the search keyword.</p>
 </div>
-<div class="paragraph">
-<p><strong>Usage</strong></p>
-</div>
 <table class="tableblock frame-all grid-all spread">
+<caption class="title">Usage</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 83.3334%;">
@@ -1034,10 +1213,8 @@ Here, you can manipulate the list of journal entries, as well as navigate to oth
 <div class="paragraph">
 <p>If you would like to record a new journal entry, this command adds a new entry to the journal.</p>
 </div>
-<div class="paragraph">
-<p><strong>Usage</strong></p>
-</div>
 <table class="tableblock frame-all grid-all spread">
+<caption class="title">Usage</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 83.3334%;">
@@ -1151,10 +1328,8 @@ Here, you can manipulate the list of journal entries, as well as navigate to oth
 <div class="paragraph">
 <p>If you would like to remove an entry from the journal, this command deletes the entry at the specified <code>INDEX</code>.</p>
 </div>
-<div class="paragraph">
-<p><strong>Usage</strong></p>
-</div>
 <table class="tableblock frame-all grid-all spread">
+<caption class="title">Usage</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 83.3334%;">
@@ -1180,7 +1355,7 @@ Here, you can manipulate the list of journal entries, as well as navigate to oth
 <div class="ulist">
 <ul>
 <li>
-<p><code>INDEX</code> must be a positive integer value, within range of the number of trips in the trip list.</p>
+<p><code>INDEX</code> must be a positive integer value, within range of the number of trips in your trip list.</p>
 </li>
 </ul>
 </div>
@@ -1204,10 +1379,8 @@ Here, you can manipulate the list of journal entries, as well as navigate to oth
 <p>If you would like to update a journal entry with new content, a new location, a new date, a new time, a new feeling or
 a new weather, this command allows you to edit the entry at a specified <code>INDEX</code>.</p>
 </div>
-<div class="paragraph">
-<p><strong>Usage</strong></p>
-</div>
 <table class="tableblock frame-all grid-all spread">
+<caption class="title">Usage</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 83.3334%;">
@@ -1256,10 +1429,8 @@ a new weather, this command allows you to edit the entry at a specified <code>IN
 <div class="paragraph">
 <p>If you would like arrange your journal entries in a certain order, this command sorts the list of entries in a specified order.</p>
 </div>
-<div class="paragraph">
-<p><strong>Usage</strong></p>
-</div>
 <table class="tableblock frame-all grid-all spread">
+<caption class="title">Usage</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 83.3334%;">
@@ -1369,7 +1540,7 @@ a new weather, this command allows you to edit the entry at a specified <code>IN
 Use this list as a quick reference.</p>
 </div>
 <div class="sect2">
-<h3 id="home-page-3"><a class="link" href="#home-page-3">6.1. Home Page</a></h3>
+<h3 id="home-page-2"><a class="link" href="#home-page-2">6.1. Home Page</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1391,7 +1562,7 @@ Use this list as a quick reference.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="trip-page-2"><a class="link" href="#trip-page-2">6.2. Trip page</a></h3>
+<h3 id="trip-page"><a class="link" href="#trip-page">6.2. Trip page</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1454,4 +1625,4 @@ Use this list as a quick reference.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-05 19:24:47 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-05 19:33:37 UTC</div></div></div></body></html>
