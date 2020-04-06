@@ -36,7 +36,7 @@
 <li><a href="#pages-in-volant">4.2. Pages in Volant</a></li>
 <li><a href="#universal-commands">4.3. Universal Commands</a>
 <ul class="sectlevel3">
-<li><a href="#opening-the-help-window-code-help-code">4.3.1. Opening the Help window: <code>help</code></a></li>
+<li><a href="#help">4.3.1. Opening the Help window: <code>help</code></a></li>
 <li><a href="#refresh">4.3.2. Refreshing a page: <code>rf</code></a></li>
 <li><a href="#going-back-to-a-previous-page-code-back-code">4.3.3. Going back to a previous page: <code>back</code></a></li>
 <li><a href="#going-back-to-the-home-page-code-home-code">4.3.4. Going back to the Home Page: <code>home</code></a></li>
@@ -91,14 +91,17 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Volant is a travel companion application for solo travellers for who <strong>prefer to use a desktop app to manage their travels</strong>.
-This user guide aims to provide users with information on how to use each and every function of the Volant app.</p>
+<p>Hello! This document is a user guide written for prospective users of our travel companion, Volant. It will cover
+how to use and navigate through Volant&#8217;s features to help you with your travel planning.</p>
+</div>
+<div class="paragraph">
+<p>Volant is a travel companion application for solo travellers for who <strong>prefer to use a desktop app to manage their travels</strong>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/Ui.png" alt="Ui" width="790">
 </div>
-<div class="title">Figure 1. Home page of Volant</div>
+<div class="title">Home page of Volant</div>
 </div>
 <div class="paragraph">
 <p>Volant is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI).
@@ -145,6 +148,14 @@ If you can type fast, Volant can get you planning, executing and reflecting on y
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This icon denotes important details to take note of when using Volant.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="imageblock">
+<div class="content">
+<img src="images/user-guide/important_icon.png" alt="important icon">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This icon denotes extremely important details to take note of. When these details are not followed, Volant may crash or have its data files corrupted.</p></td>
 </tr>
 </tbody>
 </table>
@@ -337,7 +348,7 @@ move through the pages in Volant without even touching your mouse!</p>
 <ol class="arabic">
 <li>
 <p><strong>Menu bar</strong><br>
-The menu bar contains clickable buttons that you can use to execute certain commands, such as</p>
+The menu bar contains clickable buttons that you can use to execute certain commands, such as <a href="#refresh"><code>rf</code> to refresh a page</a>, and <a href="#help"><code>help</code> to open the help window</a>.</p>
 </li>
 <li>
 <p><strong>Result Display</strong><br>
@@ -464,7 +475,7 @@ e.g <code>n/NAME [a/AGE]</code> can be used as <code>n/John Doe a/26</code> or a
 <p>Universal commands are commands that can be used on all pages.</p>
 </div>
 <div class="sect3">
-<h4 id="opening-the-help-window-code-help-code"><a class="link" href="#opening-the-help-window-code-help-code">4.3.1. Opening the Help window: <code>help</code></a></h4>
+<h4 id="help"><a class="link" href="#help">4.3.1. Opening the Help window: <code>help</code></a></h4>
 <div class="paragraph">
 <p>Opens the Help window.</p>
 </div>
@@ -613,7 +624,7 @@ depending on which page you are currently on.</p>
 </td>
 <td class="content">
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table of possible outcome for the <code>back</code> Command</caption>
+<caption class="title">Table of outcomes when using the <code>back</code> command on certain pages</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -695,13 +706,13 @@ command will conveniently move you directly to the <code>HOME</code> page.</p>
 <div class="content">
 <img src="images/user-guide/back-command-before.png" alt="back command before" width="400">
 </div>
-<div class="title">You are on the <code>ITINERARY</code> page of a specific <code>TRIP</code></div>
+<div class="title">1) You are on the <code>ITINERARY</code> page of a specific <code>TRIP</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/user-guide/home-page.png" alt="home page" width="400">
 </div>
-<div class="title">After using the <code>home</code> command, you will be moved to the <code>HOME</code> page</div>
+<div class="title">2) After using the <code>home</code> command, you will be moved to the <code>HOME</code> page</div>
 </div>
 </div>
 </div>
@@ -757,13 +768,13 @@ command will conveniently move you directly to the <code>HOME</code> page.</p>
 <div class="content">
 <img src="images/user-guide/home-goto-before.png" alt="home goto before" width="400">
 </div>
-<div class="title">You are on the <code>HOME</code> page and you want to navigate to the <code>TRIP</code> page of the 3rd <code>TRIP</code>, <em>Winter Break</em>.</div>
+<div class="title">1) You are on the <code>HOME</code> page and you want to navigate to the <code>TRIP</code> page of the 3rd <code>TRIP</code>, <em>Winter Break</em>.</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/user-guide/home-goto-after.png" alt="home goto after" width="400">
 </div>
-<div class="title">After using command <code>goto 3</code> you will be navigated to the 3rd <code>TRIP</code>, <em>Winter Break</em>.</div>
+<div class="title">2) After using command <code>goto 3</code> you will be navigated to the 3rd <code>TRIP</code>, <em>Winter Break</em>.</div>
 </div>
 </div>
 <div class="sect3">
@@ -816,13 +827,13 @@ to your trip list.</p>
 <div class="content">
 <img src="images/user-guide/home-add-before.png" alt="home add before" width="400">
 </div>
-<div class="title">You would like to add a <code>TRIP</code> to your trip list and enter the <code>add</code> command including the specific metadata of the <code>TRIP</code></div>
+<div class="title">1) You would like to add a <code>TRIP</code> to your trip list and enter the <code>add</code> command including the specific metadata of the <code>TRIP</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/user-guide/home-add-after.png" alt="home add after" width="400">
 </div>
-<div class="title">After using the <code>add</code> command, the new <code>TRIP</code> will be added to your trip list and displayed under <em>UPCOMING TRIPS</em>.</div>
+<div class="title">2) After using the <code>add</code> command, the new <code>TRIP</code> will be added to your trip list and displayed under <em>UPCOMING TRIPS</em></div>
 </div>
 </div>
 <div class="sect3">
@@ -879,13 +890,13 @@ to your trip list.</p>
 <div class="content">
 <img src="images/user-guide/home-delete-before.png" alt="home delete before" width="400">
 </div>
-<div class="title">You want to delete the second trip on your trip list, <em>Graduation Trip</em>.</div>
+<div class="title">1) You want to delete the second trip on your trip list, <em>Graduation Trip</em></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/user-guide/home-delete-after.png" alt="home delete after" width="400">
 </div>
-<div class="title">After using the <code>delete</code> command, the trip will be removed from your trip list.</div>
+<div class="title">2) After using the <code>delete</code> command, the trip will be removed from your trip list</div>
 </div>
 </div>
 <div class="sect3">
@@ -945,13 +956,13 @@ the <code>TRIP_NAME</code> of the <code>TRIP</code>, from <em>Family Trip</em> t
 <div class="content">
 <img src="images/user-guide/home-edit-before.png" alt="home edit before" width="400">
 </div>
-<div class="title">You want to edit the <code>TRIP_NAME</code> and <code>LOCATION</code> of the first trip in your trip list.</div>
+<div class="title">1) You want to edit the <code>TRIP_NAME</code> and <code>LOCATION</code> of the first trip in your trip list</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/user-guide/home-edit-after.png" alt="home edit after" width="400">
 </div>
-<div class="title">After using the <code>edit</code> command, the <code>TRIP_NAME</code> and <code>LOCATION</code> of the trip will be changed accordingly.</div>
+<div class="title">2) After using the <code>edit</code> command, the <code>TRIP_NAME</code> and <code>LOCATION</code> of the trip will be changed accordingly</div>
 </div>
 </div>
 <div class="sect3">
@@ -994,13 +1005,6 @@ them on the <code>HOME</code> page.</p>
 <p>The <code>KEYWORD</code> parameter is case insensitive, meaning that using the <code>KEYWORD</code> "fUji" will return all trips with the word
 "fuji" in their names regardless of the case of each character.</p>
 </li>
-<li>
-<p>If you would like to revert the <code>HOME</code> page to its original state after viewing the results of the <code>find</code> command, you can
-use the <code>rf</code> command to refresh the page.<br></p>
-<div class="paragraph">
-<p>See <a href="#refresh">Section 4.3.2, &#8220;Refreshing a page: <code>rf</code>&#8221;</a> for more details.</p>
-</div>
-</li>
 </ul>
 </div>
 </td>
@@ -1018,13 +1022,27 @@ Volant will locate all <code>TRIP</code> s with the <code>KEYWORD</code>, "fuji"
 <div class="content">
 <img src="images/user-guide/home-find-before.png" alt="home find before" width="400">
 </div>
-<div class="title">You want to search for all <code>TRIP</code> s with names containing the <code>KEYWORD</code>, "fuji".</div>
+<div class="title">1) You want to search for all <code>TRIP</code> s with names containing the <code>KEYWORD</code>, "fuji"</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/user-guide/home-find-after.png" alt="home find after" width="400">
 </div>
-<div class="title">After using the <code>find</code> command, Volant will display all trips with the specified <code>KEYWORD</code>.</div>
+<div class="title">2) After using the <code>find</code> command, Volant will display all trips with the specified <code>KEYWORD</code></div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you would like to revert the <code>HOME</code> page to its original state after viewing the results of the <code>find</code> command, you can
+use the <code>rf</code> command to refresh the page.<br>
+See <a href="#refresh">Section 4.3.2, &#8220;Refreshing a page: <code>rf</code>&#8221;</a> for more details.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -1066,7 +1084,7 @@ From this page, you can navigate to the <code>ITINERARY</code> and <code>JOURNAL
 <div class="ulist">
 <ul>
 <li>
-<p>List of available <code>TRIP_FEATURE</code> (can be typed in any case):</p>
+<p>List of available <code>TRIP_FEATURE</code> (case insensitive):</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1632,34 +1650,34 @@ a new weather, this command allows you to edit the entry at a specified <code>IN
 <h2 id="faq"><a class="link" href="#faq">5. FAQ</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section discusses some frequently asked questions about the Volant app.</p>
+<p>This section discusses some frequently asked questions about Volant.</p>
 </div>
 <div class="paragraph">
-<p><strong>Q</strong>: Is Volant free?<br>
+<p><strong>Q: Is Volant free?</strong><br>
 <strong>A</strong>: Yes, Volant is absolutely free to use!</p>
 </div>
 <div class="paragraph">
-<p><strong>Q</strong>: Is Volant safe to use?<br>
+<p><strong>Q: Is Volant safe to use?</strong><br>
 <strong>A</strong>: Yes, Volant is safe to use! We regularly review our code to ensure that hackers are unable to exploit the security structure of our software.</p>
 </div>
 <div class="paragraph">
-<p><strong>Q</strong>: Is Volant secure?<br>
+<p><strong>Q: Is Volant secure?</strong><br>
 <strong>A</strong>: Yes, Volant is secure. Your data is stored only on your device. No data is sent to any online servers.</p>
 </div>
 <div class="paragraph">
-<p><strong>Q</strong>: Do I need an Internet connection to use Volant?<br>
+<p><strong>Q: Do I need an Internet connection to use Volant?</strong><br>
 <strong>A</strong>: No, you don&#8217;t! Volant works 100% offline. This is especially useful when you travel to locations where Internet connection is spotty, or even scarce.</p>
 </div>
 <div class="paragraph">
-<p><strong>Q</strong>: Will Volant be consistently updated?<br>
+<p><strong>Q: Will Volant be consistently updated?</strong><br>
 <strong>A</strong>: Yes! We are a dedicated team of software developers who constantly collate feedback and run tests on the Volant app. We are also looking forward to delivering more features for our users.</p>
 </div>
 <div class="paragraph">
-<p><strong>Q</strong>: Can I use Volant on a mobile device?<br>
+<p><strong>Q: Can I use Volant on a mobile device?</strong><br>
 <strong>A</strong>: Volant is designed to work best on a desktop/laptop/tablet interface. We are currently adapting Volant&#8217;s user interface to support more mobile devices.</p>
 </div>
 <div class="paragraph">
-<p><strong>Q</strong>: How do I transfer my data to another device?<br>
+<p><strong>Q: How do I transfer my data to another device?</strong><br>
 <strong>A</strong>: Install the app in the other device and overwrite the empty data file it creates with the file that contains the data of your previous Volant folder.</p>
 </div>
 </div>
@@ -1669,7 +1687,7 @@ a new weather, this command allows you to edit the entry at a specified <code>IN
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section summarises the syntax of all the commands available in the Volant app.
-Use this list as a quick reference.</p>
+Use this list as a quick and convenient reference.</p>
 </div>
 <div class="sect2">
 <h3 id="home-page-2"><a class="link" href="#home-page-2">6.1. Home Page</a></h3>
@@ -1747,14 +1765,33 @@ Use this list as a quick reference.</p>
 <h2 id="glossary"><a class="link" href="#glossary">7. Glossary</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section discusses some terminology that has been used in this user guide.</p>
+<p>This section will cover and explain certain technical/Volant specific terms that we have used in this user guide.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>TBC:</strong> To be completed</p>
-</li>
-</ul>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Term</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Command Line Interface (CLI)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A user interface where users are required to use the program by entering commands into a text box.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphical User Interface (GUI)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A user interface that includes visuals such as buttons, icons, images, menus etc.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Metadata</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Details associated with  an entity. For example, metadata of a <code>TRIP</code> include the <code>TRIP</code> 's, <code>TRIP_NAME</code>, <code>LOCATION</code>, <code>TRIP_START_DATE</code>, <code>TRIP_END_DATE</code></p></td>
+</tr>
+</tbody>
+</table>
 </div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-06 10:04:16 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-06 10:43:01 UTC</div></div></div></body></html>
