@@ -26,7 +26,7 @@
 <li><a href="#home-page">3.2. Home Page</a></li>
 <li><a href="#journal">3.3. Journal</a></li>
 <li><a href="#itinerary">3.4. Itinerary</a></li>
-<li><a href="#auto-saving-of-data">3.5. Auto-Saving of Data</a></li>
+<li><a href="#data-storage-and-auto-saving-of-data">3.5. Data Storage and Auto-Saving of Data</a></li>
 <li><a href="#fast-in-app-navigation">3.6. Fast In-App Navigation</a></li>
 </ul>
 </li>
@@ -48,7 +48,7 @@
 <li><a href="#adding-a-trip-to-your-trip-list-code-add-code">4.4.2. Adding a trip to your trip list: <code>add</code></a></li>
 <li><a href="#deleting-a-trip-code-delete-code">4.4.3. Deleting a trip: <code>delete</code></a></li>
 <li><a href="#editing-trip-details-code-edit-code">4.4.4. Editing trip details: <code>edit</code></a></li>
-<li><a href="#finding-a-trip-in-the-list-code-find-code">4.4.5. Finding a trip in the list: <code>find</code></a></li>
+<li><a href="#home-find">4.4.5. Finding a trip in the list: <code>find</code></a></li>
 </ul>
 </li>
 <li><a href="#commands-for-the-trip-page">4.5. Commands for the Trip Page</a>
@@ -120,8 +120,8 @@ If you can type fast, Volant can get you planning, executing and reflecting on y
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 1. Table of Icons</caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
+<col style="width: 25%;">
+<col style="width: 75%;">
 </colgroup>
 <thead>
 <tr>
@@ -157,8 +157,8 @@ If you can type fast, Volant can get you planning, executing and reflecting on y
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 2. Table of Markdown Notations</caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
+<col style="width: 25%;">
+<col style="width: 75%;">
 </colgroup>
 <thead>
 <tr>
@@ -233,7 +233,9 @@ These include front-end features that users can interact with, such as the Trip 
 <p>If you would like to plan for an upcoming trip overseas, you can create a new <code>TRIP</code>.</p>
 </div>
 <div class="paragraph">
-<p>In Volant, a <code>TRIP</code> represents a set of travel plans to a certain location within a date range. You can able to create and store trips in Volant to keep track of all your travels, and plan your future travels.</p>
+<p>In Volant, a <code>TRIP</code> represents a set of travel plans to a certain <code>LOCATION</code> within a date range.
+You can able to create and store trips in Volant to keep track of all your travels, and plan your future travels, and label
+each <code>TRIP</code> with a specific <code>TRIP_NAME</code>.</p>
 </div>
 <div class="paragraph">
 <p>Each <code>TRIP</code> contains trip features such as an <code>ITINERARY</code> and <code>JOURNAL</code> to help you convenintly keep track of all things
@@ -268,10 +270,34 @@ All activities are sorted in chronological order by default, with newest entries
 </div>
 </div>
 <div class="sect2">
-<h3 id="auto-saving-of-data"><a class="link" href="#auto-saving-of-data">3.5. Auto-Saving of Data</a></h3>
+<h3 id="data-storage-and-auto-saving-of-data"><a class="link" href="#data-storage-and-auto-saving-of-data">3.5. Data Storage and Auto-Saving of Data</a></h3>
 <div class="paragraph">
 <p>In Volant, every <code>TRIP</code> you create will generate a folder named after the <code>TRIP</code> 's <code>TRIP_NAME</code> within the <strong>data</strong> folder within
-the directory you have stored in Volant JAR file in. This folder will store all data associated with your trip including the <code>TRIP</code> 's <code>ITINERARY</code> and <code>JOURNAL</code>.</p>
+the directory you have stored in Volant JAR file in. This folder will store all data associated with your <code>TRIP</code> 's <code>ITINERARY</code> and <code>JOURNAL</code>.</p>
+</div>
+<div class="paragraph">
+<p>The data folder also contains a file, <code>volant.json</code> that stores your trip list and their details such as the <code>TRIP_NAME</code>, <code>LOCATION</code> and date range of all your trips</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/user-guide/data-storage.png" alt="data storage" width="600">
+</div>
+<div class="title">Simple diagram of data storage in Volant</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Please do not touch or edit the <code>volant.json</code> file or the data of all your trips might be lost!
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Auto-saving of Data</strong></p>
 </div>
 <div class="paragraph">
 <p>If you are concerned that you may forget to save your data every now and then, do not fret!
@@ -522,20 +548,20 @@ You can also execute this command by using the <kbd>F5</kbd> key on your keyboar
 <p><strong>Expected Outcome</strong></p>
 </div>
 <div class="paragraph">
-<p>For example, after using the <code>find</code> command on the <code>HOME</code> page, the <code>HOME</code> page will display the results of the <code>find</code> command.
+<p>For example, after using the <code>find</code> command (See <a href="#home-find">Section 4.4.5, &#8220;Finding a trip in the list: <code>find</code>&#8221;</a>) on the <code>HOME</code> page, the <code>HOME</code> page will display the results of the <code>find</code> command.
 To return the <code>HOME</code> page to its original state (listing all trips), you can use the <code>rf</code> command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/user-guide/refresh-command-before.png" alt="refresh command before" width="400">
 </div>
-<div class="title">After using the <code>find</code> command on the <code>HOME</code> page, only the results of the command will be displayed.</div>
+<div class="title">1) After you have used the <code>find</code> command on the <code>HOME</code> page, only the results of the command will be displayed.</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/user-guide/refresh-command-after.png" alt="refresh command after" width="400">
 </div>
-<div class="title">After using the <code>rf</code> command, the <code>HOME</code> page will return to its original state and will list all trips.</div>
+<div class="title">2) After using the <code>rf</code> command, the <code>HOME</code> page will return to its original state and will list all trips.</div>
 </div>
 </div>
 <div class="sect3">
@@ -929,7 +955,7 @@ the <code>TRIP_NAME</code> of the <code>TRIP</code>, from <em>Family Trip</em> t
 </div>
 </div>
 <div class="sect3">
-<h4 id="finding-a-trip-in-the-list-code-find-code"><a class="link" href="#finding-a-trip-in-the-list-code-find-code">4.4.5. Finding a trip in the list: <code>find</code></a></h4>
+<h4 id="home-find"><a class="link" href="#home-find">4.4.5. Finding a trip in the list: <code>find</code></a></h4>
 <div class="paragraph">
 <p>If you would like to search for a specific trip in your trip list, you can use the <code>find</code> command to locate any trip with a
 a specific <code>KEYWORD</code> in its name.</p>
@@ -1731,4 +1757,4 @@ Use this list as a quick reference.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-06 09:47:33 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-06 09:50:34 UTC</div></div></div></body></html>
