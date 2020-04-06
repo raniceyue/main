@@ -2113,12 +2113,12 @@ span.icon>.fa {
 
 .admonitionblock td.icon .icon-tip:before {
     content: "\f0eb";
-    color: #111
+    color: #12853b
 }
 
 .admonitionblock td.icon .icon-warning:before {
     content: "\f071";
-    color: #bf6900
+    color: #b59c07
 }
 
 .admonitionblock td.icon .icon-caution:before {
