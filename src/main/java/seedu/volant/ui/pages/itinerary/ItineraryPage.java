@@ -24,16 +24,11 @@ public class ItineraryPage extends UiPart<Region> {
     @FXML
     private Label itineraryTitle;
 
-    // TODO: Complete Itinerary page once Itinerary has been fully implemented.
-
     @FXML
     private ListView<Activity> activityListView;
 
     public ItineraryPage(ObservableList<Activity> activities) {
         super(FXML);
-
-        // Get activity list from itinerary
-        //UniqueActivityList activityList = itinerary.getActivityList().getUniqueActivityList();
 
         itineraryTitle.setText("ITINERARY");
 

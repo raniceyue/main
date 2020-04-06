@@ -42,5 +42,5 @@
       </children>
    </HBox>
 
-   <ListView fx:id="tripFeaturesListView" prefWidth="200.0" VBox.vgrow="ALWAYS" minHeight="415"/>
+   <ListView fx:id="tripFeaturesListView" prefWidth="200.0" minHeight="310"/>
 </VBox>
