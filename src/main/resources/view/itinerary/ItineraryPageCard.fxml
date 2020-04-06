@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
 <HBox id="activityPane" fx:id="activityPane" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1">
     <GridPane HBox.hgrow="ALWAYS">
         <columnConstraints>
@@ -31,16 +32,19 @@
 
              <StackPane prefHeight="90.0" prefWidth="500.0" HBox.hgrow="ALWAYS">
                 <children>
-                   <VBox alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="100.0"
-                    styleClass="vBox-itineraryTitleLocation">
-                      <children>
+                   <VBox alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="100.0" styleClass="vBox-itineraryTitleLocation">
                           <Label fx:id="activityTitle" styleClass="label-location" text="\$activityTitle" />
                           <Label fx:id="activityLocation" styleClass="cell_small_label" text="\$activityLocation" />
-                      </children>
                    </VBox>
                 </children>
              </StackPane>
 
+             <StackPane>
+                 <padding>
+                     <Insets left="10"/>
+                 </padding>
+                <Label fx:id="activityIndex" alignment="BOTTOM_RIGHT" styleClass="label-journal-id" />
+             </StackPane>
          </HBox>
     </GridPane>
 </HBox>

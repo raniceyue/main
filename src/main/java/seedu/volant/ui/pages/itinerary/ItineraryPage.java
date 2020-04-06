@@ -49,7 +49,7 @@ public class ItineraryPage extends UiPart<Region> {
                 setGraphic(null);
                 setText(null);
             } else {
-                setGraphic(new ItineraryPageCard(activity).getRoot());
+                setGraphic(new ItineraryPageCard(activity, getIndex() + 1).getRoot());
             }
         }
     }

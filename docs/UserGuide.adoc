@@ -142,7 +142,7 @@ This section covers the different components of a page in Volant and teaches you
 
 .The different components of a page in Volant
 [caption=]
-image::user-guide/page-components.png[width="400"]
+image::user-guide/ui-components.png[width="600"]
 
 There are four major components that you will be using in Volant, which will be referenced in the upcoming sections.
 
