@@ -618,7 +618,11 @@ The activity at the specified index, `INDEX` will be deleted from the itinerary.
 
 [caption=]
 .After using the `home` command, you will be moved to the `HOME` page
-image::user-guide/home-page.png[width="600"]
+image::user-guide/itinerary-delete-before.png[width="600"]
+
+[caption=]
+.After using the `home` command, you will be moved to the `HOME` page
+image::user-guide/itinerary-delete-after.png[width="300"]
 
 ==== Editing an activity: `edit`
 If you would like to update the details of a particular activity in the itinerary, this commands allows you to edit the activity at a specified `INDEX`.
