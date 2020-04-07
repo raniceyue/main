@@ -12,6 +12,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextInputControl;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
@@ -23,6 +24,7 @@ import seedu.volant.commons.core.LogsCenter;
 import seedu.volant.commons.logic.Logic;
 import seedu.volant.commons.logic.Page;
 import seedu.volant.commons.logic.commands.CommandResult;
+import seedu.volant.commons.logic.commands.RefreshCommandResult;
 import seedu.volant.commons.logic.commands.exceptions.CommandException;
 import seedu.volant.commons.logic.parser.exceptions.ParseException;
 import seedu.volant.commons.model.UserPrefs;
@@ -40,6 +42,7 @@ import seedu.volant.trip.model.Itinerary;
 import seedu.volant.trip.model.Journal;
 import seedu.volant.trip.model.TripFeature;
 import seedu.volant.trip.model.TripModelManager;
+import seedu.volant.ui.pages.home.HomeHelpWindow;
 import seedu.volant.ui.pages.home.HomePage;
 import seedu.volant.ui.pages.itinerary.ItineraryPage;
 import seedu.volant.ui.pages.journal.JournalPage;
@@ -67,13 +70,19 @@ public class MainWindow extends UiPart<Stage> {
 
     private ResultDisplay resultDisplay;
 
-    private HelpWindow helpWindow;
+    private HomeHelpWindow homeHelpWindow;
 
     @FXML
     private StackPane commandBoxPlaceholder;
 
     @FXML
     private MenuItem helpMenuItem;
+
+    @FXML
+    private MenuItem refreshMenuItem;
+
+    @FXML
+    private ScrollPane scrollPane;
 
     @FXML
     private StackPane mainPanelPlaceholder;
@@ -91,20 +100,27 @@ public class MainWindow extends UiPart<Stage> {
         this.primaryStage = primaryStage;
         this.logic = logic;
 
+        primaryStage.setMaxHeight(794);
+
         // Configure the UI
         setWindowDefaultSize(logic.getGuiSettings());
-
         setAccelerators();
 
-        helpWindow = new HelpWindow();
+        homeHelpWindow = new HomeHelpWindow();
+        scrollPane.setFitToWidth(true);
     }
 
     public Stage getPrimaryStage() {
         return primaryStage;
     }
 
+    /**
+     * Sets the key bindings for the application.
+     * Note: When user is using key bindings, there will be no result display.
+     */
     private void setAccelerators() {
         setAccelerator(helpMenuItem, KeyCombination.valueOf("F1"));
+        setAccelerator(refreshMenuItem, KeyCombination.valueOf("F5"));
     }
 
     /**
@@ -171,6 +187,11 @@ public class MainWindow extends UiPart<Stage> {
         primaryStage.show();
     }
 
+    /** METHODS TO HANDLE CONTEXT SWITCHING **/
+
+    public void setCurrentPage(Page page) {
+        this.currentPage = page;
+    }
 
     /**
      * Handles the result of the command 'back'.
@@ -207,10 +228,10 @@ public class MainWindow extends UiPart<Stage> {
      */
     @FXML
     public void handleHelp() {
-        if (!helpWindow.isShowing()) {
-            helpWindow.show();
+        if (!homeHelpWindow.isShowing()) {
+            homeHelpWindow.show();
         } else {
-            helpWindow.focus();
+            homeHelpWindow.focus();
         }
     }
 
@@ -222,16 +243,9 @@ public class MainWindow extends UiPart<Stage> {
         GuiSettings guiSettings = new GuiSettings(primaryStage.getWidth(), primaryStage.getHeight(),
             (int) primaryStage.getX(), (int) primaryStage.getY());
         logic.setGuiSettings(guiSettings);
-        helpWindow.hide();
+        homeHelpWindow.hide();
         primaryStage.hide();
     }
-
-    /** METHODS TO HANDLE CONTEXT SWITCHING **/
-
-    public void setCurrentPage(Page page) {
-        this.currentPage = page;
-    }
-
 
     /**
      * Handles command to go to a TRIP page from the HOME page or TRIP_FEATURE page.
@@ -247,13 +261,16 @@ public class MainWindow extends UiPart<Stage> {
         } else {
             t = ((HomeLogicManager) logic).getTripList();
         }
-
-        logic.getStorage().setVolantFilePath(Paths.get("data", "volant.json"));
-        logic = new TripLogicManager(new TripModelManager(t, trip, new UserPrefs()), logic.getStorage());
+        UserPrefs newUserPrefs = new UserPrefs();
+        newUserPrefs.setVolantFilePath(Paths.get("data", trip.getName().toString()));
+        logic.getStorage().setVolantFilePath(Paths.get("data", trip.getName().toString()));
+        logic = new TripLogicManager(new TripModelManager(t, trip, newUserPrefs), logic.getStorage());
 
         mainPanelPlaceholder.getChildren().removeAll(mainPanel.getRoot()); // Remove GUI nodes from prev. display
         mainPanel = new TripPage(trip);
         mainPanelPlaceholder.getChildren().add(mainPanel.getRoot());
+        StatusBarFooter statusBarFooter = new StatusBarFooter(logic.getVolantFilePath());
+        statusbarPlaceholder.getChildren().add(statusBarFooter.getRoot());
         setCurrentPage(TRIP);
     }
 
@@ -294,6 +311,8 @@ public class MainWindow extends UiPart<Stage> {
         ObservableList<Activity> activityObservableList = itineraryModelManager.getFilteredActivityList();
         mainPanel = new ItineraryPage(activityObservableList);
         mainPanelPlaceholder.getChildren().add(mainPanel.getRoot());
+        StatusBarFooter statusBarFooter = new StatusBarFooter(logic.getVolantFilePath());
+        statusbarPlaceholder.getChildren().add(statusBarFooter.getRoot());
         setCurrentPage(ITINERARY);
     }
 
@@ -319,6 +338,8 @@ public class MainWindow extends UiPart<Stage> {
         mainPanelPlaceholder.getChildren().removeAll(mainPanel.getRoot()); // Remove GUI nodes from prev. display
         mainPanel = new JournalPage(journalModelManager.getFilteredEntryList());
         mainPanelPlaceholder.getChildren().add(mainPanel.getRoot());
+        StatusBarFooter statusBarFooter = new StatusBarFooter(logic.getVolantFilePath());
+        statusbarPlaceholder.getChildren().add(statusBarFooter.getRoot());
         setCurrentPage(JOURNAL);
     }
 
@@ -338,14 +359,42 @@ public class MainWindow extends UiPart<Stage> {
         mainPanelPlaceholder.getChildren().removeAll(mainPanel.getRoot()); // Remove GUI nodes from prev. display
         mainPanel = new HomePage(homeModelManager.getFilteredTripList());
         mainPanelPlaceholder.getChildren().add(mainPanel.getRoot());
+        StatusBarFooter statusBarFooter = new StatusBarFooter(logic.getVolantFilePath());
+        statusbarPlaceholder.getChildren().add(statusBarFooter.getRoot());
         setCurrentPage(HOME);
+    }
+
+    /**
+     * Handles refreshing a page.
+     */
+    @FXML
+    private void handleRefresh() throws CommandException, ParseException {
+        if (currentPage == HOME) {
+            HomeModelManager currentModel = ((HomeLogicManager) logic).getModel();
+            currentModel.updateFilteredTripList(currentModel.getPredicateShowAllTrips());
+            mainPanelPlaceholder.getChildren().removeAll(mainPanel.getRoot());
+            mainPanel = new HomePage(currentModel.getFilteredTripList());
+            mainPanelPlaceholder.getChildren().add(mainPanel.getRoot());
+        }
+
+        if (currentPage == ITINERARY) {
+            ItineraryModelManager currentModel = ((ItineraryLogicManager) logic).getModel();
+            mainPanelPlaceholder.getChildren().remove(mainPanel.getRoot());
+            mainPanel = new ItineraryPage(currentModel.getActivityList().getActivityList());
+            mainPanelPlaceholder.getChildren().add(mainPanel.getRoot());
+        }
+
+        if (currentPage == JOURNAL) {
+            // Upon refreshing journal page, revert journal page to sorting by NEW
+            executeCommand("sort NEW");
+        }
     }
 
     /**
      * Handles the result of the command to manage the stage.
      * @param commandResult Contains the result to be handled.
      */
-    private void handleResult(CommandResult commandResult) {
+    private void handleResult(CommandResult commandResult) throws CommandException, ParseException {
         if (commandResult.isShowHelp()) {
             handleHelp();
         }
@@ -365,6 +414,10 @@ public class MainWindow extends UiPart<Stage> {
         if (commandResult.isHome()) {
             handleGoToHome(commandResult.getModel().getTripList());
         }
+
+        if (commandResult instanceof RefreshCommandResult) {
+            handleRefresh();
+        }
     }
 
     /**
@@ -377,7 +430,7 @@ public class MainWindow extends UiPart<Stage> {
             logger.info("Result: " + commandResult.getFeedbackToUser());
             resultDisplay.setFeedbackToUser(commandResult.getFeedbackToUser());
 
-
+            /*If the command is something that alters the trip list, page will be refreshed after execution*/
             if (currentPage == HOME) {
                 HomeModelManager currentModel = ((HomeLogicManager) logic).getModel();
                 mainPanelPlaceholder.getChildren().removeAll(mainPanel.getRoot());

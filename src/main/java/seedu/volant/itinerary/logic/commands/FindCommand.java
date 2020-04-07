@@ -18,10 +18,12 @@ import seedu.volant.commons.model.Model;
 import seedu.volant.commons.util.CollectionUtil;
 import seedu.volant.itinerary.model.ItineraryModelManager;
 import seedu.volant.itinerary.model.activity.Activity;
-import seedu.volant.itinerary.model.activity.DateContainsKeywordsPredicate;
-import seedu.volant.itinerary.model.activity.LocationContainsKeywordsPredicate;
-import seedu.volant.itinerary.model.activity.TimeContainsKeywordsPredicate;
-import seedu.volant.itinerary.model.activity.TitleContainsKeywordsPredicate;
+
+import seedu.volant.itinerary.model.activity.util.DateContainsKeywordsPredicate;
+import seedu.volant.itinerary.model.activity.util.LocationContainsKeywordsPredicate;
+import seedu.volant.itinerary.model.activity.util.TimeContainsKeywordsPredicate;
+import seedu.volant.itinerary.model.activity.util.TitleContainsKeywordsPredicate;
+
 
 
 /**
@@ -36,13 +38,19 @@ public class FindCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Finds the activity identified "
             + "by the keywords input (case-insensitive) and displays "
-            + "them as a list with index number. \n"
-            + "Parameters:"
+            + "them as a list with index number."
+
+            + "\nParameters:\t"
             + "[" + PREFIX_TITLE + "TITLE] "
             + "[" + PREFIX_DATE + "DATE] "
             + "[" + PREFIX_TIME + "TIME] "
-            + "[" + PREFIX_LOCATION + "LOCATION] \n"
-            + "Example: " + COMMAND_WORD + " title/visit l/NEW.";
+            + "[" + PREFIX_LOCATION + "LOCATION]"
+
+            + "\nExample:\t"
+            + COMMAND_WORD + " " + PREFIX_TITLE + "visit " + PREFIX_LOCATION + "Brandenburg"
+
+            + "\nNOTE:\t\tAt least one of the parameters must be provided.";
+
 
     public static final String MESSAGE_EMPTY_FIELD = "At least one field to find must be provided.";
 

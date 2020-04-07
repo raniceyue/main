@@ -10,5 +10,5 @@
           <Label fx:id="itineraryTitle" styleClass="label-header" />
       </children>
    </StackPane>
-    <ListView fx:id="activityListView" VBox.vgrow="ALWAYS" />
+    <ListView fx:id="activityListView" VBox.vgrow="ALWAYS" minHeight="600"/>
 </VBox>
