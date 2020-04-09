@@ -1,12 +1,9 @@
 package seedu.volant.commons.storage;
 
 //import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static seedu.volant.testutil.Assert.assertThrows;
-//import static seedu.volant.testutil.TypicalTrips.A;
-//import static seedu.volant.testutil.TypicalTrips.B;
-//import static seedu.volant.testutil.TypicalTrips.C;
-//import static seedu.volant.testutil.TypicalTrips.getTypicalTripList;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -15,10 +12,14 @@ import java.nio.file.Paths;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
-//import seedu.volant.commons.exceptions.DataConversionException;
-
 import seedu.volant.home.model.ReadOnlyTripList;
 import seedu.volant.home.model.TripList;
+
+//import static seedu.volant.testutil.TypicalTrips.A;
+//import static seedu.volant.testutil.TypicalTrips.B;
+//import static seedu.volant.testutil.TypicalTrips.C;
+//import static seedu.volant.testutil.TypicalTrips.getTypicalTripList;
+//import seedu.volant.commons.exceptions.DataConversionException;
 
 public class JsonVolantStorageTest {
     private static final Path TEST_DATA_FOLDER = Paths.get("src", "test", "data", "JsonVolantStorageTest");

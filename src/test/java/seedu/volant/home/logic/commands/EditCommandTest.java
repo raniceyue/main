@@ -5,7 +5,6 @@ import static seedu.volant.home.logic.commands.CommandTestUtil.VALID_DATETO_CNY;
 import static seedu.volant.home.logic.commands.CommandTestUtil.VALID_LOCATION_CNY;
 import static seedu.volant.home.logic.commands.CommandTestUtil.VALID_TRIPNAME_CNY;
 import static seedu.volant.home.logic.commands.CommandTestUtil.assertCommandSuccess;
-
 import static seedu.volant.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
 import static seedu.volant.testutil.TypicalTrips.getTypicalTripList;
 
