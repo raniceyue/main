@@ -321,11 +321,13 @@ image::user-guide/back-command-before.png[width="300"]
 
 [caption=]
 .2) After using the `home` command, you will be moved to the `HOME` page
-image::user-guide/home-page.png[width="300"]
+image::user-guide/home-command-after.png[width="300"]
 
 === Commands for the Home Page
 
 The `HOME` page consists of a list of all your upcoming and past trips.
+
+image::user-guide/home-components.png[width="600"]
 
 From this page, you can manipulate your trip list, as well as navigate to other pages.
 
@@ -559,6 +561,8 @@ image::user-guide/trip-goto-after.png[width="300"]
 === Itinerary Page
 The `ITINERARY` page of a specific trip consists of a list of all the planned activities for a specific trip.
 
+image::user-guide/itinerary-components.png[width="600"]
+
 From this page, you can manipulate the itinerary, as well as navigate to other pages.
 
 ==== Adding an activity: `add`
@@ -647,7 +651,10 @@ If you would like to update the details of a particular activity in the itinerar
 
 The second activity in the itinerary will be edited to reflect the new location *Starbucks* and the new time *10:00AM*.
 
-INSERT DIAGRAM HERE.
+image::user-guide/itinerary-edit-before.png[width="600"]
+
+image::user-guide/itinerary-edit-after.png[width="600"]
+
 
 ==== Locating an activity: `find`
 If you would like to search for a particular activity that matches a certain name, location, date or time, this command
@@ -671,12 +678,17 @@ allows you to find the activity/activities that match(es) the search keyword.
 
 Returns all activities related to climbing.
 
-INSERT DIAGRAM HERE.
+image::user-guide/itinerary-find-before.png[width="300"]
+
+image::user-guide/itinerary-find-after.png[width="300"]
 
 === Journal
 
 The `JOURNAL` page of a specific trip consists of a list of all the journal entries associated with the trip.
 Here, you can manipulate the list of journal entries, as well as navigate to other pages.
+
+image::user-guide/journal-components.png[width="600"]
+
 
 ==== Adding a journal entry: `add`
 If you would like to record a new journal entry, this command adds a new entry to the journal.
@@ -717,10 +729,14 @@ If you would like to record a new journal entry, this command adds a new entry t
 
 Adds a new journal entry to the entry list with the specified content, date, time, location and feeling fields.
 
-INSERT DIAGRAM HERE
+image::user-guide/journal-add-before.png[width="300"]
+
+image::user-guide/journal-add-after.png[width="300"]
 
 ==== Deleting a journal entry: `delete`
 If you would like to remove an entry from the journal, this command deletes the entry at the specified `INDEX`.
+
+
 
 [caption=]
 .Usage
@@ -739,7 +755,10 @@ If you would like to remove an entry from the journal, this command deletes the 
 
 The second trip will be deleted along with its entries.
 
-DIAGRAM TO BE INSERTED HERE.
+image::user-guide/journal-delete-before.png[width="600"]
+
+image::user-guide/journal-delete-after.png[width="300"]
+
 
 ==== Editing a journal entry: `edit`
 If you would like to update a journal entry with new content, a new location, a new date, a new time, a new feeling or
@@ -763,7 +782,10 @@ a new weather, this command allows you to edit the entry at a specified `INDEX`.
 
 Changes date and feeling of fourth journal entry to *21st December 2012* and *SCARED* respectively.
 
-INSERT DIAGRAM HERE.
+image::user-guide/journal-edit-before.png[width="600"]
+
+image::user-guide/journal-edit-after.png[width="600"]
+
 
 ==== Sorting a list of current journal entries: `sort`
 If you would like arrange your journal entries in a certain order, this command sorts the list of entries in a specified order.
@@ -779,8 +801,8 @@ If you would like arrange your journal entries in a certain order, this command 
 [NOTE]
 ====
 * Available `SORT_TYPE`:
-** `NEWESTFIRST` - newest entries first (default if `SORT_TYPE` is left empty)
-** `OLDESTFIRST` - oldest entries first
+** `NEWEST` - newest entries first (default if `SORT_TYPE` is left empty)
+** `OLDEST` - oldest entries first
 ** `LOCATION` - alphabetical order of locations
 ** `FEELING` - alphabetical order of feelings
 * Default sorting of journal entries is in order of newest entries first
@@ -790,7 +812,10 @@ If you would like arrange your journal entries in a certain order, this command 
 
 Sorts the list of journal entries by alphabetical order of locations.
 
-INSERT DIAGRAM HERE.
+image::user-guide/journal-sort-oldest-before.png[width="300"]
+
+image::user-guide/journal-sort-oldest-after.png[width="300"]
+
 
 == FAQ
 This section discusses some frequently asked questions about Volant.
