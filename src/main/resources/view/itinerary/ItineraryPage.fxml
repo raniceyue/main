@@ -10,5 +10,5 @@
           <Label fx:id="itineraryTitle" styleClass="label-header" />
       </children>
    </StackPane>
-    <ListView fx:id="activityListView" minHeight="416"/>
+    <ListView fx:id="activityListView"/>
 </VBox>

@@ -113,7 +113,9 @@ public class MainWindow extends UiPart<Stage> {
         this.primaryStage = primaryStage;
         this.logic = logic;
 
-        primaryStage.setMaxHeight(794);
+        // primaryStage.setMaxHeight(794);
+        primaryStage.setMinWidth(750);
+        primaryStage.setMinHeight(612);
 
         // Configure the UI
         setWindowDefaultSize(logic.getGuiSettings());

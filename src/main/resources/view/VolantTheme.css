@@ -392,6 +392,16 @@
 }
 
 
+/*SCROLL PANE*/
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane {
+    -fx-background-color: #fff;
+}
+
 /*SCROLL BAR */
 .scroll-bar {
     -fx-min-width: 30px;

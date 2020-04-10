@@ -50,6 +50,12 @@ public class HomePage extends UiPart<Region> {
         tripListViewUpcoming.setItems(upcoming);
         tripListViewUpcoming.setCellFactory(listViewUpcoming -> new TripListViewCellUpcoming());
 
+        if (upcoming.isEmpty()) {
+            tripListViewPast.setPrefHeight(0);
+        } else {
+            tripListViewPast.setPrefHeight(past.size() * 105);
+        }
+
         tripListViewPast.setItems(past);
         tripListViewPast.setCellFactory(listViewPast -> new TripListViewCellPast(upcoming.size()));
     }
