@@ -1,6 +1,7 @@
 package seedu.volant.itinerary.logic.commands;
 
 import static seedu.volant.itinerary.logic.commands.CommandTestUtil.assertCommandSuccess;
+import static seedu.volant.itinerary.logic.commands.EditCommand.MESSAGE_EDIT_ITINERARY_SUCCESS;
 import static seedu.volant.testutil.TypicalActivities.getTypicalActivities;
 import static seedu.volant.testutil.TypicalIndexes.INDEX_FIRST_ITEM;
 import static seedu.volant.testutil.TypicalTrips.getGermanyTrip;
@@ -30,7 +31,7 @@ public class EditCommandTest {
         EditItineraryDescriptor descriptor = new EditItineraryDescriptorBuilder(editedActivity).build();
         EditCommand editCommand = new EditCommand(INDEX_FIRST_ITEM, descriptor);
 
-        String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_ITINERARY_SUCCESS, editedActivity);
+        String expectedMessage = String.format(MESSAGE_EDIT_ITINERARY_SUCCESS, editedActivity);
 
         ItineraryModelManager expectedModel = new ItineraryModelManager(model.getTrip(), new UserPrefs());
 
