@@ -32,10 +32,6 @@ public class JournalPage extends UiPart<Region> {
 
         journalTitle.setText("JOURNAL");
 
-        if (entries.isEmpty()) {
-            entryListView.setPrefHeight(0);
-        }
-
         entryListView.setItems(entries);
         entryListView.setCellFactory(listView -> new EntryListViewCell());
     }

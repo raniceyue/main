@@ -32,10 +32,6 @@ public class ItineraryPage extends UiPart<Region> {
 
         itineraryTitle.setText("ITINERARY");
 
-        if (activities.isEmpty()) {
-            activityListView.setPrefHeight(0);
-        }
-
         activityListView.setItems(activities);
         activityListView.setCellFactory(listView -> new ActivityListViewCell());
     }

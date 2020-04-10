@@ -115,7 +115,7 @@ public class MainWindow extends UiPart<Stage> {
 
         // primaryStage.setMaxHeight(794);
         primaryStage.setMinWidth(750);
-        primaryStage.setMinHeight(612);
+        primaryStage.setMinHeight(675);
 
         // Configure the UI
         setWindowDefaultSize(logic.getGuiSettings());
@@ -306,9 +306,7 @@ public class MainWindow extends UiPart<Stage> {
         logic.getStorage().setVolantFilePath(Paths.get("data", trip.getName().toString()));
         logic = new TripLogicManager(new TripModelManager(trip, newUserPrefs), logic.getStorage());
 
-        mainPanelPlaceholder.getChildren().removeAll(mainPanel.getRoot()); // Remove GUI nodes from prev. display
-        mainPanel = new TripPage(trip);
-        mainPanelPlaceholder.getChildren().add(mainPanel.getRoot());
+        switchView(new TripPage(trip));
         updateStatusBar();
         setCurrentPage(TRIP);
     }
@@ -367,9 +365,7 @@ public class MainWindow extends UiPart<Stage> {
 
         logic = new ItineraryLogicManager(itineraryModelManager, logic.getStorage());
 
-        mainPanelPlaceholder.getChildren().removeAll(mainPanel.getRoot()); // Remove GUI nodes from prev. display
-        mainPanel = new ItineraryPage(itineraryModelManager.getFilteredActivityList());
-        mainPanelPlaceholder.getChildren().add(mainPanel.getRoot());
+        switchView(new ItineraryPage(itineraryModelManager.getFilteredActivityList()));
         updateStatusBar();
         setCurrentPage(ITINERARY);
     }
@@ -393,9 +389,7 @@ public class MainWindow extends UiPart<Stage> {
 
         logic = new JournalLogicManager(journalModelManager, logic.getStorage());
 
-        mainPanelPlaceholder.getChildren().removeAll(mainPanel.getRoot()); // Remove GUI nodes from prev. display
-        mainPanel = new JournalPage(journalModelManager.getFilteredEntryList());
-        mainPanelPlaceholder.getChildren().add(mainPanel.getRoot());
+        switchView(new JournalPage(journalModelManager.getFilteredEntryList()));
         updateStatusBar();
         setCurrentPage(JOURNAL);
     }
@@ -431,9 +425,7 @@ public class MainWindow extends UiPart<Stage> {
         HomeModelManager homeModelManager = new HomeModelManager(getTripList(), newUserPrefs);
         logic = new HomeLogicManager(homeModelManager, logic.getStorage());
 
-        mainPanelPlaceholder.getChildren().removeAll(mainPanel.getRoot()); // Remove GUI nodes from prev. display
-        mainPanel = new HomePage(homeModelManager.getFilteredTripList());
-        mainPanelPlaceholder.getChildren().add(mainPanel.getRoot());
+        switchView(new HomePage(homeModelManager.getFilteredTripList()));
         updateStatusBar();
         setCurrentPage(HOME);
     }
@@ -446,22 +438,27 @@ public class MainWindow extends UiPart<Stage> {
         if (currentPage == HOME) {
             HomeModelManager currentModel = ((HomeLogicManager) logic).getModel();
             currentModel.updateFilteredTripList(currentModel.getPredicateShowAllTrips());
-            mainPanelPlaceholder.getChildren().removeAll(mainPanel.getRoot());
-            mainPanel = new HomePage(currentModel.getFilteredTripList());
-            mainPanelPlaceholder.getChildren().add(mainPanel.getRoot());
+            switchView(new HomePage(currentModel.getFilteredTripList()));
         }
 
         if (currentPage == ITINERARY) {
             ItineraryModelManager currentModel = ((ItineraryLogicManager) logic).getModel();
-            mainPanelPlaceholder.getChildren().remove(mainPanel.getRoot());
-            mainPanel = new ItineraryPage(currentModel.getActivityList().getActivityList());
-            mainPanelPlaceholder.getChildren().add(mainPanel.getRoot());
+            switchView(new ItineraryPage(currentModel.getActivityList().getActivityList()));
         }
 
         if (currentPage == JOURNAL) {
             // Upon refreshing journal page, revert journal page to sorting by NEW
             executeCommand("sort NEW");
         }
+    }
+
+    /**
+     * Switches view of mainPanel to {@param view}.
+     */
+    private void switchView(UiPart<Region> view) {
+        mainPanelPlaceholder.getChildren().remove(mainPanel.getRoot());
+        mainPanel = view;
+        mainPanelPlaceholder.getChildren().add(mainPanel.getRoot());
     }
 
     /**
@@ -507,13 +504,10 @@ public class MainWindow extends UiPart<Stage> {
             /*If the command is something that alters the trip list, page will be refreshed after execution*/
             if (currentPage == HOME) {
                 HomeModelManager currentModel = ((HomeLogicManager) logic).getModel();
-                mainPanelPlaceholder.getChildren().removeAll(mainPanel.getRoot());
-                mainPanel = new HomePage(currentModel.getFilteredTripList());
-                mainPanelPlaceholder.getChildren().add(mainPanel.getRoot());
+                switchView(new HomePage(currentModel.getFilteredTripList()));
             }
 
             handleResult(commandResult);
-
             return commandResult;
 
         } catch (CommandException | ParseException e) {
