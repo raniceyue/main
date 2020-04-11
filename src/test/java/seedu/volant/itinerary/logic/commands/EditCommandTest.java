@@ -1,7 +1,6 @@
 package seedu.volant.itinerary.logic.commands;
 
 import static seedu.volant.itinerary.logic.commands.CommandTestUtil.assertCommandSuccess;
-import static seedu.volant.itinerary.logic.commands.EditCommand.MESSAGE_EDIT_ITINERARY_SUCCESS;
 import static seedu.volant.testutil.TypicalActivities.getTypicalActivities;
 import static seedu.volant.testutil.TypicalIndexes.INDEX_FIRST_ITEM;
 import static seedu.volant.testutil.TypicalTrips.getGermanyTrip;
@@ -17,6 +16,7 @@ import seedu.volant.testutil.ActivityBuilder;
 import seedu.volant.testutil.EditItineraryDescriptorBuilder;
 
 public class EditCommandTest {
+    public static final String MESSAGE_EDIT_ITINERARY_SUCCESS = "Edited activity: %1$s";
     private ItineraryModelManager model;
 
     @BeforeEach
