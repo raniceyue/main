@@ -36,6 +36,9 @@ public class EditCommandTest {
         ItineraryModelManager expectedModel = new ItineraryModelManager(model.getTrip(), new UserPrefs());
 
         expectedModel.setActivity(model.getFilteredActivityList().get(0), editedActivity);
+        
+        model = new ItineraryModelManager(getGermanyTrip(), new UserPrefs());
+        model.getTrip().getItinerary().getActivityList().setActivities(getTypicalActivities());
 
         assertCommandSuccess(editCommand, model, expectedMessage, expectedModel);
     }
