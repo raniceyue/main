@@ -17,7 +17,6 @@ import seedu.volant.commons.logic.commands.ExitCommand;
 import seedu.volant.commons.logic.commands.HelpCommand;
 import seedu.volant.commons.logic.parser.exceptions.ParseException;
 import seedu.volant.home.logic.commands.AddCommand;
-import seedu.volant.home.logic.commands.ClearCommand;
 import seedu.volant.home.logic.commands.DeleteCommand;
 import seedu.volant.home.logic.commands.EditCommand;
 import seedu.volant.home.logic.commands.FindCommand;
