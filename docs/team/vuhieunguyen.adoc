@@ -26,19 +26,23 @@ https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=vuhieunguyen&sort=gro
 different activities in the application.
 
 * *Major Enhancement:* Refactored the code base for JUnit testing
+** Justification: Most of the original test code was for Address Book 3. These codes were
+modified and changed to fit our design of Volant.
 
-* *Major Enhancement:* Did JUnit testing for Itinerary's feature (with Zeke)
+* *Major Enhancement:* Did JUnit testing for `ITINERARY` (with Zeke)
+** Highlights: I added JUnit tests for itinerary's commands and parsers, while Zeke
+added JUnit tests for itinerary's model and storage.
 
 === Contributions to User Guide
 ==== Sections Written
-* Section 1
-* Section 2
-* Section 3
+* https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/UserGuide.adoc#itinerary-page[Section 4.6. Itinerary Page]
+* https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/UserGuide.adoc#7-glossary[Section 7. Glossary]
 
 === Contributions to Developer Guide
 ==== Sections Written
-* Section 1
-* Section 2
-* Section 3
-
-_{To be updated in the future}_
+* https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/DeveloperGuide.adoc#Design-Model[Section 3.4. Model] (Itinerary portion)
+* https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/DeveloperGuide.adoc#411-implementation[Section 4.1.2. Special Cases]
+* https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/Testing.adoc[Section 6. Testing]
+* https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/DeveloperGuide.adoc#appendix-f-product-survey[Appendix F: Product Survey]
+* https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/DeveloperGuide.adoc#appendix-g-instructions-for-manual-testing[Appendix G: Ingstructions for manual testing]
+* Reviewed Appendix for Developer Guide

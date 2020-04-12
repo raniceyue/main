@@ -52,7 +52,7 @@ public class JsonAdaptedTripTest {
     }
 
     @Test
-    public void toModelType_nullAddress_throwsIllegalValueException() {
+    public void toModelType_nullLocation_throwsIllegalValueException() {
         JsonAdaptedTrip trip = new JsonAdaptedTrip(VALID_NAME, null, VALID_DATERANGE);
         String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT, Location.class.getSimpleName());
         assertThrows(IllegalValueException.class, expectedMessage, trip::toModelType);
@@ -67,7 +67,7 @@ public class JsonAdaptedTripTest {
     }
 
     @Test
-    public void toModelType_nullEmail_throwsIllegalValueException() {
+    public void toModelType_nullDateRange_throwsIllegalValueException() {
         JsonAdaptedTrip trip = new JsonAdaptedTrip(VALID_NAME, VALID_LOCATION, null);
         String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT, DateRange.class.getSimpleName());
         assertThrows(IllegalValueException.class, expectedMessage, trip::toModelType);
