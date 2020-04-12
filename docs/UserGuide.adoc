@@ -62,6 +62,8 @@ There will also be certain markdown notations to distinguish between normal text
 | `delete INDEX` +
 `TRIP_FEATURE` +
 `TRIP PAGE`                     | This markdown notation highlights commands and terminology specific to the use of Volant.
+|`HOME`, `JOURNAL` +
+`ITINERARY`, `TRIP`             | This markdown notation highlights different features that Volant has to offer.
 |=================
 
 
@@ -81,7 +83,7 @@ e.g. Typing *`help`* and pressing kbd:[Enter] will open a help window.
 [[Features]]
 == Features
 This section describes the various features available in Volant.
-These include front-end features that you can interact with, such as the Trip Page, as well as back-end features such as the auto-saving of data.
+These include front-end features that you can interact with, such as the `TRIP` Page, as well as back-end features such as the auto-saving of data.
 
 === Trips
 You can create a new `TRIP` you to help you plan for your upcoming trip overseas.
@@ -96,7 +98,7 @@ associated with your `TRIP`!
 === Home Page
 You can view all your past and upcoming trips at one glance on the `HOME` Page.
 
-Your trip list is neatly organised into two sections: your upcoming trips and your past trips.
+Your `TRIP` list is neatly organised into two sections: your upcoming trips and your past trips.
 
 === Journal
 To help you save your thoughts and memories during your trip, you can write and record journal entries in Volant.  Volant has a `JOURNAL` feature that allows you to write and record journal entries for every `TRIP`.
@@ -156,7 +158,7 @@ After entering your command, you can execute it by clicking the `Enter` button o
 === Pages in Volant
 This section covers the different pages in Volant.
 
-Volant consists of 4 core components: Home Page, Trip, Itinerary and Journal.
+Volant consists of 4 core components: `HOME` Page, `TRIP`, `ITINERARY` and `JOURNAL`.
 Commands you enter will produce a different outcome depending on which page you are on.
 Additionally, there are a number of commands that are universal, and will work on every page.
 
@@ -167,19 +169,19 @@ Additionally, there are a number of commands that are universal, and will work o
 |`HOME` page            a| .`HOME` page
 image::user-guide/home-page.png[width="300"]
 
-Volant's Home page, featuring the entire list of trips in Volant, sorted in upcoming and past `TRIP` s.
+Volant's `HOME` page, featuring the entire list of trips in Volant, sorted in upcoming and past `TRIP` s.
 |`TRIP` page            a| .`TRIP` page
 image::user-guide/trip-page.png[width="300"]
 
-A page featuring the details of a specific trip, including the `TRIP` 's `ITINERARY` and `JOURNAL`.
+A page featuring the details of a specific `TRIP`, including the `TRIP` 's `ITINERARY` and `JOURNAL`.
 |`JOURNAL` page         a| .`JOURNAL` page
 image::user-guide/journal-page.png[width="300"]
 
-A page displaying the `JOURNAL` of a specific trip.
+A page displaying the `JOURNAL` of a specific `TRIP`.
 |`ITINERARY` page       a| .`ITINERARY` page
 image::user-guide/itinerary-page.png[width="300"]
 
-A page displaying the `ITINERARY` of a specific trip.
+A page displaying the `ITINERARY` of a specific `TRIP`.
 |===
 
 There are specific navigation commands that you will be using to navigate through these different pages. These commands
@@ -926,5 +928,5 @@ This section will cover and explain certain technical/Volant specific terms that
 |Command Line Interface (CLI)   | A user interface where users are required to use the program by entering commands into a text box.
 |Graphical User Interface (GUI) | A user interface that includes visuals such as buttons, icons, images, menus etc.
 |Metadata                       | Details associated with  an entity. For example, metadata of a `TRIP` include the `TRIP` 's, `TRIP_NAME`, `LOCATION`, `TRIP_START_DATE`, `TRIP_END_DATE`
-
+|Root Page                      | The first page that the Volant displays when opened. In Volant, this is the `HOME` Page.
 |==============

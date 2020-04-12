@@ -4,6 +4,12 @@
 :stylesDir: ../stylesheets
 
 == Introduction
+Hello, my name is Vu Hieu Nguyen, and I am currently a year 2 Computer Science student
+at National University of Singapore.
+
+Thank you for choosing to use our travel companion, Volant. I am a member of
+Team Volant, which consists of five students developers, who developed Volant
+as our CS2103T Software Development module group project.
 
 == PROJECT: Volant
 
@@ -12,6 +18,16 @@ their travels. The user interacts with it using a CLI, and it has a GUI created 
 it is primarily based off of the Address Book 3 application developed by the CS2103T teaching team.
 
 === Summary of Contributions
+You can view my code contributions to this project
+https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=vuhieunguyen&sort=groupTitle&sortWithin=title&since=&timeframe=commit&mergegroup=false&groupSelect=groupByRepos&breakdown=false[on RepoSense].
+
+* *Major Enhancement:* Implemented Itinerary page of application (with Zeke)
+** What it does: Allow users to view and manipulate the itinerary with
+different activities in the application.
+
+* *Major Enhancement:* Refactored the code base for JUnit testing
+
+* *Major Enhancement:* Did JUnit testing for Itinerary's feature (with Zeke)
 
 === Contributions to User Guide
 ==== Sections Written
