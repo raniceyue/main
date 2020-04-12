@@ -139,8 +139,6 @@ For example, if a user is switching from a `TRIP` view to the `HOME` view throug
 image::ArchitectureSequenceDiagram.png[]
 ====
 
-DIAGRAM TO BE INSERTED HERE
-
 _More details on the implementation of view switching can be found in <<implementation-view-switching>>._
 
 [[Design-Logic]]
