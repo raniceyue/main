@@ -12,7 +12,7 @@ import seedu.volant.home.model.TripList;
 public class ClearCommandTest {
 
     @Test
-    public void execute_emptyAddressBook_success() {
+    public void execute_emptyVolant_success() {
         HomeModelManager model = new HomeModelManager();
         HomeModelManager expectedModel = new HomeModelManager();
 
@@ -20,7 +20,7 @@ public class ClearCommandTest {
     }
 
     @Test
-    public void execute_nonEmptyAddressBook_success() {
+    public void execute_nonEmptyVolant_success() {
         HomeModelManager model = new HomeModelManager(getTypicalTripList(), new UserPrefs());
         HomeModelManager expectedModel = new HomeModelManager(getTypicalTripList(), new UserPrefs());
         expectedModel.setTripList(new TripList());

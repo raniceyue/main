@@ -27,7 +27,7 @@ import seedu.volant.testutil.EditTripDescriptorBuilder;
 import seedu.volant.testutil.TripBuilder;
 import seedu.volant.testutil.TripUtil;
 
-public class LocationBookParserTest {
+public class LocationTripParserTest {
 
     private final HomeInputParser parser = new HomeInputParser();
 
