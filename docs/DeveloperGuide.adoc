@@ -40,7 +40,7 @@ Refer to the guide <<SettingUp#, here>>.
 === Architecture
 
 .Architecture Diagram
-image::ArchitectureDiagram.png[]
+image::ArchitectureDiagram.png[align="center"]
 
 The *_Architecture Diagram_* given above explains the high-level design of the App. Given below is a quick overview of each component.
 
@@ -83,7 +83,7 @@ For example, the `JOURNAL` view has its own `JournalLogicManager` and `JournalMo
 for command execution on the `JOURNAL` page.
 
 .Class Diagram of the Journal Logic Component
-image::JournalLogicDiagram.png[]
+image::JournalLogicDiagram.png[align="center"]
 
 [discrete]
 ==== How the architecture components interact with each other
@@ -92,7 +92,7 @@ The _Sequence Diagram_ below shows how the components interact with each other f
 the command `back` when in a `TRIP` view. View switching is executed by the `Ui` component.
 
 .Component interactions for `back` command in the `TRIP` view.
-image::ArchitectureSequenceDiagram.png[]
+image::ArchitectureSequenceDiagram.png[align="center"]
 
 
 The _Sequence Diagram_ below illustrates how the components interact with each other for the scenario where the user issues the command `goto 1` when in a `HomePage` view.
@@ -100,7 +100,7 @@ View switching is executed by the `Ui` component.
 
 .Component interactions for `goto 1` command in the `HomePage` view.
 
-image::gotoCommandSequenceDiagram.png[]
+image::gotoCommandSequenceDiagram.png[align="center"]
 
 The sections below give more details about each component.
 
@@ -108,7 +108,7 @@ The sections below give more details about each component.
 === UI component
 
 .Structure of the UI Component when a user is on a `TRIP` page
-image::UIClassDiagram.png[]
+image::UIClassDiagram.png[align="center"]
 
 *API* : link:{repoURL}/src/main/java/seedu/location/ui/Ui.java[`Ui.java`]
 
@@ -136,7 +136,7 @@ For example, if a user is switching from a `TRIP` view to the `HOME` view throug
 . Reassign the value of `StackPane` `mainPanel` from `TripPage` to `HomePage`.
 
 .Component interactions for `back` command in the `TRIP` view.
-image::ArchitectureSequenceDiagram.png[]
+image::ArchitectureSequenceDiagram.png[align="center"]
 ====
 
 _More details on the implementation of view switching can be found in <<implementation-view-switching>>._
@@ -146,7 +146,7 @@ _More details on the implementation of view switching can be found in <<implemen
 
 [[fig-LogicClassDiagram1]]
 .Structure of the Logic Component
-image::JournalLogicDiagram.png[]
+image::JournalLogicDiagram.png[align="center"]
 
 *API* :
 link:{repoURL}/src/main/java/seedu/location/logic/Logic.java[`Logic.java`]
@@ -160,13 +160,13 @@ link:{repoURL}/src/main/java/seedu/location/logic/Logic.java[`Logic.java`]
 Given below is the Sequence Diagram for interactions within the `Logic` component of the Itinerary feature for the `execute("delete 1")` API call.
 
 .Interactions Inside the Logic Component for the `delete 1` Command
-image::DeleteCommandItinerary.png[]
+image::DeleteCommandItinerary.png[align="center"]
 
 [[Design-Model]]
 === Model component
 
 .Structure of the Model Component in Journal
-image::JournalModelClassDiagram.png[]
+image::JournalModelClassDiagram.png[align="center"]
 
 *API* : link:{repoURL}/src/main/java/seedu/location/model/Model.java[`Model.java`]
 
@@ -178,7 +178,7 @@ The `Model` for `JOURNAL`,
 * does not depend on any of the other three components.
 
 .Structure of the Model Component in Itinerary
-image::ItineraryModel.png[]
+image::ItineraryModel.png[align="center"]
 
 The `Model` for `ITINERARY`,
 
@@ -192,7 +192,7 @@ The `Model` for `ITINERARY`,
 === Storage component
 
 .Structure of the Storage Component
-image::StorageClassDiagram.png[]
+image::StorageClassDiagram.png[align="center"]
 
 *API* : link:{repoURL}/src/main/java/seedu/location/storage/Storage.java[`Storage.java`]
 
