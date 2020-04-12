@@ -73,5 +73,4 @@ public class ItineraryLogicManagerTest {
         assertEquals(expectedMessage, result.getFeedbackToUser());
         assertEquals(expectedModel, model);
     }
-
 }

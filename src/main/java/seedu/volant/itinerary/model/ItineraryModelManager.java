@@ -62,6 +62,7 @@ public class ItineraryModelManager implements Model {
         Trip placeholder = new Trip(tripName, tripLocation, tripDateRange);
 
         this.trip = placeholder;
+
         this.itinerary = trip.getTripFeatureList().getItinerary();
         this.userPrefs = new UserPrefs();
         this.activityList = itinerary.getActivityList();

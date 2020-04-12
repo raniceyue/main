@@ -33,6 +33,7 @@ public class TypicalActivities {
             .withDate("2021-06-02")
             .withTime("02:00").build();
 
+
     private TypicalActivities() {} // prevents instantiation
 
     /**
