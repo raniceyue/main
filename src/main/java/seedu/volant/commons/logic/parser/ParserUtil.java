@@ -4,8 +4,6 @@ import static java.util.Objects.requireNonNull;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Collection;
-import java.util.HashSet;
 
 import seedu.volant.commons.core.Messages;
 import seedu.volant.commons.core.index.Index;

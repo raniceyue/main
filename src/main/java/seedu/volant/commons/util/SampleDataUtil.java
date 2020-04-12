@@ -1,8 +1,6 @@
 package seedu.volant.commons.util;
 
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.stream.Collectors;
 
 import seedu.volant.home.model.ReadOnlyTripList;
 import seedu.volant.home.model.TripList;
