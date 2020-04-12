@@ -37,7 +37,8 @@ public class TripUtil {
     public static String getEditTripDescriptorDetails(EditCommand.EditTripDescriptor descriptor) {
         StringBuilder sb = new StringBuilder();
         descriptor.getName().ifPresent(name -> sb.append(PREFIX_NAME).append(name).append(" "));
-        descriptor.getLocation().ifPresent(location -> sb.append(PREFIX_LOCATION).append(location.location).append(" "));
+        descriptor.getLocation().ifPresent(location -> sb.append(PREFIX_LOCATION)
+                .append(location.location).append(" "));
         descriptor.getDateRange().ifPresent(dateRange -> sb.append(PREFIX_DATERANGE)
                 .append(dateRange.value).append(" "));
         return sb.toString();
