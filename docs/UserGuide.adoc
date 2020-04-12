@@ -558,7 +558,7 @@ For example, you are on the `TRIP` page and would like to view your itinerary fo
 `goto` command, Volant will navigate you to the `TRIP` 's  `ITINERARY` page.
 
 .`goto` command on `TRIP` page
-image::user-guide/trip-page.png[width="300"]
+image::user-guide/trip-goto-before.png[width="300"]
 1) You are on the `TRIP` page of the trip "Family Trip".
 
 .Result of `goto` command
