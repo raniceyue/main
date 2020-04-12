@@ -706,11 +706,9 @@ _{More to be added in future development}_
 
 [appendix]
 == Glossary
-<<<<<<< HEAD
-=======
+
 [[extensions]] Extensions::
 "add-on"s to the MSS that describe exceptional/alternative flow of events.
->>>>>>> 77ebf56072a716cec7401a6f1f848f5e12d6c2d3
 
 [[mainstream-os]] Mainstream OS::
 Windows, Linux, Unix, OS-X
@@ -721,14 +719,11 @@ Main Success Scenario
 [[multi-level-c]] Multi-level Commands::
 Commands that require multiple lines of user input for execution.
 
-<<<<<<< HEAD
 [[root-page]] Root Page::
 The first page the shows up when Volant is opened. By default, this is the `HOME` page.
-=======
+
 [[one-shot-c]] One-shot Commands::
 Commands that are executed using only a single line of user input.
-
->>>>>>> 77ebf56072a716cec7401a6f1f848f5e12d6c2d3
 
 [appendix]
 == Product Survey
