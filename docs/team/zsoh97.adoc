@@ -4,13 +4,14 @@
 :stylesDir: ../stylesheets
 
 == Introduction
-Hello, my name is Zeke. At the time of this project (AY19/20), I was a Year 2 Computer Science undergraduate.
-
-I am a developer for `PROJECT: Volant`.
+Hello, my name is Zeke. At the time of this project (AY19/20), I was a Year 2 Computer Science undergraduate at the National University of Singapore. Additionally, I am a software developer in Team Volant. That's the team that is working on this
+wonderful travel companion app! We're really passionate about this project, so we hope that you enjoy the product
+as much as we enjoy the process.
 
 You can find out more about who I am at these links:
 
-* https://www.linkedin.com/in/zsoh97/[LinkedIn]
+* https://www.linkedin.com/in/zsoh97/[My LinkedIn profile]
+* https://www.github.com/zsoh97[My github profile]
 
 == PROJECT: Volant
 
@@ -36,20 +37,30 @@ implement and test the functionalities of our features, developers had to have d
 
 * *Major Enhancement:* Implemented the GUI for the application.
 
+* *Testing:* Did JUnit testing for `ITINERARY` (with Zeke)
+** Highlights: I added JUnit tests for itinerary's commands and parsers, while Zeke
+added JUnit tests for itinerary's model and storage.
+
 * *Other Contributions*
 ** Documentation
-*** Wrote the initial draft for UserGuide.
+*** Did cosmetic tweaks to existing contents of the User Guide:
+*** PRs reviewed(with non-trivial review comments):
 
 === Contributions to User Guide
 ==== Sections Written
-* Section 1
-* Section 2
-* Section 3
+* Transferred early stage user guide in google doc to adoc.
+* https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/UserGuide.adoc#1-introduction[Section 1. Introduction]
+* https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/UserGuide.adoc#3-features[Section 3. Features]
+* https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/UserGuide.adoc#commands-for-the-home-page[Section 4.4. Commands for the Home Page]
+* Formatted command summary to table form
 
 === Contributions to Developer Guide
 ==== Sections Written
-* UML diagrams for Storage and goto('back') command
-* Section 2
-* Section 3
+* gotoBackCommand sequence diagram for Views in Volant.
+* UML diagram for storage component.
+* UML diagram for delete command.
+* UML diagram for refresh command.
+* UML diagram for storage when adding a new trip.
+* UML diagram for storage when adding a new activity.
 
 _{To be updated in the future}_

@@ -42,6 +42,8 @@ added JUnit tests for itinerary's model and storage.
 ==== Sections Written
 * https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/DeveloperGuide.adoc#Design-Model[Section 3.4. Model] (Itinerary portion)
 * https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/DeveloperGuide.adoc#411-implementation[Section 4.1.2. Special Cases]
+* https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/DeveloperGuide.adoc#46-adding-an-activity-in-itinerary-page[Section 4.6. Adding an activity in Itinerary Page]
+* https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/DeveloperGuide.adoc#47-finding-activities-in-itinerary-page[Section 4.7. Finding activities in Itinerary Page]
 * https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/Testing.adoc[Section 6. Testing]
 * https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/DeveloperGuide.adoc#appendix-f-product-survey[Appendix F: Product Survey]
 * https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/DeveloperGuide.adoc#appendix-g-instructions-for-manual-testing[Appendix G: Instructions for manual testing]
