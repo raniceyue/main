@@ -56,7 +56,7 @@ from the keyboard.
 ====
 *Map of Navigation Commands* +
 
-image::navigation-cheatsheet.png[width="800"]
+image::user-guide/navigation-cheatsheet.png[width="800"]
 ====
 
 * *Major Enhancement:* Implemented Home Page of application +
