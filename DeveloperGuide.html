@@ -217,9 +217,9 @@ the command <code>back</code> when in a <code>TRIP</code> view. View switching i
 </div>
 <div id="view-switch-sequence" class="imageblock" style="text-align: center">
 <div class="content">
-<img src="images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
+<img src="images/home-command-sequence.png" alt="home command sequence">
 </div>
-<div class="title">Figure 3. Component interactions for <code>back</code> command in the <code>TRIP</code> view.</div>
+<div class="title">Figure 3. Component interactions for <code>home</code> command in the <code>JOURNAL</code> page.</div>
 </div>
 <div class="paragraph">
 <p>The <em>Sequence Diagram</em> below illustrates how the components interact with each other for the scenario where the user
@@ -514,7 +514,7 @@ appropriate functions to facilitate view switching.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="/images/back-activity-diagram.png" alt="back activity diagram">
+<img src="images/back-activity-diagram.png" alt="back activity diagram">
 </div>
 <div class="title">Figure 12. Activity diagram for view switching process in <code>MainWindow</code> for <code>back</code> command</div>
 </div>
@@ -1362,7 +1362,7 @@ summarises what happens when a user deletes a journal entry or itinerary activit
 <p>User enters details of trip to be added</p>
 </li>
 <li>
-<p>V adds trip to trip list</p>
+<p>V adds new trip to trip list</p>
 <div class="paragraph">
 <p>Use case ends</p>
 </div>
@@ -1378,7 +1378,7 @@ summarises what happens when a user deletes a journal entry or itinerary activit
 <p>1a. V detects invalid characters in trip details</p>
 </li>
 <li>
-<p>1a1. V outputs error informing user of invalid characters</p>
+<p>1a1. V outputs error informing user of invalid command</p>
 <div class="paragraph">
 <p>Use case ends</p>
 </div>
@@ -1401,10 +1401,36 @@ summarises what happens when a user deletes a journal entry or itinerary activit
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1c. V is unable to detect a valid keyword</p>
+<p>1c. V detects that trip has a clashing date range with another trip on the trip list</p>
 </li>
 <li>
-<p>1c1. V outputs error informing user of invalid keyword</p>
+<p>1c1. V outputs error informing user of clashing date range between trip and another trip on the list</p>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1d. V detects that trip has the same name as another trip on the trip list</p>
+</li>
+<li>
+<p>1d1. V outputs error informing user that the trip already exists on the trip list</p>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1e. V is unable to detect a valid keyword</p>
+</li>
+<li>
+<p>1e1. V outputs error informing user of invalid command</p>
 <div class="paragraph">
 <p>Use case ends</p>
 </div>
@@ -1446,6 +1472,19 @@ summarises what happens when a user deletes a journal entry or itinerary activit
 <div class="ulist none">
 <ul class="none">
 <li>
+<p>3c. V is unable to detect any specified fields to edit</p>
+</li>
+<li>
+<p>3c1. V outputs error informing user that a field to edit must be specified</p>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
 <p>3a. V detects an invalid index i.e. index out of range or negative index</p>
 </li>
 <li>
@@ -1459,10 +1498,10 @@ summarises what happens when a user deletes a journal entry or itinerary activit
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3b. V detects invalid characters for the details</p>
+<p>3b. V detects invalid characters for the fields</p>
 </li>
 <li>
-<p>3b1. V outputs error informing user of invalid characters</p>
+<p>3b1. V outputs error informing user of invalid command</p>
 <div class="paragraph">
 <p>Use case ends</p>
 </div>
@@ -1472,17 +1511,17 @@ summarises what happens when a user deletes a journal entry or itinerary activit
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3b. V is unable to detect a valid keyword</p>
+<p>3c. V is unable to detect a valid keyword</p>
 </li>
 <li>
-<p>3b1. V outputs error informing user of invalid keyword</p>
+<p>3c1. V outputs error informing user of invalid command</p>
 <div class="paragraph">
 <p>Use case ends</p>
 </div>
 </li>
 </ul>
 </div>
-<h3 id="uc03-navigating-to-trip-folder" class="discrete">UC03 - Navigating to Trip Folder</h3>
+<h3 id="uc03-navigating-to-trip-page" class="discrete">UC03 - Navigating to Trip Page</h3>
 <div class="paragraph">
 <p><strong>Precondition:</strong> User has added a trip</p>
 </div>
@@ -1527,14 +1566,14 @@ summarises what happens when a user deletes a journal entry or itinerary activit
 <p>1b. V is unable to detect a valid keyword</p>
 </li>
 <li>
-<p>1b1. V outputs error informing user of invalid keyword</p>
+<p>1b1. V outputs error informing user of invalid command</p>
 <div class="paragraph">
 <p>Use case ends</p>
 </div>
 </li>
 </ul>
 </div>
-<h3 id="uc04-accessing-pages-contact-list-itinerary-journal" class="discrete">UC04 - Accessing Pages (Contact List/ Itinerary / Journal)</h3>
+<h3 id="uc04-accessing-trip-feature-pages-itinerary-journal" class="discrete">UC04 - Accessing Trip Feature Pages (Itinerary / Journal)</h3>
 <div class="paragraph">
 <p><strong>Precondition:</strong> User is in the home page</p>
 </div>
@@ -1566,10 +1605,10 @@ summarises what happens when a user deletes a journal entry or itinerary activit
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. V detects incorrect command to navigate to the page</p>
+<p>2a. V detects invalid field to navigate to the page</p>
 </li>
 <li>
-<p>2a1. V outputs error informing user of incorrect command</p>
+<p>2a1. V outputs error informing user of invalid command</p>
 <div class="paragraph">
 <p>Use case ends</p>
 </div>
@@ -1582,79 +1621,14 @@ summarises what happens when a user deletes a journal entry or itinerary activit
 <p>2b. V is unable to detect a valid keyword</p>
 </li>
 <li>
-<p>2b1. V outputs error informing user of invalid keyword</p>
+<p>2b1. V outputs error informing user of invalid command</p>
 <div class="paragraph">
 <p>Use case ends</p>
 </div>
 </li>
 </ul>
 </div>
-<h3 id="uc05-adding-contact-to-contact-list-in-a-trip" class="discrete">UC05 - Adding Contact to Contact List in a Trip</h3>
-<div class="paragraph">
-<p><strong>Precondition: </strong>User is in the Contact List page of a trip</p>
-</div>
-<div class="paragraph">
-<p><strong>Guarantee: </strong>A new contact will be added to the Contact List</p>
-</div>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User enters details of the contact</p>
-</li>
-<li>
-<p>V confirms the addition of the contact to the contact list and displays new contact in the contact list</p>
-<div class="paragraph">
-<p>Use case ends</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. V detects invalid characters in contact entry</p>
-</li>
-<li>
-<p>1a1. V outputs error informing user of invalid characters</p>
-<div class="paragraph">
-<p>Use case ends</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1b. V detects missing fields in contact entry</p>
-</li>
-<li>
-<p>1b1. V outputs error informing user of missing contact entry</p>
-<div class="paragraph">
-<p>Use case ends</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1c. V is unable to detect a valid keyword</p>
-</li>
-<li>
-<p>1c1. V outputs error informing user of invalid keyword</p>
-<div class="paragraph">
-<p>Use case ends</p>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="uc06-adding-travel-entry-into-journal-in-a-trip" class="discrete">UC06 - Adding Travel Entry into Journal in a Trip</h3>
+<h3 id="uc05-adding-a-travel-entry-into-journal-of-a-trip" class="discrete">UC05 - Adding a travel Entry into Journal of a Trip</h3>
 <div class="paragraph">
 <p><strong>Precondition: </strong>User is already in the Journal page of Trip</p>
 </div>
@@ -1686,7 +1660,7 @@ summarises what happens when a user deletes a journal entry or itinerary activit
 <p>1a. V detects invalid characters in travel entry</p>
 </li>
 <li>
-<p>1a1. V outputs error informing user of invalid characters</p>
+<p>1a1. V outputs error informing user of invalid command</p>
 <div class="paragraph">
 <p>Use case ends</p>
 </div>
@@ -1712,14 +1686,14 @@ summarises what happens when a user deletes a journal entry or itinerary activit
 <p>1c. V is unable to detect a valid keyword</p>
 </li>
 <li>
-<p>1c1. V outputs error informing user of invalid keyword</p>
+<p>1c1. V outputs error informing user of invalid command</p>
 <div class="paragraph">
 <p>Use case ends</p>
 </div>
 </li>
 </ul>
 </div>
-<h3 id="uc07-adding-activities-into-itinerary" class="discrete">UC07 - Adding Activities into Itinerary</h3>
+<h3 id="uc06-adding-activities-into-itinerary" class="discrete">UC06 - Adding Activities into Itinerary</h3>
 <div class="paragraph">
 <p><strong>Precondition: </strong>User is already in the Itinerary page of the Trip
 <strong>Guarantee: </strong>A new activity will be added to the Itinerary</p>
@@ -1749,7 +1723,7 @@ summarises what happens when a user deletes a journal entry or itinerary activit
 <p>1a. V detects invalid characters into activity entry</p>
 </li>
 <li>
-<p>1a1. V outputs error informing user of invalid characters</p>
+<p>1a1. V outputs error informing user of invalid command</p>
 <div class="paragraph">
 <p>Use case ends</p>
 </div>
@@ -1775,67 +1749,12 @@ summarises what happens when a user deletes a journal entry or itinerary activit
 <p>1c. V is unable to detect a valid keyword</p>
 </li>
 <li>
-<p>1c1. V outputs error informing user of invalid keyword</p>
+<p>1c1. V outputs error informing user of invalid command</p>
 <div class="paragraph">
 <p>Use case ends</p>
 </div>
 </li>
 </ul>
-</div>
-<h3 id="uc08-deleting-a-contact-in-the-contact-list-of-a-trip" class="discrete">UC08 - Deleting a Contact in the Contact List of a Trip</h3>
-<div class="paragraph">
-<p><strong>Precondition:</strong> User is in Contact List page of the Trip</p>
-</div>
-<div class="paragraph">
-<p><strong>Guarantee:</strong> The contact in the Contact List will be deleted</p>
-</div>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist none">
-<ol class="none">
-<li>
-<p>User requests to delete a contact in the contact list at the specified index</p>
-</li>
-<li>
-<p>V deletes the contact at the specified index and updates the displayed list</p>
-</li>
-<li>
-<p>Use case ends</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. V detects an invalid index i.e. index out of range or negative index</p>
-</li>
-<li>
-<p>1a1. V outputs error informing user of invalid index specified</p>
-<div class="paragraph">
-<p>Use case ends</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1b. V is unable to detect a valid keyword</p>
-</li>
-<li>
-<p>1b1. V outputs error informing user of invalid keyword</p>
-<div class="paragraph">
-<p>Use case ends</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><em>{More use cases will be added and current use cases may be edited in the future.}</em></p>
 </div>
 </div>
 </div>
@@ -2131,4 +2050,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 10:23:38 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 12:00:29 UTC</div></div></div></body></html>
