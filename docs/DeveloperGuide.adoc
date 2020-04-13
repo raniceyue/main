@@ -423,7 +423,7 @@ image::FindItinerary.png[align="center"]]
 The following activity diagram summarises what happens when a user executes a sort journal command:
 
 .Activity Diagram for `sort` Command
-image::SortActivityDiagram.png[align="center"]]
+image::sortActivityDiagram.png[align="center"]
 
 === Deleting Trip in Home Page
 
