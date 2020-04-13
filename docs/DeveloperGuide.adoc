@@ -235,13 +235,39 @@ The entire process of view switching is executed in the `MainWindow.java` class.
 
 ==== Implementation
 Each `CommandResult` from an execution in the `MainWindow` class stores data on
-*if a command is a navigation command or not.* If the command is a navigation command, the `MainWindow` will execute the
+*if a command is a navigation command or not, and which navigation command it is.* If the command is a navigation command, the `MainWindow` will execute the
 appropriate functions to facilitate view switching.
+
+In the view switching process, the `MainWindow` will do the following: +
+
+. Switch the logic component of the program to the logic component of the next page
+. Switch the model component of the program to the model component of the next page
+. Switch the current storage of the program to the storage component of the next page
+. Load the GUI components for the next page
+
+For example, for the `back` command, the `MainWindow`:
+
+.Activity diagram for view switching process in `MainWindow` for `back` command
+image::/{imagesDir}/back-activity-diagram.png[]
+
+==== Design Considerations
+Pros: +
+
+* As each page has its own components, the back end of the program is neater and better abstracted.
+* Specialised logic components for each page allow for the same keywords to be used (e.g `add`, `delete`) on certain
+pages.
+
+Cons: +
+
+* There are many steps to switching views
+* If there are more pages, there will be many logic and model components to keep track of.
 
 
 ==== Special Cases
-When `back` command is used in the <<root-page>>, this would not have any effect on the current GUI being
+* When `back` command is used in the <<root-page>>, this would not have any effect on the current GUI being
 displayed.
+* When the `home` command is used in the <<root-page>>, this would not have any effect on the current GUI being
+displayed as the user is already on the HOME page.
 
 === Data Storage
 All data (trip details, journal entry details and itinerary details) is saved in the `main.data` directory.
