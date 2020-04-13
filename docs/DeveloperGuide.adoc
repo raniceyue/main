@@ -34,7 +34,7 @@ This icon denotes important details to take note of during development.
 * *Understanding Diagrams* +
 The diagrams in this Developer Guide are colour coded according to the different components.
 +
-image::/{imagesDir}/dg-diagram-legend.png[]
+image::dg-diagram-legend.png[]
 
 ====
 
