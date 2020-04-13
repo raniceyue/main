@@ -66,11 +66,12 @@ added JUnit tests for itinerary's model and storage.
 
 ==== Diagrams
 * https://ay1920s2-cs2103t-f09-4.github.io/main/DeveloperGuide.html#Design-Architecture[Figure 4. Component interactions for `goto 1` command in the `HOME` page view.]
+* https://ay1920s2-cs2103t-f09-4.github.io/main/DeveloperGuide.html#Design-Ui[Structure of the UI Component when a user is on a `TRIP` page]
 * https://ay1920s2-cs2103t-f09-4.github.io/main/DeveloperGuide.html#Design-Storage[Figure 11. Structure of the Storage Component]
-* https://ay1920s2-cs2103t-f09-4.github.io/main/DeveloperGuide.html#deleting-trip-in-home-page[Figure 15. Activity Diagram for `delete` Command]
-* https://ay1920s2-cs2103t-f09-4.github.io/main/DeveloperGuide.html#refreshing-trips-in-home-page[Figure 18. Activity Diagram for `rf` Command]
-* https://ay1920s2-cs2103t-f09-4.github.io/main/DeveloperGuide.html#data-storage[Figure 20. Activity diagram for adding a new trip]
-* https://ay1920s2-cs2103t-f09-4.github.io/main/DeveloperGuide.html#data-storage[Figure 21. Activity diagram for adding a new activity]
+* https://ay1920s2-cs2103t-f09-4.github.io/main/DeveloperGuide.html#deleting-trip-in-home-page[Figure 18. Activity Diagram for `delete` Command]
+* https://ay1920s2-cs2103t-f09-4.github.io/main/DeveloperGuide.html#refreshing-trips-in-home-page[Figure 21. Activity Diagram for `rf` Command]
+* https://ay1920s2-cs2103t-f09-4.github.io/main/DeveloperGuide.html#data-storage[Figure 23. Activity diagram for adding a new trip]
+* https://ay1920s2-cs2103t-f09-4.github.io/main/DeveloperGuide.html#data-storage[Figure 24. Activity diagram for adding a new activity]
 
 
 _{To be updated in the future}_
