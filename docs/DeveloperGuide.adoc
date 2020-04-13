@@ -100,8 +100,8 @@ The _Sequence Diagram_ below shows how the components interact with each other f
 the command `back` when in a `TRIP` view. View switching is executed by the `Ui` component.
 
 [[view-switch-sequence]]
-.Component interactions for `back` command in the `TRIP` view.
-image::ArchitectureSequenceDiagram.png[align="center"]
+.Component interactions for `home` command in the `JOURNAL` page.
+image::home-command-sequence.png[align="center"]
 
 
 The _Sequence Diagram_ below illustrates how the components interact with each other for the scenario where the user
@@ -252,7 +252,7 @@ In the view switching process, the `MainWindow` will do the following: +
 For example, for the `back` command, the `MainWindow`:
 
 .Activity diagram for view switching process in `MainWindow` for `back` command
-image::/{imagesDir}/back-activity-diagram.png[]
+image::back-activity-diagram.png[]
 
 ==== Design Considerations
 Pros: +
@@ -265,7 +265,6 @@ Cons: +
 
 * There are many steps to switching views
 * If there are more pages, there will be many logic and model components to keep track of.
-
 
 ==== Special Cases
 * When `back` command is used in the <<root-page>>, this would not have any effect on the current GUI being
@@ -604,7 +603,7 @@ _{All user stories can be viewed in our issue tracker.}_
 *<<mss, MSS>>*
 
 1. User enters details of trip to be added
-2. V adds trip to trip list
+2. V adds new trip to trip list
 +
 Use case ends
 
@@ -612,7 +611,7 @@ Use case ends
 
 [none]
 * 1a. V detects invalid characters in trip details
-* 1a1. V outputs error informing user of invalid characters
+* 1a1. V outputs error informing user of invalid command
 +
 Use case ends
 
@@ -623,8 +622,20 @@ Use case ends
 Use case ends
 
 [none]
-* 1c. V is unable to detect a valid keyword
-* 1c1. V outputs error informing user of invalid keyword
+* 1c. V detects that trip has a clashing date range with another trip on the trip list
+* 1c1. V outputs error informing user of clashing date range between trip and another trip on the list
++
+Use case ends
+
+[none]
+* 1d. V detects that trip has the same name as another trip on the trip list
+* 1d1. V outputs error informing user that the trip already exists on the trip list
++
+Use case ends
+
+[none]
+* 1e. V is unable to detect a valid keyword
+* 1e1. V outputs error informing user of invalid command
 +
 Use case ends
 
@@ -647,25 +658,31 @@ Use case ends
 *Extensions*
 
 [none]
+* 3c. V is unable to detect any specified fields to edit
+* 3c1. V outputs error informing user that a field to edit must be specified
++
+Use case ends
+
+[none]
 * 3a. V detects an invalid index i.e. index out of range or negative index
 * 3a1. V outputs error informing user of invalid index specified
 +
 Use case ends
 
 [none]
-* 3b. V detects invalid characters for the details
-* 3b1. V outputs error informing user of invalid characters
+* 3b. V detects invalid characters for the fields
+* 3b1. V outputs error informing user of invalid command
 +
 Use case ends
 
 [none]
-* 3b. V is unable to detect a valid keyword
-* 3b1. V outputs error informing user of invalid keyword
+* 3c. V is unable to detect a valid keyword
+* 3c1. V outputs error informing user of invalid command
 +
 Use case ends
 
 [discrete]
-=== UC03 - Navigating to Trip Folder
+=== UC03 - Navigating to Trip Page
 
 *Precondition:* User has added a trip
 
@@ -688,12 +705,12 @@ Use case ends
 
 [none]
 * 1b. V is unable to detect a valid keyword
-* 1b1. V outputs error informing user of invalid keyword
+* 1b1. V outputs error informing user of invalid command
 +
 Use case ends
 
 [discrete]
-=== UC04 - Accessing Pages (Contact List/ Itinerary / Journal)
+=== UC04 - Accessing Trip Feature Pages (Itinerary / Journal)
 
 *Precondition:* User is in the home page
 
@@ -710,53 +727,19 @@ Use case ends
 *Extensions*
 
 [none]
-* 2a. V detects incorrect command to navigate to the page
-* 2a1. V outputs error informing user of incorrect command
+* 2a. V detects invalid field to navigate to the page
+* 2a1. V outputs error informing user of invalid command
 +
 Use case ends
 
 [none]
 * 2b. V is unable to detect a valid keyword
-* 2b1. V outputs error informing user of invalid keyword
+* 2b1. V outputs error informing user of invalid command
 +
 Use case ends
 
 [discrete]
-=== UC05 - Adding Contact to Contact List in a Trip
-
-**Precondition: **User is in the Contact List page of a trip
-
-**Guarantee: **A new contact will be added to the Contact List
-
-*MSS*
-
-1. User enters details of the contact
-2. V confirms the addition of the contact to the contact list and displays new contact in the contact list
-+
-Use case ends
-
-*Extensions*
-
-[none]
-* 1a. V detects invalid characters in contact entry
-* 1a1. V outputs error informing user of invalid characters
-+
-Use case ends
-
-[none]
-* 1b. V detects missing fields in contact entry
-* 1b1. V outputs error informing user of missing contact entry
-+
-Use case ends
-
-[none]
-* 1c. V is unable to detect a valid keyword
-* 1c1. V outputs error informing user of invalid keyword
-+
-Use case ends
-
-[discrete]
-=== UC06 - Adding Travel Entry into Journal in a Trip
+=== UC05 - Adding a travel Entry into Journal of a Trip
 
 **Precondition: **User is already in the Journal page of Trip
 
@@ -773,7 +756,7 @@ Use case ends
 
 [none]
 * 1a. V detects invalid characters in travel entry
-* 1a1. V outputs error informing user of invalid characters
+* 1a1. V outputs error informing user of invalid command
 +
 Use case ends
 
@@ -785,12 +768,12 @@ Use case ends
 
 [none]
 * 1c. V is unable to detect a valid keyword
-* 1c1. V outputs error informing user of invalid keyword
+* 1c1. V outputs error informing user of invalid command
 +
 Use case ends
 
 [discrete]
-=== UC07 - Adding Activities into Itinerary
+=== UC06 - Adding Activities into Itinerary
 
 **Precondition: **User is already in the Itinerary page of the Trip
 **Guarantee: **A new activity will be added to the Itinerary
@@ -806,7 +789,7 @@ Use case ends
 
 [none]
 * 1a. V detects invalid characters into activity entry
-* 1a1. V outputs error informing user of invalid characters
+* 1a1. V outputs error informing user of invalid command
 +
 Use case ends
 
@@ -818,40 +801,10 @@ Use case ends
 
 [none]
 * 1c. V is unable to detect a valid keyword
-* 1c1. V outputs error informing user of invalid keyword
+* 1c1. V outputs error informing user of invalid command
 +
 Use case ends
 
-[discrete]
-=== UC08 - Deleting a Contact in the Contact List of a Trip
-
-*Precondition:* User is in Contact List page of the Trip
-
-*Guarantee:* The contact in the Contact List will be deleted
-
-*MSS*
-
-[none]
-1. User requests to delete a contact in the contact list at the specified index
-2. V deletes the contact at the specified index and updates the displayed list
-3. Use case ends
-
-*Extensions*
-
-[none]
-* 1a. V detects an invalid index i.e. index out of range or negative index
-* 1a1. V outputs error informing user of invalid index specified
-+
-Use case ends
-
-[none]
-* 1b. V is unable to detect a valid keyword
-* 1b1. V outputs error informing user of invalid keyword
-+
-Use case ends
-
-
-_{More use cases will be added and current use cases may be edited in the future.}_
 
 [appendix]
 == Non Functional Requirements
