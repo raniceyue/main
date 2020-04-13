@@ -47,3 +47,4 @@ added JUnit tests for itinerary's model and storage.
 * https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/Testing.adoc[Section 6. Testing]
 * https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/DeveloperGuide.adoc#appendix-f-product-survey[Appendix F: Product Survey]
 * https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/DeveloperGuide.adoc#appendix-g-instructions-for-manual-testing[Appendix G: Instructions for manual testing]
+* Figure 7, 10, 16, 17
