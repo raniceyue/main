@@ -212,7 +212,7 @@ image::StorageClassDiagram.png[align="center"]
 The `Storage` component,
 
 * can save `UserPref` objects in json format and read it back.
-* can save the `XYZList` data in json format and read it back.
+* can save the `LMNList` data in json format and read it back.
 
 [[Design-Commons]]
 === Common classes
