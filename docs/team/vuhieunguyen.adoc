@@ -29,14 +29,14 @@ different activities in the application.
 ** Justification: Most of the original test code was for Address Book 3. These codes were
 modified and changed to fit our design of Volant.
 
-* *Major Enhancement:* Did JUnit testing for `ITINERARY` (with Zeke)
+* *Testing:* Did JUnit testing for `ITINERARY` (with Zeke)
 ** Highlights: I added JUnit tests for itinerary's commands and parsers, while Zeke
 added JUnit tests for itinerary's model and storage.
 
 === Contributions to User Guide
 ==== Sections Written
 * https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/UserGuide.adoc#itinerary-page[Section 4.6. Itinerary Page]
-* https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/UserGuide.adoc#7-glossary[Section 7. Glossary]
+* https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/UserGuide.adoc#6-command-summary[Section 6. Command Summary]
 
 === Contributions to Developer Guide
 ==== Sections Written
@@ -44,5 +44,4 @@ added JUnit tests for itinerary's model and storage.
 * https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/DeveloperGuide.adoc#411-implementation[Section 4.1.2. Special Cases]
 * https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/Testing.adoc[Section 6. Testing]
 * https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/DeveloperGuide.adoc#appendix-f-product-survey[Appendix F: Product Survey]
-* https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/DeveloperGuide.adoc#appendix-g-instructions-for-manual-testing[Appendix G: Ingstructions for manual testing]
-* Reviewed Appendix for Developer Guide
+* https://github.com/AY1920S2-CS2103T-F09-4/main/blob/master/docs/DeveloperGuide.adoc#appendix-g-instructions-for-manual-testing[Appendix G: Instructions for manual testing]

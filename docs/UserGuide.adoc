@@ -28,7 +28,6 @@ Volant is a travel companion application for solo travellers for who *prefer to 
 .Home page of Volant
 image::Ui.png[width="790"][align="center"]
 
-
 Volant is *optimized for those who prefer to work with a Command Line Interface* (CLI) while still having the benefits of a Graphical User Interface (GUI).
 If you can type fast, Volant can get you planning, executing and reflecting on your trip faster than traditional GUI apps. All while enjoying our retro inspired GUI.
 Interested? Wait no further, jump to <<Quick Start>> to get started. Enjoy!
@@ -574,7 +573,7 @@ For example, you are on the `TRIP` page and would like to view your itinerary fo
 `goto` command, Volant will navigate you to the `TRIP` 's  `ITINERARY` page.
 
 .`goto` command on `TRIP` page
-image::user-guide/trip-goto-before.png[width="300"]
+image::user-guide/trip-goto-before.png[width="300"][align="center"]
 1) You are on the `TRIP` page of the trip "Family Trip".
 
 .Result of `goto` command
