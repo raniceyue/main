@@ -927,8 +927,8 @@ These instructions only provide a starting point for testers to work on; testers
 
 . Initial launch
 
-.. Download the jar file and copy into an empty folder
-.. Double-click the jar file +
+.. Download the jar file and copy into an empty folder.
+.. Double-click the jar file. +
    Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
 
 . Saving window preferences
@@ -938,6 +938,12 @@ These instructions only provide a starting point for testers to work on; testers
    Expected: The most recent window size and location is retained.
 
 _{ more test cases ... }_
+
+=== Adding a `TRIP`
+
+. Adding a `TRIP` to an empty trip list
+
+.. Prerequisites:
 
 === Deleting a `TRIP`
 
@@ -967,9 +973,11 @@ _{ more test cases ... }_
 
 .. Prerequisites: A `TRIP` has already been created.
 .. Test case: `delete 1` +
-   Expected: First `activity` is deleted from the `ITINERARY` of the current `TRIP`. Current `activity` list is updated.
+   Expected: First `activity` is deleted from the `activity` list of the `ITINERARY` of the current `TRIP`. Current `activity` list is updated.
 .. Test case: `delete 0` +
-   Expected: No `activity` is deleted. Error details shown in the status message
+   Expected: No `activity` is deleted. Error details shown in the status message.
+.. Test case: `delete a` +
+   Expected: No `activity` is deleted. Error details shown in the status message.
 .. Other incorrect delete commands to try: `delete`, `delete x` (where x is larger than the itinerary size) +
    Expected: Similar to previous.
 
