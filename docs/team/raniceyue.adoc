@@ -89,6 +89,7 @@ what commands can be used on the page they are specifically on.
 * https://ay1920s2-cs2103t-f09-4.github.io/main/UserGuide.html#universal-commands-ranice[4.3 Universal Commands]
 * https://ay1920s2-cs2103t-f09-4.github.io/main/UserGuide.html#glossary-ranice[7. Glossary]
 
+
 === Contributions to Developer Guide
 ==== Sections Written
 * https://ay1920s2-cs2103t-f09-4.github.io/main/DeveloperGuide.html#Design-Architecture[3.1 Architecture]
