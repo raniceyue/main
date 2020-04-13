@@ -304,7 +304,7 @@ image::AddTripActivityDiagram.png[align="center"]
 ** Cons: Less organised as all trip details are stored in one location. Any error in the way one trip is stored will cause all trips not to be loaded.
 * **Alternative 2:** Create a individual json file for each trip details.
 ** Pros: An error in the file of one trip will not affect the loading of other trips.
-** Cons: Harder to implement retrieval
+** Cons: Harder to implement retrieval.
 
 === Sorting entries in Journal Page
 ==== Implementation
@@ -328,6 +328,36 @@ The following activity diagram summarises what happens when a user executes a so
 
 .Activity Diagram for `sort` Command
 image::SortActivityDiagram.png[align="center"]]
+
+=== Deleting Trip in Home Page
+
+==== Implementation
+
+The delete trip feature allows user to delete a trip in Volant. This feature is faciliated by `HomeInputParser`, `DeleteCommandParser`, and `DeleteCommand`.
+
+Given below is an example usage scenario and how the delete mechanism behaves at each step:
+
+1. The user executes the delete command in `HOME` page and provides the desired index for deletion.
+2. `HomeInputParser` parses the input by the user to check if the input provided contains a valid command keyword.
+3. `DeleteCommandParser` parses the remaining input by the user for the index.
+4. `DeleteCommandParser` checks if the index provided is valid; at most the number of trips in the list.
+5. `DeleteCommandParser` creates a new `DeleteCommand` with the index provided.
+6. `HomeLogicManager` executes the `DeleteCommand`.
+7. `The trip folder in the file path along with its contents are deleted during execution.
+8. `HomeModelManager` updates the `UniqueTripList`.
+9. `HomeLogicManager` updates storage with updated `UniqueTripList`.
+10. `MainWindow` receives `CommandResult` from `HomeLogicManager` containing success message to be displayed to user.
+11. Trips displayed in `MainWindow` are updated and `MainWindow` displays success message.
+
+The following activity diagram summarises what happens when a user executes an add activity command:
+
+.Activity Diagram for `delete` Command
+image::deleteTripActivityDiagram.png[align="center"]]
+
+==== Design Considerations
+
+===== Aspect: How to delete the trip
+Since each trip is a folder containing the data of the trip's itinerary and journal. If the trip is deleted, the corresponding itinerary and journal json files should also be deleted. This prevents unnecessary files from being stored in the program.
 
 === Adding an activity in Itinerary Page
 
@@ -394,6 +424,30 @@ image::FindItinerary.png[align="center"]]
 ** Pros: The commands would be a lot shorter and easy to use. This allows for cross-field search which is not possible with the current implementation. This implementation is also easier to implement.
 ** Cons: This makes it difficult to narrow down the search if the users want to be specific about which field the keyword is in. The current implementation allows for greater freedom in choosing the fields to search for, something this implementation would not be able to accomplish. Furthermore, as `date` and `time` have different format from `location` and `title`, the specified field would make it easier for users to search for activities with the same `date` or `time`.
 
+=== Refreshing trips in Home Page
+
+==== Implementation
+The refresh feature allows user to repopulate the current page with the same data in the storage. This feature is faciliated by `HomeInputParser`, `RefreshCommandParser`, and `RefreshCommand`.
+
+Given below is an example usage scenario and how the refresh mechanism behaves at each step:
+
+1. The user executes the rf command in `HOME` page.
+2. `HomeInputParser` parses the input by the user to check if the input provided contains a valid command keyword.
+3. `FindCommandParser` creates a new `RefreshCommand`.
+4. `HomeLogicManager` executes the `RefreshCommand`.
+5. `MainWindow` receives `CommandResult` and success message from `HomeLogicManager`.
+6. `MainWindow` checks the current page user is on and repopulates display with list from `HomeModelManager`.
+7. `MainWindow` displays success message.
+
+The following activity diagram summarises what happens when a user executes a find activity command:
+
+.Activity Diagram for `rf` Command
+image::rfActivityDiagram.png[align="center"]]
+
+==== Design Considerations
+
+===== Aspect: How to get the list to repopulate the data with
+After sorting or finding a list, the user needed a way to view the original data. The construction of each model includes a list that contains the relevant data in storage. Using that list, the view can be repopulated with the original data.
 
 === Data Storage
 All data (trip details, journal entry details and itinerary details) is saved in the `main.data` directory.
