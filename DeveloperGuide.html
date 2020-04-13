@@ -24,15 +24,16 @@
 <li><a href="#implementation">4. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#implementation-view-switching">4.1. View Switching for Navigation Commands</a></li>
-<li><a href="#adding-a-trip-in-home-page">4.2. Adding a trip in Home Page</a></li>
-<li><a href="#sorting-entries-in-journal-page">4.3. Sorting entries in Journal Page</a></li>
-<li><a href="#deleting-trip-in-home-page">4.4. Deleting Trip in Home Page</a></li>
-<li><a href="#adding-an-activity-in-itinerary-page">4.5. Adding an activity in Itinerary Page</a></li>
-<li><a href="#finding-activities-in-itinerary-page">4.6. Finding activities in Itinerary Page</a></li>
-<li><a href="#refreshing-trips-in-home-page">4.7. Refreshing trips in Home Page</a></li>
-<li><a href="#data-storage">4.8. Data Storage</a></li>
-<li><a href="#logging">4.9. Logging</a></li>
-<li><a href="#Implementation-Configuration">4.10. Configuration</a></li>
+<li><a href="#specific-help-windows-for-different-pages">4.2. Specific Help Windows for different pages</a></li>
+<li><a href="#adding-a-trip-in-home-page">4.3. Adding a trip in Home Page</a></li>
+<li><a href="#sorting-entries-in-journal-page">4.4. Sorting entries in Journal Page</a></li>
+<li><a href="#deleting-trip-in-home-page">4.5. Deleting Trip in Home Page</a></li>
+<li><a href="#adding-an-activity-in-itinerary-page">4.6. Adding an activity in Itinerary Page</a></li>
+<li><a href="#finding-activities-in-itinerary-page">4.7. Finding activities in Itinerary Page</a></li>
+<li><a href="#refreshing-trips-in-home-page">4.8. Refreshing trips in Home Page</a></li>
+<li><a href="#data-storage">4.9. Data Storage</a></li>
+<li><a href="#logging">4.10. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.11. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">5. Documentation</a></li>
@@ -353,7 +354,7 @@ For example, <code>goto</code>, <code>back</code> and <code>home</code> navigati
 <h3 id="Design-Model"><a class="link" href="#Design-Model">3.4. Model component</a></h3>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="/images/HomeClassDiagram.png" alt="HomeClassDiagram">
+<img src="images/HomeClassDiagram.png" alt="HomeClassDiagram">
 </div>
 <div class="title">Figure 8. Class Diagram for the Model component on the <code>HOME</code> page</div>
 </div>
@@ -569,9 +570,59 @@ displayed as the user is already on the HOME page.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-trip-in-home-page"><a class="link" href="#adding-a-trip-in-home-page">4.2. Adding a trip in Home Page</a></h3>
+<h3 id="specific-help-windows-for-different-pages"><a class="link" href="#specific-help-windows-for-different-pages">4.2. Specific Help Windows for different pages</a></h3>
 <div class="sect3">
 <h4 id="implementation-3"><a class="link" href="#implementation-3">4.2.1. Implementation</a></h4>
+<div class="paragraph">
+<p>Each page in Volant has its own <code>{Page}HelpWindow</code> class.
+<a href="#implementation-view-switching">Upon switching views</a>, the <code>MainWindow</code> will create a new <code>{Page}HelpWindow</code> containing
+details of the commands that can be used on that page.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-syntax-of-the-find-command"><a class="link" href="#aspect-syntax-of-the-find-command">Aspect: Syntax of the find command</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong>
+Help Window specifically details the commands that can be used on the page that the user is currently on.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Very specific and allows added convenience for users when they want to use commands with many fields that they
+cannot remember without having to refer to the User Guide.</p>
+</li>
+<li>
+<p>Cons: Every single page has to have its own class file for the Help Window, if there are many pages, there will be many files to keep track of.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Use a general Help Window that lists every single command for every page in Volant</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Only one Help Window class file needed and it is easy to implement.</p>
+</li>
+<li>
+<p>Cons: If all the commands are detailed on a single long Help Window, the user will have to inconveniently scroll through
+the window to reach the section that details commands for the page that they are on.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-trip-in-home-page"><a class="link" href="#adding-a-trip-in-home-page">4.3. Adding a trip in Home Page</a></h3>
+<div class="sect3">
+<h4 id="implementation-4"><a class="link" href="#implementation-4">4.3.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The add trip feature allows user to add a trip to Volant. This feature is facilitated by <code>HomeInputParser</code>, <code>AddCommandParser</code>, and <code>AddCommand</code>.</p>
 </div>
@@ -629,7 +680,7 @@ displayed as the user is already on the HOME page.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.2. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-data-is-stored"><a class="link" href="#aspect-how-data-is-stored">Aspect: How data is stored</a></h5>
 <div class="ulist">
@@ -666,9 +717,9 @@ displayed as the user is already on the HOME page.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sorting-entries-in-journal-page"><a class="link" href="#sorting-entries-in-journal-page">4.3. Sorting entries in Journal Page</a></h3>
+<h3 id="sorting-entries-in-journal-page"><a class="link" href="#sorting-entries-in-journal-page">4.4. Sorting entries in Journal Page</a></h3>
 <div class="sect3">
-<h4 id="implementation-4"><a class="link" href="#implementation-4">4.3.1. Implementation</a></h4>
+<h4 id="implementation-5"><a class="link" href="#implementation-5">4.4.1. Implementation</a></h4>
 <div class="paragraph">
 <p>Sorting journal entries
 The sort feature allows user to sort the entries in the <code>JOURNAL</code> of a trip. This feature is facilitated by <code>JournalInputParser</code>, <code>SortCommandParser</code>, and <code>SortCommand</code>.</p>
@@ -722,9 +773,9 @@ The sort feature allows user to sort the entries in the <code>JOURNAL</code> of 
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-trip-in-home-page"><a class="link" href="#deleting-trip-in-home-page">4.4. Deleting Trip in Home Page</a></h3>
+<h3 id="deleting-trip-in-home-page"><a class="link" href="#deleting-trip-in-home-page">4.5. Deleting Trip in Home Page</a></h3>
 <div class="sect3">
-<h4 id="implementation-5"><a class="link" href="#implementation-5">4.4.1. Implementation</a></h4>
+<h4 id="implementation-6"><a class="link" href="#implementation-6">4.5.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The delete trip feature allows user to delete a trip in Volant. This feature is faciliated by <code>HomeInputParser</code>, <code>DeleteCommandParser</code>, and <code>DeleteCommand</code>.</p>
 </div>
@@ -779,7 +830,7 @@ The sort feature allows user to sort the entries in the <code>JOURNAL</code> of 
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.4.2. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.5.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-to-delete-the-trip"><a class="link" href="#aspect-how-to-delete-the-trip">Aspect: How to delete the trip</a></h5>
 <div class="paragraph">
@@ -789,9 +840,9 @@ The sort feature allows user to sort the entries in the <code>JOURNAL</code> of 
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-an-activity-in-itinerary-page"><a class="link" href="#adding-an-activity-in-itinerary-page">4.5. Adding an activity in Itinerary Page</a></h3>
+<h3 id="adding-an-activity-in-itinerary-page"><a class="link" href="#adding-an-activity-in-itinerary-page">4.6. Adding an activity in Itinerary Page</a></h3>
 <div class="sect3">
-<h4 id="implementation-6"><a class="link" href="#implementation-6">4.5.1. Implementation</a></h4>
+<h4 id="implementation-7"><a class="link" href="#implementation-7">4.6.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The add activity feature allows user to add an activity to a current trip. This feature is faciliated by <code>ItineraryInputParser</code>, <code>AddCommandParser</code>, and <code>AddCommand</code>.</p>
 </div>
@@ -849,7 +900,7 @@ The sort feature allows user to sort the entries in the <code>JOURNAL</code> of 
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.5.2. Design Considerations</a></h4>
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.6.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-prerequisite-of-the-command"><a class="link" href="#aspect-prerequisite-of-the-command">Aspect: Prerequisite of the command</a></h5>
 <div class="paragraph">
@@ -859,9 +910,9 @@ The sort feature allows user to sort the entries in the <code>JOURNAL</code> of 
 </div>
 </div>
 <div class="sect2">
-<h3 id="finding-activities-in-itinerary-page"><a class="link" href="#finding-activities-in-itinerary-page">4.6. Finding activities in Itinerary Page</a></h3>
+<h3 id="finding-activities-in-itinerary-page"><a class="link" href="#finding-activities-in-itinerary-page">4.7. Finding activities in Itinerary Page</a></h3>
 <div class="sect3">
-<h4 id="implementation-7"><a class="link" href="#implementation-7">4.6.1. Implementation</a></h4>
+<h4 id="implementation-8"><a class="link" href="#implementation-8">4.7.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The find activity feature allows user to find one or several activities in the current trip with matching keywords provided. This feature is faciliated by <code>ItineraryInputParser</code>, <code>FindCommandParser</code>, and <code>FindCommand</code>.</p>
 </div>
@@ -916,9 +967,9 @@ The sort feature allows user to sort the entries in the <code>JOURNAL</code> of 
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.6.2. Design Considerations</a></h4>
+<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">4.7.2. Design Considerations</a></h4>
 <div class="sect4">
-<h5 id="aspect-syntax-of-the-find-command"><a class="link" href="#aspect-syntax-of-the-find-command">Aspect: Syntax of the find command</a></h5>
+<h5 id="aspect-syntax-of-the-find-command-2"><a class="link" href="#aspect-syntax-of-the-find-command-2">Aspect: Syntax of the find command</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -953,9 +1004,9 @@ The sort feature allows user to sort the entries in the <code>JOURNAL</code> of 
 </div>
 </div>
 <div class="sect2">
-<h3 id="refreshing-trips-in-home-page"><a class="link" href="#refreshing-trips-in-home-page">4.7. Refreshing trips in Home Page</a></h3>
+<h3 id="refreshing-trips-in-home-page"><a class="link" href="#refreshing-trips-in-home-page">4.8. Refreshing trips in Home Page</a></h3>
 <div class="sect3">
-<h4 id="implementation-8"><a class="link" href="#implementation-8">4.7.1. Implementation</a></h4>
+<h4 id="implementation-9"><a class="link" href="#implementation-9">4.8.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The refresh feature allows user to repopulate the current page with the same data in the storage. This feature is faciliated by <code>HomeInputParser</code>, <code>RefreshCommandParser</code>, and <code>RefreshCommand</code>.</p>
 </div>
@@ -998,7 +1049,7 @@ The sort feature allows user to sort the entries in the <code>JOURNAL</code> of 
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">4.7.2. Design Considerations</a></h4>
+<h4 id="design-considerations-7"><a class="link" href="#design-considerations-7">4.8.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-to-get-the-list-to-repopulate-the-data-with"><a class="link" href="#aspect-how-to-get-the-list-to-repopulate-the-data-with">Aspect: How to get the list to repopulate the data with</a></h5>
 <div class="paragraph">
@@ -1008,12 +1059,12 @@ The sort feature allows user to sort the entries in the <code>JOURNAL</code> of 
 </div>
 </div>
 <div class="sect2">
-<h3 id="data-storage"><a class="link" href="#data-storage">4.8. Data Storage</a></h3>
+<h3 id="data-storage"><a class="link" href="#data-storage">4.9. Data Storage</a></h3>
 <div class="paragraph">
 <p>All data (trip details, journal entry details and itinerary details) is saved in the <code>main.data</code> directory.</p>
 </div>
 <div class="sect3">
-<h4 id="organisation"><a class="link" href="#organisation">4.8.1. Organisation</a></h4>
+<h4 id="organisation"><a class="link" href="#organisation">4.9.1. Organisation</a></h4>
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/user-guide/data-storage.png" alt="data storage">
@@ -1050,7 +1101,7 @@ time, location, feeling and weather.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-7"><a class="link" href="#design-considerations-7">4.8.2. Design Considerations</a></h4>
+<h4 id="design-considerations-8"><a class="link" href="#design-considerations-8">4.9.2. Design Considerations</a></h4>
 <div class="paragraph">
 <p>Pros:</p>
 </div>
@@ -1076,7 +1127,7 @@ time, location, feeling and weather.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="data-storage-implementation-adding-a-new-trip-activity"><a class="link" href="#data-storage-implementation-adding-a-new-trip-activity">4.8.3. Data storage implementation: Adding a new trip/activity</a></h4>
+<h4 id="data-storage-implementation-adding-a-new-trip-activity"><a class="link" href="#data-storage-implementation-adding-a-new-trip-activity">4.9.3. Data storage implementation: Adding a new trip/activity</a></h4>
 <div class="paragraph">
 <p>Given below is an example usage scenario where a user adds a new trip:</p>
 </div>
@@ -1132,7 +1183,7 @@ data file is updated. The following activity diagram summarises this process:</p
 </div>
 </div>
 <div class="sect3">
-<h4 id="data-storage-implementation-editing-a-trip"><a class="link" href="#data-storage-implementation-editing-a-trip">4.8.4. Data storage implementation: Editing a trip</a></h4>
+<h4 id="data-storage-implementation-editing-a-trip"><a class="link" href="#data-storage-implementation-editing-a-trip">4.9.4. Data storage implementation: Editing a trip</a></h4>
 <div class="paragraph">
 <p>Given below is an example usage scenario where a user edits a trip:</p>
 </div>
@@ -1174,7 +1225,7 @@ deleted.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="data-storage-implementation-deleting-a-journal-entry-itinerary-activity"><a class="link" href="#data-storage-implementation-deleting-a-journal-entry-itinerary-activity">4.8.5. Data storage implementation: Deleting a journal entry/itinerary activity</a></h4>
+<h4 id="data-storage-implementation-deleting-a-journal-entry-itinerary-activity"><a class="link" href="#data-storage-implementation-deleting-a-journal-entry-itinerary-activity">4.9.5. Data storage implementation: Deleting a journal entry/itinerary activity</a></h4>
 <div class="paragraph">
 <p>Given below is an example usage scenario where a user deletes a journal entry:</p>
 </div>
@@ -1216,14 +1267,14 @@ summarises what happens when a user deletes a journal entry or itinerary activit
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.9. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.10. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.10, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.11, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1254,7 +1305,7 @@ summarises what happens when a user deletes a journal entry or itinerary activit
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.10. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.11. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2196,4 +2247,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 12:22:27 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 12:38:51 UTC</div></div></div></body></html>
