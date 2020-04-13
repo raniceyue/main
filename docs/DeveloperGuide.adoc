@@ -175,7 +175,7 @@ image::DeleteItinerary.png[align="center"]
 === Model component
 
 .Class Diagram for the Model component on the `HOME` page
-image::/{imagesDir}/HomeClassDiagram.png[align="center"]
+image::HomeClassDiagram.png[align="center"]
 
 .Structure of the Model Component in Journal
 image::JournalModelDiagram.png[align="center"]
@@ -271,6 +271,28 @@ Cons: +
 displayed.
 * When the `home` command is used in the <<root-page>>, this would not have any effect on the current GUI being
 displayed as the user is already on the HOME page.
+
+
+=== Specific Help Windows for different pages
+==== Implementation
+Each page in Volant has its own `{Page}HelpWindow` class.
+<<implementation-view-switching, Upon switching views>>, the `MainWindow` will create a new `{Page}HelpWindow` containing
+details of the commands that can be used on that page.
+
+==== Design Considerations
+===== Aspect: Syntax of the find command
+* **Alternative 1 (current choice):**
+Help Window specifically details the commands that can be used on the page that the user is currently on.
+** Pros: Very specific and allows added convenience for users when they want to use commands with many fields that they
+cannot remember without having to refer to the User Guide.
+** Cons: Every single page has to have its own class file for the Help Window, if there are many pages, there will be many files to keep track of.
+* **Alternative 2:** Use a general Help Window that lists every single command for every page in Volant
+** Pros: Only one Help Window class file needed and it is easy to implement.
+** Cons: If all the commands are detailed on a single long Help Window, the user will have to inconveniently scroll through
+the window to reach the section that details commands for the page that they are on.
+
+
+
 
 === Adding a trip in Home Page
 ==== Implementation
