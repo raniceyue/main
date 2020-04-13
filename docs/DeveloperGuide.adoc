@@ -349,7 +349,7 @@ Given below is an example usage scenario and how the journal sort mechanism beha
 The following activity diagram summarises what happens when a user executes a sort journal command:
 
 .Activity Diagram for `sort` Command
-image::SortActivityDiagram.png[align="center"]]
+image::sortActivityDiagram.png[align="center"]
 
 === Deleting Trip in Home Page
 
