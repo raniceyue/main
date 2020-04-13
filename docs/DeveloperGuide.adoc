@@ -290,7 +290,7 @@ Given below is an example usage scenario and how the journal sort mechanism beha
 The following activity diagram summarizes what happens when a user executes a sort journal command:
 
 .Activity Diagram for `sort` Command
-image::AddActivity.png[align="center"]]
+image::sortActivityDiagram.png[align="center"]]
 
 === Adding activities in Itinerary Page
 ==== Implementation
@@ -316,7 +316,7 @@ Given below is an example usage scenario and how the activity add mechanism beha
 The following activity diagram summarizes what happens when a user executes a add activity command:
 
 .Activity Diagram for `add` Command
-image::sortActivityDiagram.png[align="center"]]
+image::AddActivity.png[align="center"]]
 
 ==== Design Considerations
 
@@ -363,6 +363,7 @@ The following activity diagram summarises what happens when a user executes a so
 
 .Activity Diagram for `sort` Command
 image::SortActivityDiagram.png[align="center"]]
+
 === Deleting Trip in Home Page
 
 ==== Implementation
